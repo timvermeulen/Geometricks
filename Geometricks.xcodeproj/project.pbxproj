@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783721ED29E4900FF8784 /* AppDelegate.swift */; };
+		228783751ED29E4900FF8784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783741ED29E4900FF8784 /* ViewController.swift */; };
+		228783771ED29E4900FF8784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228783761ED29E4900FF8784 /* Assets.xcassets */; };
+		2287837A1ED29E4900FF8784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228783781ED29E4900FF8784 /* Main.storyboard */; };
+		228783851ED29E4900FF8784 /* GeometricksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783841ED29E4900FF8784 /* GeometricksTests.swift */; };
+		228783901ED29E4900FF8784 /* GeometricksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287838F1ED29E4900FF8784 /* GeometricksUITests.swift */; };
+		2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839D1ED29E7B00FF8784 /* Canvas.swift */; };
+		228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */; };
+		228783B21ED29ECA00FF8784 /* AnyDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */; };
+		228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */; };
+		228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A21ED29ECA00FF8784 /* AnyPoint.swift */; };
+		228783B51ED29ECA00FF8784 /* CocoaDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */; };
+		228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A41ED29ECA00FF8784 /* Drawable.swift */; };
+		228783B71ED29ECA00FF8784 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A51ED29ECA00FF8784 /* DrawingContext.swift */; };
+		228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A61ED29ECA00FF8784 /* FreePoint.swift */; };
+		228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A71ED29ECA00FF8784 /* FreeValued.swift */; };
+		228783BA1ED29ECA00FF8784 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A81ED29ECA00FF8784 /* Line.swift */; };
+		228783BB1ED29ECA00FF8784 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A91ED29ECA00FF8784 /* Model.swift */; };
+		228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */; };
+		228783BD1ED29ECA00FF8784 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AB1ED29ECA00FF8784 /* Point.swift */; };
+		228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AC1ED29ECA00FF8784 /* RawPoint.swift */; };
+		228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */; };
+		228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AE1ED29ECA00FF8784 /* RawVector.swift */; };
+		228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */; };
+		228783C21ED29ECA00FF8784 /* StandardOutputDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* StandardOutputDrawingContext.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		228783811ED29E4900FF8784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 228783671ED29E4900FF8784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2287836E1ED29E4900FF8784;
+			remoteInfo = Geometricks;
+		};
+		2287838C1ED29E4900FF8784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 228783671ED29E4900FF8784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2287836E1ED29E4900FF8784;
+			remoteInfo = Geometricks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2287836F1ED29E4900FF8784 /* Geometricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geometricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		228783721ED29E4900FF8784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		228783741ED29E4900FF8784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		228783761ED29E4900FF8784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		228783791ED29E4900FF8784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2287837B1ED29E4900FF8784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228783801ED29E4900FF8784 /* GeometricksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeometricksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		228783841ED29E4900FF8784 /* GeometricksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometricksTests.swift; sourceTree = "<group>"; };
+		228783861ED29E4900FF8784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2287838B1ED29E4900FF8784 /* GeometricksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeometricksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2287838F1ED29E4900FF8784 /* GeometricksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometricksUITests.swift; sourceTree = "<group>"; };
+		228783911ED29E4900FF8784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2287839D1ED29E7B00FF8784 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawable.swift; sourceTree = "<group>"; };
+		228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawingContext.swift; sourceTree = "<group>"; };
+		228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyFreeValued.swift; sourceTree = "<group>"; };
+		228783A21ED29ECA00FF8784 /* AnyPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPoint.swift; sourceTree = "<group>"; };
+		228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDrawingContext.swift; sourceTree = "<group>"; };
+		228783A41ED29ECA00FF8784 /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		228783A51ED29ECA00FF8784 /* DrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
+		228783A61ED29ECA00FF8784 /* FreePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreePoint.swift; sourceTree = "<group>"; };
+		228783A71ED29ECA00FF8784 /* FreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeValued.swift; sourceTree = "<group>"; };
+		228783A81ED29ECA00FF8784 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		228783A91ED29ECA00FF8784 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPoint+Raw.swift"; sourceTree = "<group>"; };
+		228783AB1ED29ECA00FF8784 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		228783AC1ED29ECA00FF8784 /* RawPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPoint.swift; sourceTree = "<group>"; };
+		228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPointConvertible.swift; sourceTree = "<group>"; };
+		228783AE1ED29ECA00FF8784 /* RawVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVector.swift; sourceTree = "<group>"; };
+		228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVectorConvertible.swift; sourceTree = "<group>"; };
+		228783B01ED29ECA00FF8784 /* StandardOutputDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardOutputDrawingContext.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2287836C1ED29E4900FF8784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2287837D1ED29E4900FF8784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228783881ED29E4900FF8784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		228783661ED29E4900FF8784 = {
+			isa = PBXGroup;
+			children = (
+				228783711ED29E4900FF8784 /* Geometricks */,
+				228783831ED29E4900FF8784 /* GeometricksTests */,
+				2287838E1ED29E4900FF8784 /* GeometricksUITests */,
+				228783701ED29E4900FF8784 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		228783701ED29E4900FF8784 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2287836F1ED29E4900FF8784 /* Geometricks.app */,
+				228783801ED29E4900FF8784 /* GeometricksTests.xctest */,
+				2287838B1ED29E4900FF8784 /* GeometricksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		228783711ED29E4900FF8784 /* Geometricks */ = {
+			isa = PBXGroup;
+			children = (
+				228783721ED29E4900FF8784 /* AppDelegate.swift */,
+				228783741ED29E4900FF8784 /* ViewController.swift */,
+				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
+				228783C91ED29F3300FF8784 /* Core */,
+				228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */,
+				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
+				228783761ED29E4900FF8784 /* Assets.xcassets */,
+				228783781ED29E4900FF8784 /* Main.storyboard */,
+				2287837B1ED29E4900FF8784 /* Info.plist */,
+			);
+			path = Geometricks;
+			sourceTree = "<group>";
+		};
+		228783831ED29E4900FF8784 /* GeometricksTests */ = {
+			isa = PBXGroup;
+			children = (
+				228783841ED29E4900FF8784 /* GeometricksTests.swift */,
+				228783861ED29E4900FF8784 /* Info.plist */,
+			);
+			path = GeometricksTests;
+			sourceTree = "<group>";
+		};
+		2287838E1ED29E4900FF8784 /* GeometricksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2287838F1ED29E4900FF8784 /* GeometricksUITests.swift */,
+				228783911ED29E4900FF8784 /* Info.plist */,
+			);
+			path = GeometricksUITests;
+			sourceTree = "<group>";
+		};
+		228783C31ED29EE700FF8784 /* FreeValued */ = {
+			isa = PBXGroup;
+			children = (
+				228783A71ED29ECA00FF8784 /* FreeValued.swift */,
+				228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */,
+			);
+			name = FreeValued;
+			sourceTree = "<group>";
+		};
+		228783C41ED29EF700FF8784 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				228783AB1ED29ECA00FF8784 /* Point.swift */,
+				228783A21ED29ECA00FF8784 /* AnyPoint.swift */,
+				228783A61ED29ECA00FF8784 /* FreePoint.swift */,
+			);
+			name = Point;
+			sourceTree = "<group>";
+		};
+		228783C51ED29F0400FF8784 /* Drawable */ = {
+			isa = PBXGroup;
+			children = (
+				228783A41ED29ECA00FF8784 /* Drawable.swift */,
+				2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */,
+				228783A81ED29ECA00FF8784 /* Line.swift */,
+			);
+			name = Drawable;
+			sourceTree = "<group>";
+		};
+		228783C61ED29F1600FF8784 /* DrawingContext */ = {
+			isa = PBXGroup;
+			children = (
+				228783A51ED29ECA00FF8784 /* DrawingContext.swift */,
+				228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */,
+				228783B01ED29ECA00FF8784 /* StandardOutputDrawingContext.swift */,
+			);
+			name = DrawingContext;
+			sourceTree = "<group>";
+		};
+		228783C71ED29F2200FF8784 /* RawPoint */ = {
+			isa = PBXGroup;
+			children = (
+				228783AC1ED29ECA00FF8784 /* RawPoint.swift */,
+				228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */,
+			);
+			name = RawPoint;
+			sourceTree = "<group>";
+		};
+		228783C81ED29F2700FF8784 /* RawVector */ = {
+			isa = PBXGroup;
+			children = (
+				228783AE1ED29ECA00FF8784 /* RawVector.swift */,
+				228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */,
+			);
+			name = RawVector;
+			sourceTree = "<group>";
+		};
+		228783C91ED29F3300FF8784 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				228783A91ED29ECA00FF8784 /* Model.swift */,
+				228783C51ED29F0400FF8784 /* Drawable */,
+				228783C61ED29F1600FF8784 /* DrawingContext */,
+				228783C31ED29EE700FF8784 /* FreeValued */,
+				228783C41ED29EF700FF8784 /* Point */,
+				228783C71ED29F2200FF8784 /* RawPoint */,
+				228783C81ED29F2700FF8784 /* RawVector */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2287836E1ED29E4900FF8784 /* Geometricks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228783941ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "Geometricks" */;
+			buildPhases = (
+				2287836B1ED29E4900FF8784 /* Sources */,
+				2287836C1ED29E4900FF8784 /* Frameworks */,
+				2287836D1ED29E4900FF8784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Geometricks;
+			productName = Geometricks;
+			productReference = 2287836F1ED29E4900FF8784 /* Geometricks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2287837F1ED29E4900FF8784 /* GeometricksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228783971ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "GeometricksTests" */;
+			buildPhases = (
+				2287837C1ED29E4900FF8784 /* Sources */,
+				2287837D1ED29E4900FF8784 /* Frameworks */,
+				2287837E1ED29E4900FF8784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228783821ED29E4900FF8784 /* PBXTargetDependency */,
+			);
+			name = GeometricksTests;
+			productName = GeometricksTests;
+			productReference = 228783801ED29E4900FF8784 /* GeometricksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2287838A1ED29E4900FF8784 /* GeometricksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2287839A1ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "GeometricksUITests" */;
+			buildPhases = (
+				228783871ED29E4900FF8784 /* Sources */,
+				228783881ED29E4900FF8784 /* Frameworks */,
+				228783891ED29E4900FF8784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2287838D1ED29E4900FF8784 /* PBXTargetDependency */,
+			);
+			name = GeometricksUITests;
+			productName = GeometricksUITests;
+			productReference = 2287838B1ED29E4900FF8784 /* GeometricksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		228783671ED29E4900FF8784 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Tim Vermeulen";
+				TargetAttributes = {
+					2287836E1ED29E4900FF8784 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					2287837F1ED29E4900FF8784 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2287836E1ED29E4900FF8784;
+					};
+					2287838A1ED29E4900FF8784 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2287836E1ED29E4900FF8784;
+					};
+				};
+			};
+			buildConfigurationList = 2287836A1ED29E4900FF8784 /* Build configuration list for PBXProject "Geometricks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 228783661ED29E4900FF8784;
+			productRefGroup = 228783701ED29E4900FF8784 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2287836E1ED29E4900FF8784 /* Geometricks */,
+				2287837F1ED29E4900FF8784 /* GeometricksTests */,
+				2287838A1ED29E4900FF8784 /* GeometricksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2287836D1ED29E4900FF8784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228783771ED29E4900FF8784 /* Assets.xcassets in Resources */,
+				2287837A1ED29E4900FF8784 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2287837E1ED29E4900FF8784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228783891ED29E4900FF8784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2287836B1ED29E4900FF8784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
+				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
+				228783C21ED29ECA00FF8784 /* StandardOutputDrawingContext.swift in Sources */,
+				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
+				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
+				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
+				228783B51ED29ECA00FF8784 /* CocoaDrawingContext.swift in Sources */,
+				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
+				228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */,
+				228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */,
+				228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */,
+				228783B21ED29ECA00FF8784 /* AnyDrawingContext.swift in Sources */,
+				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
+				228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */,
+				228783BB1ED29ECA00FF8784 /* Model.swift in Sources */,
+				228783BA1ED29ECA00FF8784 /* Line.swift in Sources */,
+				228783B71ED29ECA00FF8784 /* DrawingContext.swift in Sources */,
+				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
+				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
+				228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */,
+				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2287837C1ED29E4900FF8784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228783851ED29E4900FF8784 /* GeometricksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228783871ED29E4900FF8784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228783901ED29E4900FF8784 /* GeometricksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		228783821ED29E4900FF8784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2287836E1ED29E4900FF8784 /* Geometricks */;
+			targetProxy = 228783811ED29E4900FF8784 /* PBXContainerItemProxy */;
+		};
+		2287838D1ED29E4900FF8784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2287836E1ED29E4900FF8784 /* Geometricks */;
+			targetProxy = 2287838C1ED29E4900FF8784 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		228783781ED29E4900FF8784 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				228783791ED29E4900FF8784 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		228783921ED29E4900FF8784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		228783931ED29E4900FF8784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		228783951ED29E4900FF8784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geometricks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.Geometricks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		228783961ED29E4900FF8784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geometricks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.Geometricks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		228783981ED29E4900FF8784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GeometricksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometricks.app/Contents/MacOS/Geometricks";
+			};
+			name = Debug;
+		};
+		228783991ED29E4900FF8784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GeometricksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometricks.app/Contents/MacOS/Geometricks";
+			};
+			name = Release;
+		};
+		2287839B1ED29E4900FF8784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GeometricksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Geometricks;
+			};
+			name = Debug;
+		};
+		2287839C1ED29E4900FF8784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GeometricksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Geometricks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2287836A1ED29E4900FF8784 /* Build configuration list for PBXProject "Geometricks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228783921ED29E4900FF8784 /* Debug */,
+				228783931ED29E4900FF8784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228783941ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "Geometricks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228783951ED29E4900FF8784 /* Debug */,
+				228783961ED29E4900FF8784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		228783971ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "GeometricksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228783981ED29E4900FF8784 /* Debug */,
+				228783991ED29E4900FF8784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2287839A1ED29E4900FF8784 /* Build configuration list for PBXNativeTarget "GeometricksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2287839B1ED29E4900FF8784 /* Debug */,
+				2287839C1ED29E4900FF8784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 228783671ED29E4900FF8784 /* Project object */;
+}

@@ -1,0 +1,2 @@
+protocol Point: Drawable, ConvertibleToRawPoint {
+}
