@@ -8,9 +8,13 @@ final class CocoaDrawingContext: DrawingContext {
     }
     
     func drawLine(from start: NSPoint, to end: NSPoint) {
-        let path = NSBezierPath()
-        path.move(to: start)
-        path.line(to: end)
+        let path = NSBezierPath.line(from: start, to: end)
+        path.lineWidth = 2
+        path.stroke()
+    }
+    
+    func drawCurve(from start: CGPoint, to end: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
+        let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
         path.lineWidth = 2
         path.stroke()
     }

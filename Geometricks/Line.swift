@@ -1,13 +1,13 @@
 final class Line<RawValue: FloatingPoint> {
-    var start: AnyPoint<RawValue>
-    var end: AnyPoint<RawValue>
+    let start: AnyPoint<RawValue>
+    let end: AnyPoint<RawValue>
     
-    init(start: AnyPoint<RawValue>, end: AnyPoint<RawValue>) {
+    init(from start: AnyPoint<RawValue>, to end: AnyPoint<RawValue>) {
         self.start = start
         self.end = end
     }
     
-    init<P1: Point, P2: Point>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+    init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
         self.start = AnyPoint(start)
         self.end = AnyPoint(end)
     }

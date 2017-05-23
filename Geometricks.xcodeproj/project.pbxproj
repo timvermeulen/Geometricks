@@ -32,6 +32,8 @@
 		228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AE1ED29ECA00FF8784 /* RawVector.swift */; };
 		228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */; };
 		228783C21ED29ECA00FF8784 /* StandardOutputDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* StandardOutputDrawingContext.swift */; };
+		228783CB1ED3A51700FF8784 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CA1ED3A51700FF8784 /* Curve.swift */; };
+		228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		228783AE1ED29ECA00FF8784 /* RawVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVector.swift; sourceTree = "<group>"; };
 		228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVectorConvertible.swift; sourceTree = "<group>"; };
 		228783B01ED29ECA00FF8784 /* StandardOutputDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardOutputDrawingContext.swift; sourceTree = "<group>"; };
+		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
+		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 				228783C91ED29F3300FF8784 /* Core */,
 				228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */,
+				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
 				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
 				228783761ED29E4900FF8784 /* Assets.xcassets */,
 				228783781ED29E4900FF8784 /* Main.storyboard */,
@@ -189,6 +194,7 @@
 				228783A41ED29ECA00FF8784 /* Drawable.swift */,
 				2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */,
 				228783A81ED29ECA00FF8784 /* Line.swift */,
+				228783CA1ED3A51700FF8784 /* Curve.swift */,
 			);
 			name = Drawable;
 			sourceTree = "<group>";
@@ -376,10 +382,12 @@
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
 				228783B51ED29ECA00FF8784 /* CocoaDrawingContext.swift in Sources */,
 				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
+				228783CB1ED3A51700FF8784 /* Curve.swift in Sources */,
 				228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */,
 				228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */,
 				228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */,
 				228783B21ED29ECA00FF8784 /* AnyDrawingContext.swift in Sources */,
+				228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
 				228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* Model.swift in Sources */,
