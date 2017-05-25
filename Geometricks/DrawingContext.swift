@@ -5,4 +5,10 @@ protocol DrawingContext {
     func drawPoint(at location: RawPoint)
     func drawLine(from start: RawPoint, to end: RawPoint)
     func drawCurve(from start: RawPoint, to end: RawPoint, controlPoint1: RawPoint, controlPoint2: RawPoint)
+    
+    func drawingDidEnd()
+}
+
+extension DrawingContext {
+    func drawingDidEnd() {}
 }

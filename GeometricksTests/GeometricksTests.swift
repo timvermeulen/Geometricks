@@ -10,27 +10,27 @@ import XCTest
 @testable import Geometricks
 
 class GeometricksTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testLine() {
+        let model = Model<Double>()
+        let context = BasicDrawingContext<Double>()
+        
+        let start = FreePoint<Double>(rawPoint: RawPoint(x: 100, y: 100))
+        let end = FreePoint<Double>(rawPoint: RawPoint(x: 200, y: 200))
+        let line = Line(from: start, to: end)
+        
+        model.addFigure(line)
+        model.addFreeValued(start)
+        model.addFreeValued(end)
+        
+        model.draw(in: context)
+        
+        let expectedLogs: Set<BasicDrawingContext<Double>.Log> = [
+            .point(RawPoint(x: 100, y: 100)),
+            .point(RawPoint(x: 200, y: 200)),
+            .line(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
+        ]
+        
+        XCTAssertEqual(context.logs.count, 1)
+        XCTAssertEqual(context.logs.first, expectedLogs)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

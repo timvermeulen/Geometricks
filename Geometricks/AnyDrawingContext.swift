@@ -4,6 +4,14 @@ struct AnyDrawingContext<RawValue: FloatingPoint> {
     private let _drawPoint: (Point) -> Void
     private let _drawLine: (Point, Point) -> Void
     private let _drawCurve: (Point, Point, Point, Point) -> Void
+    private let _drawingDidEnd: () -> Void
+    
+    init<Context: DrawingContext>(_ context: Context) where Context.RawPoint.RawValue == RawValue {
+        _drawPoint = { point in context.drawPoint(at: Context.RawPoint(point)) }
+        _drawLine = { start, end in context.drawLine(from: Context.RawPoint(start), to: Context.RawPoint(end)) }
+        _drawCurve = { start, end, control1, control2 in context.drawCurve(from: Context.RawPoint(start), to: Context.RawPoint(end), controlPoint1: Context.RawPoint(control1), controlPoint2: Context.RawPoint(control2)) }
+        _drawingDidEnd = context.drawingDidEnd
+    }
     
     func drawPoint<P: ConvertibleToRawPoint>(at location: P) where P.RawValue == RawValue {
         _drawPoint(location.makeRawPoint())
@@ -17,9 +25,7 @@ struct AnyDrawingContext<RawValue: FloatingPoint> {
         _drawCurve(start.makeRawPoint(), end.makeRawPoint(), controlPoint1.makeRawPoint(), controlPoint2.makeRawPoint())
     }
     
-    init<Context: DrawingContext>(_ context: Context) where Context.RawPoint.RawValue == RawValue {
-        _drawPoint = { point in context.drawPoint(at: Context.RawPoint(point)) }
-        _drawLine = { start, end in context.drawLine(from: Context.RawPoint(start), to: Context.RawPoint(end)) }
-        _drawCurve = { start, end, control1, control2 in context.drawCurve(from: Context.RawPoint(start), to: Context.RawPoint(end), controlPoint1: Context.RawPoint(control1), controlPoint2: Context.RawPoint(control2)) }
+    func drawingDidEnd() {
+        _drawingDidEnd()
     }
 }

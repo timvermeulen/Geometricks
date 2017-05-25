@@ -2,6 +2,7 @@ import Cocoa
 
 final class Canvas: NSView {
     let model = Model<CGFloat>()
+    let context = CocoaDrawingContext()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,8 +26,6 @@ final class Canvas: NSView {
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        
-        let context = CocoaDrawingContext()
         model.draw(in: context)
     }
     

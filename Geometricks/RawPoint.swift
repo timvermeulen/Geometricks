@@ -10,6 +10,18 @@ struct RawPoint<RawValue: FloatingPoint> {
     }
 }
 
+extension RawPoint: Equatable {
+    static func == (left: RawPoint, right: RawPoint) -> Bool {
+        return left.x == right.x && left.y == right.y
+    }
+}
+
+extension RawPoint: Hashable {
+    var hashValue: Int {
+        return x.hashValue ^ y.hashValue
+    }
+}
+
 extension RawPoint: ConvertibleFromRawPoint {
     init(_ rawPoint: RawPoint) {
         self = rawPoint
