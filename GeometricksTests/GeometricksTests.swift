@@ -30,7 +30,6 @@ class GeometricksTests: XCTestCase {
             .line(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
         ]
         
-        XCTAssertEqual(context.logs.count, 1)
-        XCTAssertEqual(context.logs.first, expectedLogs)
+        XCTAssertEqual(context.logs, [expectedLogs])
     }
 }
