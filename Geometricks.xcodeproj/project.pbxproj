@@ -31,9 +31,9 @@
 		228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */; };
 		228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AE1ED29ECA00FF8784 /* RawVector.swift */; };
 		228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */; };
-		228783C21ED29ECA00FF8784 /* BasicDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */; };
 		228783CB1ED3A51700FF8784 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CA1ED3A51700FF8784 /* Curve.swift */; };
 		228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */; };
+		229590DF1ED840500062F101 /* BasicDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */; };
 		229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +85,7 @@
 		228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPointConvertible.swift; sourceTree = "<group>"; };
 		228783AE1ED29ECA00FF8784 /* RawVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVector.swift; sourceTree = "<group>"; };
 		228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVectorConvertible.swift; sourceTree = "<group>"; };
-		228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDrawingContext.swift; sourceTree = "<group>"; };
+		228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicDrawingContext.swift; path = ../Geometricks/BasicDrawingContext.swift; sourceTree = "<group>"; };
 		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
 		229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPoint.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		228783831ED29E4900FF8784 /* GeometricksTests */ = {
 			isa = PBXGroup;
 			children = (
+				228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */,
 				228783841ED29E4900FF8784 /* GeometricksTests.swift */,
 				228783861ED29E4900FF8784 /* Info.plist */,
 			);
@@ -207,7 +208,6 @@
 			children = (
 				228783A51ED29ECA00FF8784 /* DrawingContext.swift */,
 				228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */,
-				228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */,
 			);
 			name = DrawingContext;
 			sourceTree = "<group>";
@@ -380,7 +380,6 @@
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
 				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
-				228783C21ED29ECA00FF8784 /* BasicDrawingContext.swift in Sources */,
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
@@ -409,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228783851ED29E4900FF8784 /* GeometricksTests.swift in Sources */,
+				229590DF1ED840500062F101 /* BasicDrawingContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

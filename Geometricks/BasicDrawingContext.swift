@@ -1,3 +1,5 @@
+@testable import Geometricks
+
 final class BasicDrawingContext<Raw: FloatingPoint>: DrawingContext {
     typealias RawValue = Raw
     
