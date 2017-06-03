@@ -22,6 +22,9 @@ final class Canvas: NSView {
         model.addFreeValued(endPoint)
         model.addFreeValued(controlPoint1)
         model.addFreeValued(controlPoint2)
+        
+        context.setCurveWidth(5, of: curve)
+        context.setCurveColor(.blue, of: curve)
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -33,10 +36,8 @@ final class Canvas: NSView {
         switch recognizer.state {
         case .began:
             model.startPan(at: recognizer.location(in: self))
-            
         case .changed:
             model.pan(translation: recognizer.translation(in: self))
-            
         default:
             model.endPan()
         }
