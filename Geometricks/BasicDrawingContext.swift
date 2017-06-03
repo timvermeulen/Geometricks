@@ -37,11 +37,11 @@ extension BasicDrawingContext: DrawingContext {
         log(.point(location, size: pointSize(of: identifier)))
     }
     
-    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>) {
+    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: ObjectIdentifier) {
         log(.line(start: start, end: end))
     }
     
-    func drawCurve(from start: RawPoint<Raw>, to end: RawPoint<Raw>, controlPoint1: RawPoint<Raw>, controlPoint2: RawPoint<Raw>) {
+    func drawCurve(from start: RawPoint<Raw>, to end: RawPoint<Raw>, controlPoint1: RawPoint<Raw>, controlPoint2: RawPoint<Raw>, identifier: ObjectIdentifier) {
         log(.curve(start: start, end: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2))
     }
     
