@@ -1,12 +1,23 @@
 @testable import Geometricks
 
-final class BasicDrawingContext<Raw: FloatingPoint>: DrawingContext {
+final class BasicDrawingContext<Raw: FloatingPoint> {
     typealias RawValue = Raw
     
     enum Log {
-        case point(RawPoint<RawValue>)
+        case point(RawPoint<RawValue>, size: RawValue)
         case line(start: RawPoint<RawValue>, end: RawPoint<RawValue>)
         case curve(start: RawPoint<RawValue>, end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>)
+    }
+    
+    private let defaultPointSize: RawValue = 1
+    private var pointSizes: [ObjectIdentifier: RawValue] = [:]
+    
+    private func pointSize(of identifier: ObjectIdentifier) -> RawValue {
+        return pointSizes[identifier] ?? defaultPointSize
+    }
+    
+    func setPointSize<P: Point>(_ pointSize: RawValue, of point: P) {
+        pointSizes[ObjectIdentifier(point)] = pointSize
     }
     
     private var currentLogs: Set<Log> = []
@@ -16,8 +27,14 @@ final class BasicDrawingContext<Raw: FloatingPoint>: DrawingContext {
         currentLogs.insert(log)
     }
     
-    func drawPoint(at location: RawPoint<RawValue>) {
-        log(.point(location))
+    func setPointSize(_ pointSize: RawValue, identifier: ObjectIdentifier) {
+        pointSizes[identifier] = pointSize
+    }
+}
+
+extension BasicDrawingContext: DrawingContext {
+    func drawPoint(at location: RawPoint<RawValue>, identifier: ObjectIdentifier) {
+        log(.point(location, size: pointSize(of: identifier)))
     }
     
     func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>) {
@@ -39,10 +56,10 @@ extension BasicDrawingContext.Log: Equatable {
         switch (left, right) {
         case let (.point(left), .point(right)):
             return left == right
-        case let (.line(leftStart, leftEnd), .line(rightStart, rightEnd)):
-            return leftStart == rightStart && leftEnd == rightEnd
-        case let (.curve(leftStart, leftEnd, leftControlPoint1, leftControlPoint2), .curve(rightStart, rightEnd, rightControlPoint1, rightControlPoint2)):
-            return leftStart == rightStart && leftEnd == rightEnd && leftControlPoint1 == rightControlPoint1 && leftControlPoint2 == rightControlPoint2
+        case let (.line(left), .line(right)):
+            return left == right
+        case let (.curve(left), .curve(right)):
+            return left == right
         case (.point, _), (.line, _), (.curve, _):
             return false
         }
@@ -52,8 +69,8 @@ extension BasicDrawingContext.Log: Equatable {
 extension BasicDrawingContext.Log: Hashable {
     var hashValue: Int {
         switch self {
-        case .point(let point):
-            return point.hashValue
+        case let .point(point, isFilled):
+            return point.hashValue ^ isFilled.hashValue
         case let .line(start, end):
             return start.hashValue ^ end.hashValue
         case let .curve(start, end, controlPoint1, controlPoint2):

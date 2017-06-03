@@ -2,9 +2,13 @@ struct AnyPoint<RawValue: FloatingPoint> {
     private let _draw: (AnyDrawingContext<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>
     
+    let identifier: ObjectIdentifier
+    
     init<P: Point>(_ point: P) where P.RawValue == RawValue {
         _draw = point.draw
         _makeRawPoint = point.makeRawPoint
+        
+        identifier = ObjectIdentifier(point)
     }
 }
 

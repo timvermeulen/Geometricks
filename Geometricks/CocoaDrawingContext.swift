@@ -3,7 +3,7 @@ import AppKit
 final class CocoaDrawingContext: DrawingContext {
     typealias RawValue = CGFloat
     
-    func drawPoint(at location: NSPoint) {
+    func drawPoint(at location: NSPoint, identifier: ObjectIdentifier) {
         NSBezierPath(ovalIn: NSRect(x: location.x - 6, y: location.y - 6, width: 12, height: 12)).fill()
     }
     

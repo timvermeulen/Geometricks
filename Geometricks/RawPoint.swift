@@ -33,12 +33,3 @@ extension RawPoint: ConvertibleToRawPoint {
         return self
     }
 }
-
-extension RawPoint: Drawable {
-    func draw(in context: AnyDrawingContext<RawValue>) {
-        context.drawPoint(at: self)
-    }
-}
-
-extension RawPoint: Point {
-}

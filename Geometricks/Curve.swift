@@ -22,9 +22,9 @@ final class Curve<RawValue: FloatingPoint> {
 extension Curve: Drawable {
     func draw(in context: AnyDrawingContext<RawValue>) {
         context.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-        context.drawPoint(at: start)
-        context.drawPoint(at: end)
-        context.drawPoint(at: controlPoint1)
-        context.drawPoint(at: controlPoint2)
+        context.drawPoint(at: start, identifier: start.identifier)
+        context.drawPoint(at: end, identifier: end.identifier)
+        context.drawPoint(at: controlPoint1, identifier: controlPoint1.identifier)
+        context.drawPoint(at: controlPoint2, identifier: controlPoint2.identifier)
     }
 }

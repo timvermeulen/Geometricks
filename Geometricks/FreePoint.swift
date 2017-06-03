@@ -8,7 +8,7 @@ final class FreePoint<RawValue: FloatingPoint> {
 
 extension FreePoint: Drawable {
     func draw(in context: AnyDrawingContext<RawValue>) {
-        rawPoint.draw(in: context)
+        context.drawPoint(at: rawPoint, identifier: ObjectIdentifier(self))
     }
 }
 

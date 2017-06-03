@@ -22,11 +22,13 @@ class GeometricksTests: XCTestCase {
         model.addFreeValued(start)
         model.addFreeValued(end)
         
+        context.setPointSize(5, of: end)
+        
         model.draw(in: context)
         
         let expectedLogs: Set<BasicDrawingContext<Double>.Log> = [
-            .point(RawPoint(x: 100, y: 100)),
-            .point(RawPoint(x: 200, y: 200)),
+            .point(RawPoint(x: 100, y: 100), size: 1),
+            .point(RawPoint(x: 200, y: 200), size: 5),
             .line(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
         ]
         

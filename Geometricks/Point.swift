@@ -1,2 +1,2 @@
-protocol Point: Drawable, ConvertibleToRawPoint {
+protocol Point: class, Drawable, ConvertibleToRawPoint {
 }
