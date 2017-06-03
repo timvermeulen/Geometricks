@@ -22,7 +22,7 @@ class GeometricksTests: XCTestCase {
         model.addFreeValued(start)
         model.addFreeValued(end)
         
-        context.setPointSize(5, of: end)
+        context.setPointRadius(5, of: end)
         
         model.draw(in: context)
         

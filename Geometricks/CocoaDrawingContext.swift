@@ -5,24 +5,34 @@ final class CocoaDrawingContext {
     
     private static let defaultLineWidth: CGFloat = 2
     private static let defaultCurveColor = NSColor.black
+    private static let defaultPointRadius: CGFloat = 6
     
     private var lineWidths: [ObjectIdentifier: CGFloat] = [:]
+    private var pointRadii: [ObjectIdentifier: CGFloat] = [:]
     private var colors: [ObjectIdentifier: NSColor] = [:]
     
     private func lineWidth(of identifier: ObjectIdentifier) -> CGFloat {
         return lineWidths[identifier] ?? CocoaDrawingContext.defaultLineWidth
     }
     
-    func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
-        lineWidths[ObjectIdentifier(line)] = width
-    }
-    
-    func setCurveWidth(_ width: CGFloat, of curve: Curve<CGFloat>) {
-        lineWidths[ObjectIdentifier(curve)] = width
+    private func pointRadius(of identifier: ObjectIdentifier) -> CGFloat {
+        return pointRadii[identifier] ?? CocoaDrawingContext.defaultPointRadius
     }
     
     private func curveColor(of identifier: ObjectIdentifier) -> NSColor {
         return colors[identifier] ?? CocoaDrawingContext.defaultCurveColor
+    }
+    
+    func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
+        lineWidths[ObjectIdentifier(line)] = width
+    }
+    
+    func setPointRadius<P: Point>(_ radius: CGFloat, of point: P) {
+        pointRadii[ObjectIdentifier(point)] = radius
+    }
+    
+    func setCurveWidth(_ width: CGFloat, of curve: Curve<CGFloat>) {
+        lineWidths[ObjectIdentifier(curve)] = width
     }
     
     func setCurveColor(_ color: NSColor, of curve: Curve<CGFloat>) {
@@ -32,7 +42,8 @@ final class CocoaDrawingContext {
 
 extension CocoaDrawingContext: DrawingContext {
     func drawPoint(at location: NSPoint, identifier: ObjectIdentifier) {
-        NSBezierPath(ovalIn: NSRect(x: location.x - 6, y: location.y - 6, width: 12, height: 12)).fill()
+        let radius = pointRadius(of: identifier)
+        NSBezierPath(ovalIn: NSRect(x: location.x - radius, y: location.y - radius, width: radius * 2, height: radius * 2)).fill()
     }
     
     func drawLine(from start: NSPoint, to end: NSPoint, identifier: ObjectIdentifier) {

@@ -9,15 +9,15 @@ final class BasicDrawingContext<Raw: FloatingPoint> {
         case curve(start: RawPoint<RawValue>, end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>)
     }
     
-    private let defaultPointSize: RawValue = 1
-    private var pointSizes: [ObjectIdentifier: RawValue] = [:]
+    private let defaultPointRadius: RawValue = 1
+    private var pointRadii: [ObjectIdentifier: RawValue] = [:]
     
-    private func pointSize(of identifier: ObjectIdentifier) -> RawValue {
-        return pointSizes[identifier] ?? defaultPointSize
+    private func pointRadius(of identifier: ObjectIdentifier) -> RawValue {
+        return pointRadii[identifier] ?? defaultPointRadius
     }
     
-    func setPointSize<P: Point>(_ pointSize: RawValue, of point: P) {
-        pointSizes[ObjectIdentifier(point)] = pointSize
+    func setPointRadius<P: Point>(_ pointRadius: RawValue, of point: P) {
+        pointRadii[ObjectIdentifier(point)] = pointRadius
     }
     
     private var currentLogs: Set<Log> = []
@@ -26,15 +26,11 @@ final class BasicDrawingContext<Raw: FloatingPoint> {
     private func log(_ log: Log) {
         currentLogs.insert(log)
     }
-    
-    func setPointSize(_ pointSize: RawValue, identifier: ObjectIdentifier) {
-        pointSizes[identifier] = pointSize
-    }
 }
 
 extension BasicDrawingContext: DrawingContext {
     func drawPoint(at location: RawPoint<RawValue>, identifier: ObjectIdentifier) {
-        log(.point(location, size: pointSize(of: identifier)))
+        log(.point(location, size: pointRadius(of: identifier)))
     }
     
     func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: ObjectIdentifier) {

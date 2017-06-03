@@ -25,6 +25,7 @@ final class Canvas: NSView {
         
         context.setCurveWidth(5, of: curve)
         context.setCurveColor(.blue, of: curve)
+        context.setPointRadius(4, of: endPoint)
     }
     
     override func draw(_ dirtyRect: NSRect) {
