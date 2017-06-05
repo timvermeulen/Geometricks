@@ -11,7 +11,7 @@ import XCTest
 
 class GeometricksTests: XCTestCase {
     func testLine() {
-        let model = Model<Double>()
+        let model = LogicUnit<Double>()
         let context = BasicDrawingUnit<Double>()
         
         let start = FreePoint<Double>(rawPoint: RawPoint(x: 100, y: 100))

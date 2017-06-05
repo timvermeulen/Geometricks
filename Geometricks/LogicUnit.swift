@@ -1,13 +1,13 @@
-protocol ModelDelegate: class {
+protocol LogicUnitDelegate: class {
     func shouldRedraw()
 }
 
-final class Model<RawValue: FloatingPoint> {
+final class LogicUnit<RawValue: FloatingPoint> {
     private var figures: [AnyDrawable<RawValue>] = []
     private var freeValuedFigures: [AnyFreeValued<RawValue>] = []
     private var currentPan: (startingPoint: RawPoint<RawValue>, figure: AnyFreeValued<RawValue>)?
     
-    weak var delegate: ModelDelegate?
+    weak var delegate: LogicUnitDelegate?
     
     func startPan<PointConvertible: ConvertibleToRawPoint>(at point: PointConvertible) where PointConvertible.RawValue == RawValue {
         let rawPoint = point.makeRawPoint()
@@ -38,7 +38,7 @@ final class Model<RawValue: FloatingPoint> {
     }
 }
 
-extension Model: Drawable {
+extension LogicUnit: Drawable {
     func draw(in context: AnyDrawingUnit<RawValue>) {
         figures.forEach { $0.draw(in: context) }
         context.drawingDidEnd()

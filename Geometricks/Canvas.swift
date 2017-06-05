@@ -1,7 +1,7 @@
 import Cocoa
 
 final class Canvas: NSView {
-    let model = Model<CGFloat>()
+    let model = LogicUnit<CGFloat>()
     let context = CocoaDrawingUnit()
     
     required init?(coder: NSCoder) {
@@ -48,7 +48,7 @@ final class Canvas: NSView {
     }
 }
 
-extension Canvas: ModelDelegate {
+extension Canvas: LogicUnitDelegate {
     func shouldRedraw() {
         setNeedsDisplay(frame)
     }

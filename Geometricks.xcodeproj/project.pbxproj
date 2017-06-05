@@ -24,7 +24,7 @@
 		228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A61ED29ECA00FF8784 /* FreePoint.swift */; };
 		228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A71ED29ECA00FF8784 /* FreeValued.swift */; };
 		228783BA1ED29ECA00FF8784 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A81ED29ECA00FF8784 /* Line.swift */; };
-		228783BB1ED29ECA00FF8784 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A91ED29ECA00FF8784 /* Model.swift */; };
+		228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A91ED29ECA00FF8784 /* LogicUnit.swift */; };
 		228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */; };
 		228783BD1ED29ECA00FF8784 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AB1ED29ECA00FF8784 /* Point.swift */; };
 		228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AC1ED29ECA00FF8784 /* RawPoint.swift */; };
@@ -78,7 +78,7 @@
 		228783A61ED29ECA00FF8784 /* FreePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreePoint.swift; sourceTree = "<group>"; };
 		228783A71ED29ECA00FF8784 /* FreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeValued.swift; sourceTree = "<group>"; };
 		228783A81ED29ECA00FF8784 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		228783A91ED29ECA00FF8784 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		228783A91ED29ECA00FF8784 /* LogicUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicUnit.swift; sourceTree = "<group>"; };
 		228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPoint+Raw.swift"; sourceTree = "<group>"; };
 		228783AB1ED29ECA00FF8784 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		228783AC1ED29ECA00FF8784 /* RawPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPoint.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 		228783C91ED29F3300FF8784 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				228783A91ED29ECA00FF8784 /* Model.swift */,
+				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
 				228783C31ED29EE700FF8784 /* FreeValued */,
@@ -396,7 +396,7 @@
 				228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
 				228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */,
-				228783BB1ED29ECA00FF8784 /* Model.swift in Sources */,
+				228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */,
 				228783BA1ED29ECA00FF8784 /* Line.swift in Sources */,
 				228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */,
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
