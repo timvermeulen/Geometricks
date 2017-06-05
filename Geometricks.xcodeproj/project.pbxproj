@@ -15,12 +15,12 @@
 		228783901ED29E4900FF8784 /* GeometricksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287838F1ED29E4900FF8784 /* GeometricksUITests.swift */; };
 		2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839D1ED29E7B00FF8784 /* Canvas.swift */; };
 		228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */; };
-		228783B21ED29ECA00FF8784 /* AnyDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */; };
+		228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */; };
 		228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */; };
 		228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A21ED29ECA00FF8784 /* AnyPoint.swift */; };
-		228783B51ED29ECA00FF8784 /* CocoaDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */; };
+		228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */; };
 		228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A41ED29ECA00FF8784 /* Drawable.swift */; };
-		228783B71ED29ECA00FF8784 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A51ED29ECA00FF8784 /* DrawingContext.swift */; };
+		228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A51ED29ECA00FF8784 /* DrawingUnit.swift */; };
 		228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A61ED29ECA00FF8784 /* FreePoint.swift */; };
 		228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A71ED29ECA00FF8784 /* FreeValued.swift */; };
 		228783BA1ED29ECA00FF8784 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A81ED29ECA00FF8784 /* Line.swift */; };
@@ -33,7 +33,7 @@
 		228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */; };
 		228783CB1ED3A51700FF8784 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CA1ED3A51700FF8784 /* Curve.swift */; };
 		228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */; };
-		229590DF1ED840500062F101 /* BasicDrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */; };
+		229590DF1ED840500062F101 /* BasicDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */; };
 		229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,12 +69,12 @@
 		228783911ED29E4900FF8784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2287839D1ED29E7B00FF8784 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawable.swift; sourceTree = "<group>"; };
-		228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawingContext.swift; sourceTree = "<group>"; };
+		228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawingUnit.swift; sourceTree = "<group>"; };
 		228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyFreeValued.swift; sourceTree = "<group>"; };
 		228783A21ED29ECA00FF8784 /* AnyPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPoint.swift; sourceTree = "<group>"; };
-		228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDrawingContext.swift; sourceTree = "<group>"; };
+		228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDrawingUnit.swift; sourceTree = "<group>"; };
 		228783A41ED29ECA00FF8784 /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
-		228783A51ED29ECA00FF8784 /* DrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
+		228783A51ED29ECA00FF8784 /* DrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingUnit.swift; sourceTree = "<group>"; };
 		228783A61ED29ECA00FF8784 /* FreePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreePoint.swift; sourceTree = "<group>"; };
 		228783A71ED29ECA00FF8784 /* FreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeValued.swift; sourceTree = "<group>"; };
 		228783A81ED29ECA00FF8784 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPointConvertible.swift; sourceTree = "<group>"; };
 		228783AE1ED29ECA00FF8784 /* RawVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVector.swift; sourceTree = "<group>"; };
 		228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVectorConvertible.swift; sourceTree = "<group>"; };
-		228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicDrawingContext.swift; path = ../Geometricks/BasicDrawingContext.swift; sourceTree = "<group>"; };
+		228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicDrawingUnit.swift; path = ../Geometricks/BasicDrawingUnit.swift; sourceTree = "<group>"; };
 		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
 		229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPoint.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				228783741ED29E4900FF8784 /* ViewController.swift */,
 				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 				228783C91ED29F3300FF8784 /* Core */,
-				228783A31ED29ECA00FF8784 /* CocoaDrawingContext.swift */,
+				228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */,
 				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
 				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
 				228783761ED29E4900FF8784 /* Assets.xcassets */,
@@ -156,7 +156,7 @@
 		228783831ED29E4900FF8784 /* GeometricksTests */ = {
 			isa = PBXGroup;
 			children = (
-				228783B01ED29ECA00FF8784 /* BasicDrawingContext.swift */,
+				228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */,
 				228783841ED29E4900FF8784 /* GeometricksTests.swift */,
 				228783861ED29E4900FF8784 /* Info.plist */,
 			);
@@ -203,13 +203,13 @@
 			name = Drawable;
 			sourceTree = "<group>";
 		};
-		228783C61ED29F1600FF8784 /* DrawingContext */ = {
+		228783C61ED29F1600FF8784 /* DrawingUnit */ = {
 			isa = PBXGroup;
 			children = (
-				228783A51ED29ECA00FF8784 /* DrawingContext.swift */,
-				228783A01ED29ECA00FF8784 /* AnyDrawingContext.swift */,
+				228783A51ED29ECA00FF8784 /* DrawingUnit.swift */,
+				228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */,
 			);
-			name = DrawingContext;
+			name = DrawingUnit;
 			sourceTree = "<group>";
 		};
 		228783C71ED29F2200FF8784 /* RawPoint */ = {
@@ -235,7 +235,7 @@
 			children = (
 				228783A91ED29ECA00FF8784 /* Model.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
-				228783C61ED29F1600FF8784 /* DrawingContext */,
+				228783C61ED29F1600FF8784 /* DrawingUnit */,
 				228783C31ED29EE700FF8784 /* FreeValued */,
 				228783C41ED29EF700FF8784 /* Point */,
 				228783C71ED29F2200FF8784 /* RawPoint */,
@@ -307,20 +307,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Tim Vermeulen";
 				TargetAttributes = {
 					2287836E1ED29E4900FF8784 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					2287837F1ED29E4900FF8784 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2287836E1ED29E4900FF8784;
 					};
 					2287838A1ED29E4900FF8784 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2287836E1ED29E4900FF8784;
 					};
@@ -383,19 +386,19 @@
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
-				228783B51ED29ECA00FF8784 /* CocoaDrawingContext.swift in Sources */,
+				228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */,
 				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
 				228783CB1ED3A51700FF8784 /* Curve.swift in Sources */,
 				228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */,
 				228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */,
 				228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */,
-				228783B21ED29ECA00FF8784 /* AnyDrawingContext.swift in Sources */,
+				228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */,
 				228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
 				228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* Model.swift in Sources */,
 				228783BA1ED29ECA00FF8784 /* Line.swift in Sources */,
-				228783B71ED29ECA00FF8784 /* DrawingContext.swift in Sources */,
+				228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */,
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
 				228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */,
@@ -408,7 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228783851ED29E4900FF8784 /* GeometricksTests.swift in Sources */,
-				229590DF1ED840500062F101 /* BasicDrawingContext.swift in Sources */,
+				229590DF1ED840500062F101 /* BasicDrawingUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +460,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -465,7 +470,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -494,6 +503,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -507,7 +517,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -515,7 +527,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -536,6 +552,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Release;
 		};
@@ -548,7 +565,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.Geometricks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -561,7 +579,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.Geometricks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -575,7 +594,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometricks.app/Contents/MacOS/Geometricks";
 			};
 			name = Debug;
@@ -590,7 +610,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometricks.app/Contents/MacOS/Geometricks";
 			};
 			name = Release;
@@ -604,7 +625,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Geometricks;
 			};
 			name = Debug;
@@ -618,7 +640,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tv.GeometricksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Geometricks;
 			};
 			name = Release;

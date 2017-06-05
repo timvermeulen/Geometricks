@@ -1,4 +1,4 @@
-protocol DrawingContext {
+protocol DrawingUnit {
     associatedtype RawValue
     associatedtype RawPoint: ConvertibleFromRawPoint where RawPoint.RawValue == RawValue
     
@@ -9,6 +9,6 @@ protocol DrawingContext {
     func drawingDidEnd()
 }
 
-extension DrawingContext {
+extension DrawingUnit {
     func drawingDidEnd() {}
 }

@@ -39,7 +39,7 @@ final class Model<RawValue: FloatingPoint> {
 }
 
 extension Model: Drawable {
-    func draw(in context: AnyDrawingContext<RawValue>) {
+    func draw(in context: AnyDrawingUnit<RawValue>) {
         figures.forEach { $0.draw(in: context) }
         context.drawingDidEnd()
     }

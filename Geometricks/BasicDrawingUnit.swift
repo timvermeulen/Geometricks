@@ -1,6 +1,6 @@
 @testable import Geometricks
 
-final class BasicDrawingContext<Raw: FloatingPoint> {
+final class BasicDrawingUnit<Raw: FloatingPoint> {
     typealias RawValue = Raw
     
     enum Log {
@@ -28,7 +28,7 @@ final class BasicDrawingContext<Raw: FloatingPoint> {
     }
 }
 
-extension BasicDrawingContext: DrawingContext {
+extension BasicDrawingUnit: DrawingUnit {
     func drawPoint(at location: RawPoint<RawValue>, identifier: ObjectIdentifier) {
         log(.point(location, size: pointRadius(of: identifier)))
     }
@@ -47,8 +47,8 @@ extension BasicDrawingContext: DrawingContext {
     }
 }
 
-extension BasicDrawingContext.Log: Equatable {
-    static func == (left: BasicDrawingContext.Log, right: BasicDrawingContext.Log) -> Bool {
+extension BasicDrawingUnit.Log: Equatable {
+    static func == (left: BasicDrawingUnit.Log, right: BasicDrawingUnit.Log) -> Bool {
         switch (left, right) {
         case let (.point(left), .point(right)):
             return left == right
@@ -62,7 +62,7 @@ extension BasicDrawingContext.Log: Equatable {
     }
 }
 
-extension BasicDrawingContext.Log: Hashable {
+extension BasicDrawingUnit.Log: Hashable {
     var hashValue: Int {
         switch self {
         case let .point(point, isFilled):

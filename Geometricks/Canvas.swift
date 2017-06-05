@@ -2,7 +2,7 @@ import Cocoa
 
 final class Canvas: NSView {
     let model = Model<CGFloat>()
-    let context = CocoaDrawingContext()
+    let context = CocoaDrawingUnit()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,7 +25,10 @@ final class Canvas: NSView {
         
         context.setCurveWidth(5, of: curve)
         context.setCurveColor(.blue, of: curve)
+        context.setPointRadius(10, of: startPoint)
         context.setPointRadius(4, of: endPoint)
+        context.setPointColor(.green, of: startPoint)
+        context.setPointColor(.red, of: controlPoint1)
     }
     
     override func draw(_ dirtyRect: NSRect) {

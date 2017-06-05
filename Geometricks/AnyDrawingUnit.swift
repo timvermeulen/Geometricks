@@ -1,4 +1,4 @@
-struct AnyDrawingContext<RawValue: FloatingPoint> {
+struct AnyDrawingUnit<RawValue: FloatingPoint> {
     typealias Point = RawPoint<RawValue>
     
     private let _drawPoint: (Point, ObjectIdentifier) -> Void
@@ -6,7 +6,7 @@ struct AnyDrawingContext<RawValue: FloatingPoint> {
     private let _drawCurve: (Point, Point, Point, Point, ObjectIdentifier) -> Void
     private let _drawingDidEnd: () -> Void
     
-    init<Context: DrawingContext>(_ context: Context) where Context.RawPoint.RawValue == RawValue {
+    init<Context: DrawingUnit>(_ context: Context) where Context.RawPoint.RawValue == RawValue {
         _drawPoint = { point, identifier in context.drawPoint(at: Context.RawPoint(point), identifier: identifier) }
         _drawLine = { start, end, identifier in context.drawLine(from: Context.RawPoint(start), to: Context.RawPoint(end), identifier: identifier) }
         _drawCurve = { start, end, control1, control2, identifier in context.drawCurve(from: Context.RawPoint(start), to: Context.RawPoint(end), controlPoint1: Context.RawPoint(control1), controlPoint2: Context.RawPoint(control2), identifier: identifier) }

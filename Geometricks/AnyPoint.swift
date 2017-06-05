@@ -1,5 +1,5 @@
 struct AnyPoint<RawValue: FloatingPoint> {
-    private let _draw: (AnyDrawingContext<RawValue>) -> Void
+    private let _draw: (AnyDrawingUnit<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>
     
     let identifier: ObjectIdentifier
@@ -13,7 +13,7 @@ struct AnyPoint<RawValue: FloatingPoint> {
 }
 
 extension AnyPoint: Drawable {
-    func draw(in context: AnyDrawingContext<RawValue>) {
+    func draw(in context: AnyDrawingUnit<RawValue>) {
         _draw(context)
     }
 }

@@ -1,26 +1,31 @@
 import AppKit
 
-final class CocoaDrawingContext {
+final class CocoaDrawingUnit {
     typealias RawValue = CGFloat
     
     private static let defaultLineWidth: CGFloat = 2
     private static let defaultCurveColor = NSColor.black
     private static let defaultPointRadius: CGFloat = 6
+    private static let defaultPointColor = NSColor.black
     
     private var lineWidths: [ObjectIdentifier: CGFloat] = [:]
     private var pointRadii: [ObjectIdentifier: CGFloat] = [:]
     private var colors: [ObjectIdentifier: NSColor] = [:]
     
     private func lineWidth(of identifier: ObjectIdentifier) -> CGFloat {
-        return lineWidths[identifier] ?? CocoaDrawingContext.defaultLineWidth
+        return lineWidths[identifier] ?? CocoaDrawingUnit.defaultLineWidth
     }
     
     private func pointRadius(of identifier: ObjectIdentifier) -> CGFloat {
-        return pointRadii[identifier] ?? CocoaDrawingContext.defaultPointRadius
+        return pointRadii[identifier] ?? CocoaDrawingUnit.defaultPointRadius
     }
     
     private func curveColor(of identifier: ObjectIdentifier) -> NSColor {
-        return colors[identifier] ?? CocoaDrawingContext.defaultCurveColor
+        return colors[identifier] ?? CocoaDrawingUnit.defaultCurveColor
+    }
+    
+    private func pointColor(of identifier: ObjectIdentifier) -> NSColor {
+        return colors[identifier] ?? CocoaDrawingUnit.defaultPointColor
     }
     
     func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
@@ -38,11 +43,16 @@ final class CocoaDrawingContext {
     func setCurveColor(_ color: NSColor, of curve: Curve<CGFloat>) {
         colors[ObjectIdentifier(curve)] = color
     }
+    
+    func setPointColor<P: Point>(_ color: NSColor, of point: P) {
+        colors[ObjectIdentifier(point)] = color
+    }
 }
 
-extension CocoaDrawingContext: DrawingContext {
+extension CocoaDrawingUnit: DrawingUnit {
     func drawPoint(at location: NSPoint, identifier: ObjectIdentifier) {
         let radius = pointRadius(of: identifier)
+        pointColor(of: identifier).setFill()
         NSBezierPath(ovalIn: NSRect(x: location.x - radius, y: location.y - radius, width: radius * 2, height: radius * 2)).fill()
     }
     

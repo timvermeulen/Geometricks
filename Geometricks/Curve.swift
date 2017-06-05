@@ -20,7 +20,7 @@ final class Curve<RawValue: FloatingPoint> {
 }
 
 extension Curve: Drawable {
-    func draw(in context: AnyDrawingContext<RawValue>) {
+    func draw(in context: AnyDrawingUnit<RawValue>) {
         context.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: ObjectIdentifier(self))
         
         start.draw(in: context)

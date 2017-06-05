@@ -12,7 +12,7 @@ import XCTest
 class GeometricksTests: XCTestCase {
     func testLine() {
         let model = Model<Double>()
-        let context = BasicDrawingContext<Double>()
+        let context = BasicDrawingUnit<Double>()
         
         let start = FreePoint<Double>(rawPoint: RawPoint(x: 100, y: 100))
         let end = FreePoint<Double>(rawPoint: RawPoint(x: 200, y: 200))
@@ -26,7 +26,7 @@ class GeometricksTests: XCTestCase {
         
         model.draw(in: context)
         
-        let expectedLogs: Set<BasicDrawingContext<Double>.Log> = [
+        let expectedLogs: Set<BasicDrawingUnit<Double>.Log> = [
             .point(RawPoint(x: 100, y: 100), size: 1),
             .point(RawPoint(x: 200, y: 200), size: 5),
             .line(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
