@@ -3,13 +3,21 @@ import AppKit
 final class CocoaDrawingUnit {
     typealias RawValue = CGFloat
     
-    // TODO: add to init
-    private static let defaultLineWidth: CGFloat = 2
-    private static let defaultCurveColor = NSColor.black
-    private static let defaultPointRadius: CGFloat = 6
-    private static let defaultPointBorderWidth: CGFloat = 1
-    private static let defaultPointBorderColor = NSColor.black
-    private static let defaultPointFillColor = NSColor.white
+    private let defaultLineWidth: CGFloat
+    private let defaultCurveColor: NSColor
+    private let defaultPointRadius: CGFloat
+    private let defaultPointBorderWidth: CGFloat
+    private let defaultPointBorderColor: NSColor
+    private let defaultPointFillColor: NSColor
+    
+    init(defaultLineWidth: CGFloat = 2, defaultCurveColor: NSColor = .black, defaultPointRadius: CGFloat = 6, defaultPointBorderWidth: CGFloat = 1, defaultPointBorderColor: NSColor = .black, defaultPointFillColor: NSColor = .white) {
+        self.defaultLineWidth = defaultLineWidth
+        self.defaultCurveColor = defaultCurveColor
+        self.defaultPointRadius = defaultPointRadius
+        self.defaultPointBorderWidth = defaultPointBorderWidth
+        self.defaultPointBorderColor = defaultPointBorderColor
+        self.defaultPointFillColor = defaultPointFillColor
+    }
     
     private var lineWidths:   [ObjectIdentifier: CGFloat] = [:]
     private var pointRadii:   [ObjectIdentifier: CGFloat] = [:]
@@ -23,7 +31,7 @@ extension CocoaDrawingUnit {
     }
     
     private func lineWidth(of identifier: ObjectIdentifier) -> CGFloat {
-        return lineWidths[identifier] ?? CocoaDrawingUnit.defaultLineWidth
+        return lineWidths[identifier] ?? defaultLineWidth
     }
     
     func lineWidth(of line: Line<CGFloat>) -> CGFloat {
@@ -47,7 +55,7 @@ extension CocoaDrawingUnit {
     }
     
     private func curveColor(of identifier: ObjectIdentifier) -> NSColor {
-        return strokeColors[identifier] ?? CocoaDrawingUnit.defaultCurveColor
+        return strokeColors[identifier] ?? defaultCurveColor
     }
     
     func curveColor(of curve: Curve<CGFloat>) -> NSColor {
@@ -61,7 +69,7 @@ extension CocoaDrawingUnit {
     }
     
     private func pointRadius(of identifier: ObjectIdentifier) -> CGFloat {
-        return pointRadii[identifier] ?? CocoaDrawingUnit.defaultPointRadius
+        return pointRadii[identifier] ?? defaultPointRadius
     }
     
     func pointRadius<P: Point>(of point: P) -> CGFloat {
@@ -75,7 +83,7 @@ extension CocoaDrawingUnit {
     }
     
     private func pointBorderWidth(of identifier: ObjectIdentifier) -> CGFloat {
-        return lineWidths[identifier] ?? CocoaDrawingUnit.defaultPointBorderWidth
+        return lineWidths[identifier] ?? defaultPointBorderWidth
     }
     
     func pointBorderWidth<P: Point>(of point: P) -> CGFloat {
@@ -89,7 +97,7 @@ extension CocoaDrawingUnit {
     }
     
     private func pointBorderColor(of identifier: ObjectIdentifier) -> NSColor {
-        return strokeColors[identifier] ?? CocoaDrawingUnit.defaultPointBorderColor
+        return strokeColors[identifier] ?? defaultPointBorderColor
     }
     
     func pointBorderColor<P: Point>(of point: P) -> NSColor {
@@ -103,7 +111,7 @@ extension CocoaDrawingUnit {
     }
     
     private func pointFillColor(of identifier: ObjectIdentifier) -> NSColor {
-        return fillColors[identifier] ?? CocoaDrawingUnit.defaultPointFillColor
+        return fillColors[identifier] ?? defaultPointFillColor
     }
     
     func pointFillColor<P: Point>(of point: P) -> NSColor {
