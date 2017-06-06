@@ -14,10 +14,10 @@ final class Line<RawValue: FloatingPoint> {
 }
 
 extension Line: Drawable {
-    func draw(in context: AnyDrawingUnit<RawValue>) {
-        context.drawLine(from: start, to: end, identifier: ObjectIdentifier(self))
+    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+        drawingUnit.drawLine(from: start, to: end, identifier: ObjectIdentifier(self))
         
-        start.draw(in: context)
-        end.draw(in: context)
+        start.draw(in: drawingUnit)
+        end.draw(in: drawingUnit)
     }
 }

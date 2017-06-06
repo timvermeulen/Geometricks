@@ -1,16 +1,14 @@
 struct AnyDrawingUnit<RawValue: FloatingPoint> {
-    typealias Point = RawPoint<RawValue>
-    
-    private let _drawPoint: (Point, ObjectIdentifier) -> Void
-    private let _drawLine: (Point, Point, ObjectIdentifier) -> Void
-    private let _drawCurve: (Point, Point, Point, Point, ObjectIdentifier) -> Void
+    private let _drawPoint: (RawPoint<RawValue>, ObjectIdentifier) -> Void
+    private let _drawLine: (RawPoint<RawValue>, RawPoint<RawValue>, ObjectIdentifier) -> Void
+    private let _drawCurve: (RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, ObjectIdentifier) -> Void
     private let _drawingDidEnd: () -> Void
     
-    init<Context: DrawingUnit>(_ context: Context) where Context.RawPoint.RawValue == RawValue {
-        _drawPoint = { point, identifier in context.drawPoint(at: Context.RawPoint(point), identifier: identifier) }
-        _drawLine = { start, end, identifier in context.drawLine(from: Context.RawPoint(start), to: Context.RawPoint(end), identifier: identifier) }
-        _drawCurve = { start, end, control1, control2, identifier in context.drawCurve(from: Context.RawPoint(start), to: Context.RawPoint(end), controlPoint1: Context.RawPoint(control1), controlPoint2: Context.RawPoint(control2), identifier: identifier) }
-        _drawingDidEnd = context.drawingDidEnd
+    init<T: DrawingUnit>(_ drawingUnit: T) where T.RawValue == RawValue {
+        _drawPoint = { point, identifier in drawingUnit.drawPoint(at: point, identifier: identifier) }
+        _drawLine = { start, end, identifier in drawingUnit.drawLine(from: start, to: end, identifier: identifier) }
+        _drawCurve = { start, end, control1, control2, identifier in drawingUnit.drawCurve(from: start, to: end, controlPoint1: control1, controlPoint2: control2, identifier: identifier) }
+        _drawingDidEnd = drawingUnit.drawingDidEnd
     }
     
     func drawPoint<P: ConvertibleToRawPoint>(at location: P, identifier: ObjectIdentifier) where P.RawValue == RawValue {

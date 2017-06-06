@@ -7,8 +7,8 @@ final class FreePoint<RawValue: FloatingPoint> {
 }
 
 extension FreePoint: Drawable {
-    func draw(in context: AnyDrawingUnit<RawValue>) {
-        context.drawPoint(at: rawPoint, identifier: ObjectIdentifier(self))
+    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+        drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
     }
 }
 
@@ -21,7 +21,7 @@ extension FreePoint: ConvertibleToRawPoint {
 extension FreePoint: Point {
 }
 
-extension FreePoint: FreeValued {
+extension FreePoint: DraggablePoint {
     func isAtPoint(_ point: RawPoint<RawValue>) -> Bool {
         let distance = (point - rawPoint).length
         return distance < 6

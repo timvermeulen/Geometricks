@@ -17,7 +17,7 @@ final class BasicDrawingUnit<Raw: FloatingPoint> {
     }
     
     func setPointRadius<P: Point>(_ pointRadius: RawValue, of point: P) {
-        pointRadii[ObjectIdentifier(point)] = pointRadius
+        pointRadii[point.identifier] = pointRadius
     }
     
     private var currentLogs: Set<Log> = []

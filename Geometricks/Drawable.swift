@@ -1,10 +1,10 @@
 protocol Drawable {
     associatedtype RawValue: FloatingPoint
-    func draw(in context: AnyDrawingUnit<RawValue>)
+    func draw(in drawingUnit: AnyDrawingUnit<RawValue>)
 }
 
 extension Drawable {
-    func draw<Context: DrawingUnit>(in context: Context) where Context.RawValue == RawValue {
-        draw(in: AnyDrawingUnit(context))
+    func draw<T: DrawingUnit>(in drawingUnit: T) where T.RawValue == RawValue {
+        draw(in: AnyDrawingUnit(drawingUnit))
     }
 }

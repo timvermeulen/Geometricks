@@ -4,43 +4,46 @@ protocol LogicUnitDelegate: class {
 
 final class LogicUnit<RawValue: FloatingPoint> {
     private var figures: [AnyDrawable<RawValue>] = []
-    private var freeValuedFigures: [AnyFreeValued<RawValue>] = []
-    private var currentPan: (startingPoint: RawPoint<RawValue>, figure: AnyFreeValued<RawValue>)?
+    private var draggablePoints: [AnyDraggablePoint<RawValue>] = []
     
     weak var delegate: LogicUnitDelegate?
     
-    func startPan<PointConvertible: ConvertibleToRawPoint>(at point: PointConvertible) where PointConvertible.RawValue == RawValue {
-        let rawPoint = point.makeRawPoint()
-        guard let figure = freeValuedFigures.first(where: { $0.isAtPoint(rawPoint) }) else { return }
-        
-        currentPan = (rawPoint, figure)
+    func closestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
+        return draggablePoints
+            .lazy
+            .map { (point: $0, distance: $0.distance(to: point)) }
+            .min(by: { $0.distance < $1.distance })
     }
     
-    func pan<VectorConvertible: ConvertibleToRawVector>(translation: VectorConvertible) where VectorConvertible.RawValue == RawValue {
-        guard let (point, figure) = currentPan else { return }
-        
-        let newPoint = point + translation.makeRawVector()
-        figure.takeOnValue(nearestTo: newPoint)
-        
+    func closestDraggablePoints<P: ConvertibleToRawPoint>(to point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
+        return draggablePoints
+            .map { (point: $0, distance: $0.distance(to: point)) }
+            .sorted(by: { $0.distance < $1.distance })
+    }
+    
+    func startDragging(_ point: AnyDraggablePoint<RawValue>) {
+    }
+    
+    func drag(_ point: AnyDraggablePoint<RawValue>, to location: RawPoint<RawValue>) {
+        point.takeOnValue(nearestTo: location)
         delegate?.shouldRedraw()
     }
     
-    func endPan() {
-        currentPan = nil
+    func stopDragging(_ point: AnyDraggablePoint<RawValue>) {
     }
     
     func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
         figures.append(AnyDrawable(drawable))
     }
     
-    func addFreeValued<T: FreeValued>(_ freeValued: T) where T.RawValue == RawValue {
-        freeValuedFigures.append(AnyFreeValued(freeValued))
+    func addDraggablePoint<T: DraggablePoint>(_ draggable: T) where T.RawValue == RawValue {
+        draggablePoints.append(AnyDraggablePoint(draggable))
     }
 }
 
 extension LogicUnit: Drawable {
-    func draw(in context: AnyDrawingUnit<RawValue>) {
-        figures.forEach { $0.draw(in: context) }
-        context.drawingDidEnd()
+    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+        figures.forEach { $0.draw(in: drawingUnit) }
+        drawingUnit.drawingDidEnd()
     }
 }

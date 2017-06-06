@@ -1,13 +1,16 @@
 import Cocoa
 
 final class Canvas: NSView {
-    let model = LogicUnit<CGFloat>()
-    let context = CocoaDrawingUnit()
+    let logicUnit = LogicUnit<CGFloat>()
+    let drawingUnit = CocoaDrawingUnit()
+    let interactionUnit: CocoaInteractionUnit
     
     required init?(coder: NSCoder) {
+        interactionUnit = CocoaInteractionUnit(logicUnit: logicUnit, drawingUnit: drawingUnit)
+        
         super.init(coder: coder)
         
-        model.delegate = self
+        logicUnit.delegate = self
         
         addGestureRecognizer(NSPanGestureRecognizer(target: self, action: #selector(handlePan)))
         
@@ -17,33 +20,33 @@ final class Canvas: NSView {
         let controlPoint2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
         let curve = Curve(from: startPoint, to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
         
-        model.addFigure(curve)
-        model.addFreeValued(startPoint)
-        model.addFreeValued(endPoint)
-        model.addFreeValued(controlPoint1)
-        model.addFreeValued(controlPoint2)
+        logicUnit.addFigure(curve)
+        logicUnit.addDraggablePoint(startPoint)
+        logicUnit.addDraggablePoint(endPoint)
+        logicUnit.addDraggablePoint(controlPoint1)
+        logicUnit.addDraggablePoint(controlPoint2)
         
-        context.setCurveWidth(5, of: curve)
-        context.setCurveColor(.blue, of: curve)
-        context.setPointRadius(10, of: startPoint)
-        context.setPointRadius(4, of: endPoint)
-        context.setPointColor(.green, of: startPoint)
-        context.setPointColor(.red, of: controlPoint1)
+        drawingUnit.setCurveWidth(5, of: curve)
+        drawingUnit.setCurveColor(.blue, of: curve)
+        drawingUnit.setPointRadius(10, of: startPoint)
+        drawingUnit.setPointRadius(4, of: endPoint)
+        drawingUnit.setPointColor(.green, of: startPoint)
+        drawingUnit.setPointColor(.red, of: controlPoint1)
     }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        model.draw(in: context)
+        logicUnit.draw(in: drawingUnit)
     }
     
     @objc func handlePan(recognizer: NSPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
-            model.startPan(at: recognizer.location(in: self))
+            interactionUnit.startPan(at: recognizer.location(in: self))
         case .changed:
-            model.pan(translation: recognizer.translation(in: self))
+            interactionUnit.pan(translation: recognizer.translation(in: self))
         default:
-            model.endPan()
+            interactionUnit.endPan()
         }
     }
 }

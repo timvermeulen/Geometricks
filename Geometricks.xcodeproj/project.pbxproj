@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */; };
 		228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783721ED29E4900FF8784 /* AppDelegate.swift */; };
 		228783751ED29E4900FF8784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783741ED29E4900FF8784 /* ViewController.swift */; };
 		228783771ED29E4900FF8784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228783761ED29E4900FF8784 /* Assets.xcassets */; };
@@ -16,13 +17,13 @@
 		2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839D1ED29E7B00FF8784 /* Canvas.swift */; };
 		228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */; };
 		228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */; };
-		228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */; };
+		228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A11ED29ECA00FF8784 /* AnyDraggablePoint.swift */; };
 		228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A21ED29ECA00FF8784 /* AnyPoint.swift */; };
 		228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */; };
 		228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A41ED29ECA00FF8784 /* Drawable.swift */; };
 		228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A51ED29ECA00FF8784 /* DrawingUnit.swift */; };
 		228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A61ED29ECA00FF8784 /* FreePoint.swift */; };
-		228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A71ED29ECA00FF8784 /* FreeValued.swift */; };
+		228783B91ED29ECA00FF8784 /* DraggablePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A71ED29ECA00FF8784 /* DraggablePoint.swift */; };
 		228783BA1ED29ECA00FF8784 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A81ED29ECA00FF8784 /* Line.swift */; };
 		228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783A91ED29ECA00FF8784 /* LogicUnit.swift */; };
 		228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaInteractionUnit.swift; sourceTree = "<group>"; };
 		2287836F1ED29E4900FF8784 /* Geometricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geometricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228783721ED29E4900FF8784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228783741ED29E4900FF8784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,13 +72,13 @@
 		2287839D1ED29E7B00FF8784 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawable.swift; sourceTree = "<group>"; };
 		228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDrawingUnit.swift; sourceTree = "<group>"; };
-		228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyFreeValued.swift; sourceTree = "<group>"; };
+		228783A11ED29ECA00FF8784 /* AnyDraggablePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDraggablePoint.swift; sourceTree = "<group>"; };
 		228783A21ED29ECA00FF8784 /* AnyPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPoint.swift; sourceTree = "<group>"; };
 		228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDrawingUnit.swift; sourceTree = "<group>"; };
 		228783A41ED29ECA00FF8784 /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		228783A51ED29ECA00FF8784 /* DrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingUnit.swift; sourceTree = "<group>"; };
 		228783A61ED29ECA00FF8784 /* FreePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreePoint.swift; sourceTree = "<group>"; };
-		228783A71ED29ECA00FF8784 /* FreeValued.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeValued.swift; sourceTree = "<group>"; };
+		228783A71ED29ECA00FF8784 /* DraggablePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePoint.swift; sourceTree = "<group>"; };
 		228783A81ED29ECA00FF8784 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		228783A91ED29ECA00FF8784 /* LogicUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicUnit.swift; sourceTree = "<group>"; };
 		228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPoint+Raw.swift"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 				228783C91ED29F3300FF8784 /* Core */,
 				228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */,
+				2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */,
 				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
 				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
 				228783761ED29E4900FF8784 /* Assets.xcassets */,
@@ -172,13 +175,13 @@
 			path = GeometricksUITests;
 			sourceTree = "<group>";
 		};
-		228783C31ED29EE700FF8784 /* FreeValued */ = {
+		228783C31ED29EE700FF8784 /* DraggablePoint */ = {
 			isa = PBXGroup;
 			children = (
-				228783A71ED29ECA00FF8784 /* FreeValued.swift */,
-				228783A11ED29ECA00FF8784 /* AnyFreeValued.swift */,
+				228783A71ED29ECA00FF8784 /* DraggablePoint.swift */,
+				228783A11ED29ECA00FF8784 /* AnyDraggablePoint.swift */,
 			);
-			name = FreeValued;
+			name = DraggablePoint;
 			sourceTree = "<group>";
 		};
 		228783C41ED29EF700FF8784 /* Point */ = {
@@ -236,7 +239,7 @@
 				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
-				228783C31ED29EE700FF8784 /* FreeValued */,
+				228783C31ED29EE700FF8784 /* DraggablePoint */,
 				228783C41ED29EF700FF8784 /* Point */,
 				228783C71ED29F2200FF8784 /* RawPoint */,
 				228783C81ED29F2700FF8784 /* RawVector */,
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */,
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
 				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
@@ -395,13 +399,13 @@
 				228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */,
 				228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
-				228783B91ED29ECA00FF8784 /* FreeValued.swift in Sources */,
+				228783B91ED29ECA00FF8784 /* DraggablePoint.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */,
 				228783BA1ED29ECA00FF8784 /* Line.swift in Sources */,
 				228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */,
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
-				228783B31ED29ECA00FF8784 /* AnyFreeValued.swift in Sources */,
+				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
 				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

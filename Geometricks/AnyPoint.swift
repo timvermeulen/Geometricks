@@ -8,13 +8,13 @@ struct AnyPoint<RawValue: FloatingPoint> {
         _draw = point.draw
         _makeRawPoint = point.makeRawPoint
         
-        identifier = ObjectIdentifier(point)
+        identifier = point.identifier
     }
 }
 
 extension AnyPoint: Drawable {
-    func draw(in context: AnyDrawingUnit<RawValue>) {
-        _draw(context)
+    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+        _draw(drawingUnit)
     }
 }
 

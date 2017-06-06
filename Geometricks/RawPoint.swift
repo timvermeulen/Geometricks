@@ -8,6 +8,10 @@ struct RawPoint<RawValue: FloatingPoint> {
     static func - (left: RawPoint, right: RawPoint) -> RawVector<RawValue> {
         return RawVector(changeInX: left.x - right.x, changeInY: left.y - right.y)
     }
+    
+    func distance(to point: RawPoint) -> RawValue {
+        return (point - self).length
+    }
 }
 
 extension RawPoint: Equatable {
