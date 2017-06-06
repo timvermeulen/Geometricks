@@ -30,8 +30,10 @@ final class Canvas: NSView {
         drawingUnit.setCurveColor(.blue, of: curve)
         drawingUnit.setPointRadius(10, of: startPoint)
         drawingUnit.setPointRadius(4, of: endPoint)
-        drawingUnit.setPointColor(.green, of: startPoint)
-        drawingUnit.setPointColor(.red, of: controlPoint1)
+        drawingUnit.setPointFillColor(.green, of: startPoint)
+        drawingUnit.setPointFillColor(.red, of: controlPoint1)
+        drawingUnit.setPointBorderColor(.purple, of: controlPoint2)
+        drawingUnit.setPointBorderWidth(3, of: endPoint)
     }
     
     override func draw(_ dirtyRect: NSRect) {
