@@ -12,7 +12,7 @@ final class Canvas: NSView {
         
         logicUnit.delegate = self
         
-        addGestureRecognizer(NSPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
         
         let startPoint = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 100))
         let endPoint = FreePoint<CGFloat>(rawPoint: RawPoint(x: 300, y: 100))
@@ -39,17 +39,6 @@ final class Canvas: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         logicUnit.draw(in: drawingUnit)
-    }
-    
-    @objc func handlePan(recognizer: NSPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            interactionUnit.startPan(at: recognizer.location(in: self))
-        case .changed:
-            interactionUnit.pan(translation: recognizer.translation(in: self))
-        default:
-            interactionUnit.endPan()
-        }
     }
 }
 
