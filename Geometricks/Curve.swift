@@ -34,11 +34,6 @@ extension Curve: Observer {
 extension Curve: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
         drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: identifier)
-        
-        start.draw(in: drawingUnit)
-        end.draw(in: drawingUnit)
-        controlPoint1.draw(in: drawingUnit)
-        controlPoint2.draw(in: drawingUnit)
     }
 }
 

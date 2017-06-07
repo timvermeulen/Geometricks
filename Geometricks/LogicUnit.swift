@@ -35,6 +35,7 @@ final class LogicUnit<RawValue: FloatingPoint> {
     }
     
     func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.RawValue == RawValue {
+		addFigure(point)
         draggablePoints.append(AnyDraggablePoint(point))
     }
 }

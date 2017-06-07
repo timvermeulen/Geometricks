@@ -60,13 +60,17 @@ extension Canvas {
 	}
 	
 	func loadCircle() {
-		let center = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
-		let pointOnBoundary = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 100))
-		let circle = Circle(center: center, pointOnBoundary: pointOnBoundary)
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 100))
 		
-		logicUnit.addFigure(circle)
-		logicUnit.addDraggablePoint(center)
-		logicUnit.addDraggablePoint(pointOnBoundary)
+		let circle1 = Circle(center: point1, pointOnBoundary: point2)
+		let circle2 = Circle(center: point2, pointOnBoundary: point1)
+		
+		logicUnit.addFigure(circle1)
+		logicUnit.addFigure(circle2)
+		
+		logicUnit.addDraggablePoint(point1)
+		logicUnit.addDraggablePoint(point2)
 	}
 }
 

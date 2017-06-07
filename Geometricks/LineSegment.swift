@@ -23,9 +23,6 @@ extension LineSegment: Observer {
 extension LineSegment: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
         drawingUnit.drawLineSegment(from: start, to: end, identifier: identifier)
-        
-        start.draw(in: drawingUnit)
-        end.draw(in: drawingUnit)
     }
 }
 

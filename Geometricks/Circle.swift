@@ -23,9 +23,6 @@ extension Circle: Observer {
 extension Circle: Drawable {
 	func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
 		drawingUnit.drawCircle(center: center, radius: pointOnBoundary.distance(to: center), identifier: identifier)
-		
-		center.draw(in: drawingUnit)
-		pointOnBoundary.draw(in: drawingUnit)
 	}
 }
 
