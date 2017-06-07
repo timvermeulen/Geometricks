@@ -10,7 +10,7 @@ final class CocoaDrawingUnit {
     private let defaultPointBorderColor: NSColor
     private let defaultPointFillColor: NSColor
     
-    init(defaultLineWidth: CGFloat = 2, defaultCurveColor: NSColor = .black, defaultPointRadius: CGFloat = 6, defaultPointBorderWidth: CGFloat = 1, defaultPointBorderColor: NSColor = .black, defaultPointFillColor: NSColor = .white) {
+    init(defaultLineWidth: CGFloat = 2, defaultCurveColor: NSColor = .black, defaultPointRadius: CGFloat = 3, defaultPointBorderWidth: CGFloat = 1, defaultPointBorderColor: NSColor = .black, defaultPointFillColor: NSColor = .white) {
         self.defaultLineWidth = defaultLineWidth
         self.defaultCurveColor = defaultCurveColor
         self.defaultPointRadius = defaultPointRadius

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CC1EE896A30016C1D1 /* Circle.swift */; };
+		221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */; };
+		221BF5D11EE8B93F0016C1D1 /* CGFloat+FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D01EE8B93F0016C1D1 /* CGFloat+FloatingPoint.swift */; };
 		2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */; };
 		224BC5721EE77FBD00C29CE3 /* OneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */; };
 		224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		221BF5CC1EE896A30016C1D1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		221BF5D01EE8B93F0016C1D1 /* CGFloat+FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+FloatingPoint.swift"; sourceTree = "<group>"; };
 		2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaInteractionUnit.swift; sourceTree = "<group>"; };
 		224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDimensional.swift; sourceTree = "<group>"; };
 		224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOneDimensional.swift; sourceTree = "<group>"; };
@@ -173,7 +177,7 @@
 				2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */,
 				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
 				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
-				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
+				221BF5D01EE8B93F0016C1D1 /* CGFloat+FloatingPoint.swift */,
 				228783761ED29E4900FF8784 /* Assets.xcassets */,
 				228783781ED29E4900FF8784 /* Main.storyboard */,
 				2287837B1ED29E4900FF8784 /* Info.plist */,
@@ -262,6 +266,8 @@
 				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
 				227EBE581EE8500200456AFB /* Observable.swift */,
+				221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */,
+				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
@@ -418,6 +424,7 @@
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
+				221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */,
 				228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */,
 				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
 				228783CB1ED3A51700FF8784 /* Curve.swift in Sources */,
@@ -439,6 +446,7 @@
 				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
 				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,
 				224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */,
+				221BF5D11EE8B93F0016C1D1 /* CGFloat+FloatingPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
