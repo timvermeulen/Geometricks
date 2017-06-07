@@ -15,7 +15,7 @@ final class CocoaInteractionUnit {
 		switch recognizer.state {
 		case .began:
 			let point = recognizer.location(in: recognizer.view)
-			guard let (nearestPoint, distance) = logicUnit.nearestDraggablePoint(to: point), distance < drawingUnit.pointRadius(of: nearestPoint) else { return }
+			guard let nearestPoint = logicUnit.draggablePoints(near: point).first(where: { $0.distance < drawingUnit.pointRadius(of: $0.point) })?.point else { return }
 			
 			logicUnit.startDragging(nearestPoint)
 			self.point = (nearestPoint, nearestPoint.makeRawPoint())

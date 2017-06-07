@@ -15,10 +15,8 @@ final class LogicUnit<RawValue: FloatingPoint> {
             .min(by: { $0.distance < $1.distance })
     }
     
-    func nearestDraggablePoints<P: ConvertibleToRawPoint>(to point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
-        return draggablePoints
-            .map { (point: $0, distance: $0.distance(to: point)) }
-            .sorted(by: { $0.distance < $1.distance })
+    func draggablePoints<P: ConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
+        return draggablePoints.map { (point: $0, distance: $0.distance(to: point)) }
     }
     
     func startDragging(_ point: AnyDraggablePoint<RawValue>) {
