@@ -1,10 +1,10 @@
 struct AnyOneDimensional<RawValue: FloatingPoint> {
     private let _point: (RawValue) -> RawPoint<RawValue>
-    private let _nearestPoint: (RawPoint<RawValue>) -> RawPoint<RawValue>
+    private let _fractionOfNearestPoint: (RawPoint<RawValue>) -> RawValue
     
     init<T: OneDimensional>(_ oneDimensional: T) where T.RawValue == RawValue {
         _point = oneDimensional.point
-        _nearestPoint = oneDimensional.nearestPoint
+        _fractionOfNearestPoint = oneDimensional.fractionOfNearestPoint
     }
 }
 
@@ -13,7 +13,7 @@ extension AnyOneDimensional: OneDimensional {
         return _point(fraction)
     }
     
-    func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
-        return _nearestPoint(point)
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
+        return _fractionOfNearestPoint(point)
     }
 }

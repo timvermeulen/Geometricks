@@ -30,8 +30,8 @@ extension Line: OneDimensional {
         return rawStart + fraction * (rawEnd - rawStart)
     }
     
-    func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
-//        let vector = end.makeRawPoint() - start.makeRawPoint()
-		fatalError()
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
+		let fraction = RawPoint.fractionOfProjection(of: point, onLineBetween: start.makeRawPoint(), and: end.makeRawPoint())
+		return max(0, min(1, fraction))
     }
 }

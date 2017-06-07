@@ -14,6 +14,21 @@ struct RawPoint<RawValue: FloatingPoint> {
     }
 }
 
+extension RawPoint {
+	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
+	static func fractionOfProjection(of point: RawPoint, onLineBetween start: RawPoint, and end: RawPoint) -> RawValue {
+		let delta1 = end - start
+		let delta2 = start - point
+		
+		let xConstant = delta1.changeInX * delta2.changeInX
+		let xCoefficient = delta1.changeInX.squared()
+		let yConstant = delta1.changeInY * delta2.changeInY
+		let yCoefficient = delta1.changeInY.squared()
+		
+		return -(xConstant + yConstant) / (xCoefficient + yCoefficient)
+	}
+}
+
 extension RawPoint: Equatable {
     static func == (left: RawPoint, right: RawPoint) -> Bool {
         return left.x == right.x && left.y == right.y

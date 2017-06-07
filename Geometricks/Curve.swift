@@ -35,7 +35,7 @@ extension Curve: OneDimensional {
         fatalError()
     }
     
-    func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
         fatalError()
     }
 }
