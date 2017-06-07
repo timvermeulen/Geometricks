@@ -138,10 +138,15 @@ extension CocoaDrawingUnit: DrawingUnit {
         path.stroke()
     }
     
-    func drawCurve(from start: CGPoint, to end: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint, identifier: Identifier) {
+    func drawCurve(from start: NSPoint, to end: NSPoint, controlPoint1: NSPoint, controlPoint2: NSPoint, identifier: Identifier) {
         let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
         path.lineWidth = lineWidth(of: identifier)
         curveColor(of: identifier).setStroke()
         path.stroke()
     }
+	
+	func drawCircle(center: NSPoint, radius: CGFloat, identifier: Identifier) {
+		let path = NSBezierPath(ovalIn: NSRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2))
+		path.stroke()
+	}
 }
