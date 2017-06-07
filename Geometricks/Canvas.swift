@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadLineSegment()
+		loadCurve()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -27,21 +27,19 @@ extension Canvas {
 		let controlPoint1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 400, y: 200))
 		let controlPoint2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
 		let curve = Curve(from: startPoint, to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+		let midPoint = SlidingPoint(oneDimensional: curve, fraction: 2 / 3)
 		
 		logicUnit.addFigure(curve)
 		logicUnit.addDraggablePoint(startPoint)
 		logicUnit.addDraggablePoint(endPoint)
 		logicUnit.addDraggablePoint(controlPoint1)
 		logicUnit.addDraggablePoint(controlPoint2)
+		logicUnit.addFigure(midPoint)
+		logicUnit.addDraggablePoint(midPoint)
 		
-		drawingUnit.setCurveWidth(5, of: curve)
-		drawingUnit.setCurveColor(.blue, of: curve)
-		drawingUnit.setPointRadius(10, of: startPoint)
-		drawingUnit.setPointRadius(4, of: endPoint)
-		drawingUnit.setPointFillColor(.green, of: startPoint)
-		drawingUnit.setPointFillColor(.red, of: controlPoint1)
-		drawingUnit.setPointBorderColor(.purple, of: controlPoint2)
-		drawingUnit.setPointBorderWidth(3, of: endPoint)
+		drawingUnit.setPointRadius(6, of: midPoint)
+		drawingUnit.setPointBorderWidth(0, of: midPoint)
+		drawingUnit.setPointFillColor(.red, of: midPoint)
 	}
 	
 	func loadLineSegment() {

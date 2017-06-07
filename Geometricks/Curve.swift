@@ -44,10 +44,22 @@ extension Curve: Drawable {
 
 extension Curve: OneDimensional {
     func point(at fraction: RawValue) -> RawPoint<RawValue> {
-        fatalError()
+        return RawPoint.pointOnCurve(
+			at: fraction,
+			start: start.makeRawPoint(),
+			end: end.makeRawPoint(),
+			controlPoint1: controlPoint1.makeRawPoint(),
+			controlPoint2: controlPoint2.makeRawPoint()
+		)
     }
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-        fatalError()
+        return RawPoint.fractionOfProjectionOnCurve(
+			of: point,
+			start: start.makeRawPoint(),
+			end: end.makeRawPoint(),
+			controlPoint1: controlPoint1.makeRawPoint(),
+			controlPoint2: controlPoint2.makeRawPoint()
+		)
     }
 }
