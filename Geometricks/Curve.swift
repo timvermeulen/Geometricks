@@ -29,3 +29,13 @@ extension Curve: Drawable {
         controlPoint2.draw(in: drawingUnit)
     }
 }
+
+extension Curve: OneDimensional {
+    func point(at fraction: RawValue) -> RawPoint<RawValue> {
+        fatalError()
+    }
+    
+    func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
+        fatalError()
+    }
+}

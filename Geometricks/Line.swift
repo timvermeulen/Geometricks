@@ -21,3 +21,16 @@ extension Line: Drawable {
         end.draw(in: drawingUnit)
     }
 }
+
+extension Line: OneDimensional {
+    func point(at fraction: RawValue) -> RawPoint<RawValue> {
+        let rawStart = start.makeRawPoint()
+        let rawEnd = end.makeRawPoint()
+        
+        return rawStart + fraction * (rawEnd - rawStart)
+    }
+    
+    func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
+        let vector = end.makeRawPoint() - start.makeRawPoint()
+    }
+}

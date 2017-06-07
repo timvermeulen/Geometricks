@@ -8,14 +8,14 @@ final class LogicUnit<RawValue: FloatingPoint> {
     
     weak var delegate: LogicUnitDelegate?
     
-    func closestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
+    func nearestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
         return draggablePoints
             .lazy
             .map { (point: $0, distance: $0.distance(to: point)) }
             .min(by: { $0.distance < $1.distance })
     }
     
-    func closestDraggablePoints<P: ConvertibleToRawPoint>(to point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
+    func nearestDraggablePoints<P: ConvertibleToRawPoint>(to point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
         return draggablePoints
             .map { (point: $0, distance: $0.distance(to: point)) }
             .sorted(by: { $0.distance < $1.distance })

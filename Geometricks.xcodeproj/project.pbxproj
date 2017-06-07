@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */; };
+		224BC5721EE77FBD00C29CE3 /* OneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */; };
+		224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */; };
 		228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783721ED29E4900FF8784 /* AppDelegate.swift */; };
 		228783751ED29E4900FF8784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783741ED29E4900FF8784 /* ViewController.swift */; };
 		228783771ED29E4900FF8784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228783761ED29E4900FF8784 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaInteractionUnit.swift; sourceTree = "<group>"; };
+		224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDimensional.swift; sourceTree = "<group>"; };
+		224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOneDimensional.swift; sourceTree = "<group>"; };
 		2287836F1ED29E4900FF8784 /* Geometricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geometricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228783721ED29E4900FF8784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228783741ED29E4900FF8784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224BC5731EE77FCD00C29CE3 /* OneDimensional */ = {
+			isa = PBXGroup;
+			children = (
+				224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */,
+				224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */,
+				228783A81ED29ECA00FF8784 /* Line.swift */,
+				228783CA1ED3A51700FF8784 /* Curve.swift */,
+			);
+			name = OneDimensional;
+			sourceTree = "<group>";
+		};
 		228783661ED29E4900FF8784 = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +215,6 @@
 			children = (
 				228783A41ED29ECA00FF8784 /* Drawable.swift */,
 				2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */,
-				228783A81ED29ECA00FF8784 /* Line.swift */,
-				228783CA1ED3A51700FF8784 /* Curve.swift */,
 			);
 			name = Drawable;
 			sourceTree = "<group>";
@@ -238,6 +251,7 @@
 			children = (
 				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
+				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
 				228783C31ED29EE700FF8784 /* DraggablePoint */,
 				228783C41ED29EF700FF8784 /* Point */,
@@ -383,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224BC5721EE77FBD00C29CE3 /* OneDimensional.swift in Sources */,
 				2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */,
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
@@ -407,6 +422,7 @@
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
 				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
 				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,
+				224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

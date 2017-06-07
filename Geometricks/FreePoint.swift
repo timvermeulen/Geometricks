@@ -22,11 +22,6 @@ extension FreePoint: Point {
 }
 
 extension FreePoint: DraggablePoint {
-    func isAtPoint(_ point: RawPoint<RawValue>) -> Bool {
-        let distance = (point - rawPoint).length
-        return distance < 6
-    }
-
     func takeOnValue(nearestTo point: RawPoint<RawValue>) {
         rawPoint = point
     }

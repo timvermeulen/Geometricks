@@ -12,10 +12,10 @@ final class CocoaInteractionUnit {
     var point: (point: AnyDraggablePoint<CGFloat>, location: RawPoint<CGFloat>)?
     
     func startPan<PointConvertible: ConvertibleToRawPoint>(at point: PointConvertible) where PointConvertible.RawValue == CGFloat {
-        guard let (closestPoint, distance) = logicUnit.closestDraggablePoint(to: point), distance < drawingUnit.pointRadius(of: closestPoint) else { return }
+        guard let (nearestPoint, distance) = logicUnit.nearestDraggablePoint(to: point), distance < drawingUnit.pointRadius(of: nearestPoint) else { return }
         
-        logicUnit.startDragging(closestPoint)
-        self.point = (closestPoint, closestPoint.makeRawPoint())
+        logicUnit.startDragging(nearestPoint)
+        self.point = (nearestPoint, nearestPoint.makeRawPoint())
     }
     
     func pan<VectorConvertible: ConvertibleToRawVector>(translation: VectorConvertible) where VectorConvertible.RawValue == CGFloat {
@@ -28,9 +28,9 @@ final class CocoaInteractionUnit {
     }
     
     func endPan() {
-        if let point = point?.point {
-            logicUnit.stopDragging(point)
-            self.point = nil
-        }
+        guard let point = point?.point else { return }
+        
+        logicUnit.stopDragging(point)
+        self.point = nil
     }
 }
