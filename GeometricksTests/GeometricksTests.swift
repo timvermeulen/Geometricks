@@ -1,11 +1,3 @@
-//
-//  GeometricksTests.swift
-//  GeometricksTests
-//
-//  Created by Tim Vermeulen on 22/05/2017.
-//  Copyright © 2017 Tim Vermeulen. All rights reserved.
-//
-
 import XCTest
 @testable import Geometricks
 
