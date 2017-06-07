@@ -11,14 +11,24 @@ final class Curve<RawValue: FloatingPoint> {
         self.end = end
         self.controlPoint1 = controlPoint1
         self.controlPoint2 = controlPoint2
+		
+		start.keepUpdated(self)
+		end.keepUpdated(self)
+		controlPoint1.keepUpdated(self)
+		controlPoint2.keepUpdated(self)
     }
     
-    init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
-        self.start = AnyPoint(start)
-        self.end = AnyPoint(end)
-        self.controlPoint1 = AnyPoint(controlPoint1)
-        self.controlPoint2 = AnyPoint(controlPoint2)
+    convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
+		self.init(
+			from: AnyPoint(start),
+			to: AnyPoint(end),
+			controlPoint1: AnyPoint(controlPoint1),
+			controlPoint2: AnyPoint(controlPoint2)
+		)
     }
+}
+
+extension Curve: Observer {
 }
 
 extension Curve: Drawable {
