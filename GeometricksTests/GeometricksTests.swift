@@ -19,8 +19,8 @@ class GeometricksTests: XCTestCase {
         let line = Line(from: start, to: end)
         
         logicUnit.addFigure(line)
-        logicUnit.addDraggable(start)
-        logicUnit.addDraggable(end)
+        logicUnit.addDraggablePoint(start)
+        logicUnit.addDraggablePoint(end)
         
         drawingUnit.setPointRadius(5, of: end)
         

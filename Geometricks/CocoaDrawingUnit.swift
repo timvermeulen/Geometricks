@@ -19,47 +19,47 @@ final class CocoaDrawingUnit {
         self.defaultPointFillColor = defaultPointFillColor
     }
     
-    private var lineWidths:   [ObjectIdentifier: CGFloat] = [:]
-    private var pointRadii:   [ObjectIdentifier: CGFloat] = [:]
-    private var strokeColors: [ObjectIdentifier: NSColor] = [:]
-    private var fillColors:   [ObjectIdentifier: NSColor] = [:]
+    private var lineWidths:   [Identifier: CGFloat] = [:]
+    private var pointRadii:   [Identifier: CGFloat] = [:]
+    private var strokeColors: [Identifier: NSColor] = [:]
+    private var fillColors:   [Identifier: NSColor] = [:]
 }
 
 extension CocoaDrawingUnit {
     func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
-        lineWidths[ObjectIdentifier(line)] = width
+        lineWidths[line.identifier] = width
     }
     
-    private func lineWidth(of identifier: ObjectIdentifier) -> CGFloat {
+    private func lineWidth(of identifier: Identifier) -> CGFloat {
         return lineWidths[identifier] ?? defaultLineWidth
     }
     
     func lineWidth(of line: Line<CGFloat>) -> CGFloat {
-        return lineWidth(of: ObjectIdentifier(line))
+        return lineWidth(of: line.identifier)
     }
 }
 
 extension CocoaDrawingUnit {
     func setCurveWidth(_ width: CGFloat, of curve: Curve<CGFloat>) {
-        lineWidths[ObjectIdentifier(curve)] = width
+        lineWidths[curve.identifier] = width
     }
     
     func curveWidth(of curve: Curve<CGFloat>) -> CGFloat {
-        return lineWidth(of: ObjectIdentifier(curve))
+        return lineWidth(of: curve.identifier)
     }
 }
 
 extension CocoaDrawingUnit {
     func setCurveColor(_ color: NSColor, of curve: Curve<CGFloat>) {
-        strokeColors[ObjectIdentifier(curve)] = color
+        strokeColors[curve.identifier] = color
     }
     
-    private func curveColor(of identifier: ObjectIdentifier) -> NSColor {
+    private func curveColor(of identifier: Identifier) -> NSColor {
         return strokeColors[identifier] ?? defaultCurveColor
     }
     
     func curveColor(of curve: Curve<CGFloat>) -> NSColor {
-        return curveColor(of: ObjectIdentifier(curve))
+        return curveColor(of: curve.identifier)
     }
 }
 
@@ -68,7 +68,7 @@ extension CocoaDrawingUnit {
         pointRadii[point.identifier] = radius
     }
     
-    private func pointRadius(of identifier: ObjectIdentifier) -> CGFloat {
+    private func pointRadius(of identifier: Identifier) -> CGFloat {
         return pointRadii[identifier] ?? defaultPointRadius
     }
     
@@ -82,7 +82,7 @@ extension CocoaDrawingUnit {
         lineWidths[point.identifier] = width
     }
     
-    private func pointBorderWidth(of identifier: ObjectIdentifier) -> CGFloat {
+    private func pointBorderWidth(of identifier: Identifier) -> CGFloat {
         return lineWidths[identifier] ?? defaultPointBorderWidth
     }
     
@@ -96,7 +96,7 @@ extension CocoaDrawingUnit {
         strokeColors[point.identifier] = color
     }
     
-    private func pointBorderColor(of identifier: ObjectIdentifier) -> NSColor {
+    private func pointBorderColor(of identifier: Identifier) -> NSColor {
         return strokeColors[identifier] ?? defaultPointBorderColor
     }
     
@@ -110,7 +110,7 @@ extension CocoaDrawingUnit {
         fillColors[point.identifier] = color
     }
     
-    private func pointFillColor(of identifier: ObjectIdentifier) -> NSColor {
+    private func pointFillColor(of identifier: Identifier) -> NSColor {
         return fillColors[identifier] ?? defaultPointFillColor
     }
     
@@ -120,7 +120,7 @@ extension CocoaDrawingUnit {
 }
 
 extension CocoaDrawingUnit: DrawingUnit {
-    func drawPoint(at location: NSPoint, identifier: ObjectIdentifier) {
+    func drawPoint(at location: NSPoint, identifier: Identifier) {
         pointBorderColor(of: identifier).setStroke()
         pointFillColor(of: identifier).setFill()
         
@@ -132,13 +132,13 @@ extension CocoaDrawingUnit: DrawingUnit {
         path.stroke()
     }
     
-    func drawLine(from start: NSPoint, to end: NSPoint, identifier: ObjectIdentifier) {
+    func drawLine(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
         let path = NSBezierPath.line(from: start, to: end)
         path.lineWidth = lineWidth(of: identifier)
         path.stroke()
     }
     
-    func drawCurve(from start: CGPoint, to end: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint, identifier: ObjectIdentifier) {
+    func drawCurve(from start: CGPoint, to end: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint, identifier: Identifier) {
         let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
         path.lineWidth = lineWidth(of: identifier)
         curveColor(of: identifier).setStroke()

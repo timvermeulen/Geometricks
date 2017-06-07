@@ -1,4 +1,4 @@
-protocol Drawable {
+protocol Drawable: Identifiable {
     associatedtype RawValue: FloatingPoint
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>)
 }

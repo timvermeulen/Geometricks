@@ -15,7 +15,7 @@ final class Line<RawValue: FloatingPoint> {
 
 extension Line: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawLine(from: start, to: end, identifier: ObjectIdentifier(self))
+        drawingUnit.drawLine(from: start, to: end, identifier: identifier)
         
         start.draw(in: drawingUnit)
         end.draw(in: drawingUnit)
@@ -31,6 +31,7 @@ extension Line: OneDimensional {
     }
     
     func nearestPoint(to point: RawPoint<RawValue>) -> RawPoint<RawValue> {
-        let vector = end.makeRawPoint() - start.makeRawPoint()
+//        let vector = end.makeRawPoint() - start.makeRawPoint()
+		fatalError()
     }
 }

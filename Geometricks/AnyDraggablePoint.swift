@@ -3,7 +3,7 @@ struct AnyDraggablePoint<RawValue: FloatingPoint> {
     private let _draw: (AnyDrawingUnit<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>
     
-    let identifier: ObjectIdentifier
+    let identifier: Identifier
     
     init<T: DraggablePoint>(_ draggable: T) where T.RawValue == RawValue {
         _takeOnValue = draggable.takeOnValue

@@ -10,9 +10,9 @@ final class BasicDrawingUnit<Raw: FloatingPoint> {
     }
     
     private let defaultPointRadius: RawValue = 1
-    private var pointRadii: [ObjectIdentifier: RawValue] = [:]
+    private var pointRadii: [Identifier: RawValue] = [:]
     
-    private func pointRadius(of identifier: ObjectIdentifier) -> RawValue {
+    private func pointRadius(of identifier: Identifier) -> RawValue {
         return pointRadii[identifier] ?? defaultPointRadius
     }
     
@@ -29,15 +29,15 @@ final class BasicDrawingUnit<Raw: FloatingPoint> {
 }
 
 extension BasicDrawingUnit: DrawingUnit {
-    func drawPoint(at location: RawPoint<RawValue>, identifier: ObjectIdentifier) {
+    func drawPoint(at location: RawPoint<RawValue>, identifier: Identifier) {
         log(.point(location, size: pointRadius(of: identifier)))
     }
     
-    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: ObjectIdentifier) {
+    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
         log(.line(start: start, end: end))
     }
     
-    func drawCurve(from start: RawPoint<Raw>, to end: RawPoint<Raw>, controlPoint1: RawPoint<Raw>, controlPoint2: RawPoint<Raw>, identifier: ObjectIdentifier) {
+    func drawCurve(from start: RawPoint<Raw>, to end: RawPoint<Raw>, controlPoint1: RawPoint<Raw>, controlPoint2: RawPoint<Raw>, identifier: Identifier) {
         log(.curve(start: start, end: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2))
     }
     

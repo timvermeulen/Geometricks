@@ -21,7 +21,7 @@ final class Curve<RawValue: FloatingPoint> {
 
 extension Curve: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: ObjectIdentifier(self))
+        drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: identifier)
         
         start.draw(in: drawingUnit)
         end.draw(in: drawingUnit)
