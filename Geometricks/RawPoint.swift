@@ -1,5 +1,5 @@
 struct RawPoint<RawValue: FloatingPoint> {
-    var x, y: RawValue
+    let x, y: RawValue
 }
 
 extension RawPoint {
@@ -14,6 +14,10 @@ extension RawPoint {
     func distance(to point: RawPoint) -> RawValue {
         return (point - self).length
     }
+	
+	func rotated(by angle: RawValue, around point: RawPoint) -> RawPoint {
+		return point + (self - point).rotated(by: angle)
+	}
 }
 
 extension RawPoint {

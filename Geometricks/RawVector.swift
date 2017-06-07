@@ -24,6 +24,24 @@ extension RawVector {
     var length: RawValue {
         return (changeInX * changeInX + changeInY * changeInY).squareRoot()
     }
+	
+	func rotated(by angle: RawValue) -> RawVector {
+		let s = sin(angle)
+		let c = cos(angle)
+		
+		return RawVector(
+			changeInX: changeInX * c - changeInY * s,
+			changeInY: changeInX * s + changeInY * c
+		)
+	}
+	
+	var angleWithXAxis: RawValue {
+		let isLeft = changeInX < 0
+		let angle = atan(changeInY / changeInX)
+		let corrected = isLeft ? angle + .pi : angle
+		
+		return corrected.mod(.tau)
+	}
 }
 
 extension RawVector: ConvertibleFromRawVector {

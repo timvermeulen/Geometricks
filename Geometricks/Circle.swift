@@ -28,10 +28,13 @@ extension Circle: Drawable {
 
 extension Circle: OneDimensional {
 	func point(at fraction: RawValue) -> RawPoint<RawValue> {
-		fatalError()
+		return pointOnBoundary.makeRawPoint().rotated(by: fraction, around: center.makeRawPoint())
 	}
 	
 	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		fatalError()
+		let rawCenter = center.makeRawPoint()
+		let angle = (point - rawCenter).angleWithXAxis - (pointOnBoundary.makeRawPoint() - rawCenter).angleWithXAxis
+//		print(point - rawCenter, (point - rawCenter).angleWithXAxis)
+		return angle.mod(.tau)
 	}
 }

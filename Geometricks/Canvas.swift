@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadCurve()
+		loadCircle()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -68,15 +68,16 @@ extension Canvas {
 	func loadCircle() {
 		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
 		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 100))
+		let circle = Circle(center: point1, pointOnBoundary: point2)
+		let sliding = SlidingPoint(oneDimensional: circle, fraction: .pi)
 		
-		let circle1 = Circle(center: point1, pointOnBoundary: point2)
-		let circle2 = Circle(center: point2, pointOnBoundary: point1)
-		
-		logicUnit.addFigure(circle1)
-		logicUnit.addFigure(circle2)
-		
+		logicUnit.addFigure(circle)
 		logicUnit.addDraggablePoint(point1)
 		logicUnit.addDraggablePoint(point2)
+		logicUnit.addDraggablePoint(sliding)
+		
+		drawingUnit.setPointRadius(6, of: sliding)
+		drawingUnit.setPointFillColor(.red, of: sliding)
 	}
 }
 

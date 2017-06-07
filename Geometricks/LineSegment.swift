@@ -36,6 +36,6 @@ extension LineSegment: OneDimensional {
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
 		let fraction = RawPoint.fractionOfProjection(of: point, onLineBetween: start.makeRawPoint(), and: end.makeRawPoint())
-		return max(0, min(1, fraction))
+		return fraction.clamped(to: 0 ... 1)
     }
 }
