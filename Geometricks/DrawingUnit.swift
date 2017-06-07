@@ -3,7 +3,7 @@ protocol DrawingUnit {
     associatedtype Point: ConvertibleFromRawPoint where Point.RawValue == RawValue
     
     func drawPoint(at location: Point, identifier: Identifier)
-    func drawLine(from start: Point, to end: Point, identifier: Identifier)
+    func drawLineSegment(from start: Point, to end: Point, identifier: Identifier)
     func drawCurve(from start: Point, to end: Point, controlPoint1: Point, controlPoint2: Point, identifier: Identifier)
     
     func drawingDidEnd()
@@ -14,8 +14,8 @@ extension DrawingUnit {
         drawPoint(at: Point(location), identifier: identifier)
     }
     
-    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
-        drawLine(from: Point(start), to: Point(end), identifier: identifier)
+    func drawLineSegment(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
+        drawLineSegment(from: Point(start), to: Point(end), identifier: identifier)
     }
     
     func drawCurve(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>, identifier: Identifier) {

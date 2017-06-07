@@ -1,4 +1,4 @@
-final class Line<RawValue: FloatingPoint> {
+final class LineSegment<RawValue: FloatingPoint> {
     let start: AnyPoint<RawValue>
     let end: AnyPoint<RawValue>
 	
@@ -17,19 +17,19 @@ final class Line<RawValue: FloatingPoint> {
     }
 }
 
-extension Line: Observer {
+extension LineSegment: Observer {
 }
 
-extension Line: Drawable {
+extension LineSegment: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawLine(from: start, to: end, identifier: identifier)
+        drawingUnit.drawLineSegment(from: start, to: end, identifier: identifier)
         
         start.draw(in: drawingUnit)
         end.draw(in: drawingUnit)
     }
 }
 
-extension Line: OneDimensional {
+extension LineSegment: OneDimensional {
     func point(at fraction: RawValue) -> RawPoint<RawValue> {
         let rawStart = start.makeRawPoint()
         let rawEnd = end.makeRawPoint()

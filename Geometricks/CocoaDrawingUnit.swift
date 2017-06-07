@@ -26,16 +26,16 @@ final class CocoaDrawingUnit {
 }
 
 extension CocoaDrawingUnit {
-    func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
-        lineWidths[line.identifier] = width
+    func setLineWidth(_ width: CGFloat, of lineSegment: LineSegment<CGFloat>) {
+        lineWidths[lineSegment.identifier] = width
     }
     
     private func lineWidth(of identifier: Identifier) -> CGFloat {
         return lineWidths[identifier] ?? defaultLineWidth
     }
     
-    func lineWidth(of line: Line<CGFloat>) -> CGFloat {
-        return lineWidth(of: line.identifier)
+    func lineWidth(of lineSegment: LineSegment<CGFloat>) -> CGFloat {
+        return lineWidth(of: lineSegment.identifier)
     }
 }
 
@@ -132,8 +132,8 @@ extension CocoaDrawingUnit: DrawingUnit {
         path.stroke()
     }
     
-    func drawLine(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
-        let path = NSBezierPath.line(from: start, to: end)
+    func drawLineSegment(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
+        let path = NSBezierPath.lineSegment(from: start, to: end)
         path.lineWidth = lineWidth(of: identifier)
         path.stroke()
     }

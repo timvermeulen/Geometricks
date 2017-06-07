@@ -1,7 +1,7 @@
 import AppKit
 
 extension NSBezierPath {
-    static func line(from start: NSPoint, to end: NSPoint) -> NSBezierPath {
+    static func lineSegment(from start: NSPoint, to end: NSPoint) -> NSBezierPath {
         let path = NSBezierPath()
         
         path.move(to: start)

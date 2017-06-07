@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadLine()
+		loadLineSegment()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -44,13 +44,13 @@ extension Canvas {
 		drawingUnit.setPointBorderWidth(3, of: endPoint)
 	}
 	
-	func loadLine() {
+	func loadLineSegment() {
 		let startPoint = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 100))
 		let endPoint   = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
-		let line = Line(from: startPoint, to: endPoint)
-		let midPoint = SlidingPoint(oneDimensional: line, fraction: 1 / 3)
+		let lineSegment = LineSegment(from: startPoint, to: endPoint)
+		let midPoint = SlidingPoint(oneDimensional: lineSegment, fraction: 1 / 3)
 		
-		logicUnit.addFigure(line)
+		logicUnit.addFigure(lineSegment)
 		logicUnit.addDraggablePoint(startPoint)
 		logicUnit.addDraggablePoint(endPoint)
 		logicUnit.addDraggablePoint(midPoint)
