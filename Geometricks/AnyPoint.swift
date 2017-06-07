@@ -3,12 +3,14 @@ struct AnyPoint<RawValue: FloatingPoint> {
     private let _makeRawPoint: () -> RawPoint<RawValue>
     
     let identifier: Identifier
+	let observableStorage: ObservableStorage
     
     init<P: Point>(_ point: P) where P.RawValue == RawValue {
         _draw = point.draw
         _makeRawPoint = point.makeRawPoint
         
         identifier = point.identifier
+		observableStorage = point.observableStorage
     }
 }
 

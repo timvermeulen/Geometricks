@@ -3,6 +3,8 @@ final class Curve<RawValue: FloatingPoint> {
     let end: AnyPoint<RawValue>
     let controlPoint1: AnyPoint<RawValue>
     let controlPoint2: AnyPoint<RawValue>
+	
+	let observableStorage = ObservableStorage()
     
     init(from start: AnyPoint<RawValue>, to end: AnyPoint<RawValue>, controlPoint1: AnyPoint<RawValue>, controlPoint2: AnyPoint<RawValue>) {
         self.start = start
@@ -17,6 +19,12 @@ final class Curve<RawValue: FloatingPoint> {
         self.controlPoint1 = AnyPoint(controlPoint1)
         self.controlPoint2 = AnyPoint(controlPoint2)
     }
+}
+
+extension Curve: Observable {
+	func update() {
+		updateObservers()
+	}
 }
 
 extension Curve: Drawable {

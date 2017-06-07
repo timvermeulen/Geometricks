@@ -1,5 +1,9 @@
 final class FreePoint<RawValue: FloatingPoint> {
-    var rawPoint: RawPoint<RawValue>
+	private var rawPoint: RawPoint<RawValue> {
+		didSet { updateObservers() }
+	}
+	
+	let observableStorage = ObservableStorage()
     
     init(rawPoint: RawPoint<RawValue>) {
         self.rawPoint = rawPoint

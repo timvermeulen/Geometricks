@@ -12,6 +12,7 @@
 		224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */; };
 		224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5761EE7F47300C29CE3 /* Identifiable.swift */; };
 		227EBE571EE84CE800456AFB /* Numeric+squared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EBE561EE84CE800456AFB /* Numeric+squared.swift */; };
+		227EBE591EE8500200456AFB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EBE581EE8500200456AFB /* Observable.swift */; };
 		228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783721ED29E4900FF8784 /* AppDelegate.swift */; };
 		228783751ED29E4900FF8784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783741ED29E4900FF8784 /* ViewController.swift */; };
 		228783771ED29E4900FF8784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228783761ED29E4900FF8784 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOneDimensional.swift; sourceTree = "<group>"; };
 		224BC5761EE7F47300C29CE3 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		227EBE561EE84CE800456AFB /* Numeric+squared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+squared.swift"; sourceTree = "<group>"; };
+		227EBE581EE8500200456AFB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2287836F1ED29E4900FF8784 /* Geometricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geometricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228783721ED29E4900FF8784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228783741ED29E4900FF8784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
+				227EBE581EE8500200456AFB /* Observable.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
@@ -419,6 +422,7 @@
 				228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */,
 				228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */,
 				228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */,
+				227EBE591EE8500200456AFB /* Observable.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
 				228783B91ED29ECA00FF8784 /* DraggablePoint.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */,

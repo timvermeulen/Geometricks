@@ -1,13 +1,29 @@
 final class SlidingPoint<RawValue: FloatingPoint> {
-    let oneDimensional: AnyOneDimensional<RawValue>
-    var fraction: RawValue
-    var rawPoint: RawPoint<RawValue>
+    private let oneDimensional: AnyOneDimensional<RawValue>
+	
+	private var fraction: RawValue {
+		didSet { rawPoint = oneDimensional.point(at: fraction) }
+	}
+	
+	var rawPoint: RawPoint<RawValue> {
+		didSet { updateObservers() }
+	}
+	
+	let observableStorage = ObservableStorage()
     
     init<T: OneDimensional>(oneDimensional: T, fraction: RawValue) where T.RawValue == RawValue {
         self.oneDimensional = AnyOneDimensional(oneDimensional)
         self.fraction = fraction
-        rawPoint = oneDimensional.point(at: fraction)
-    }
+		rawPoint = oneDimensional.point(at: fraction)
+		
+		oneDimensional.keepUpdated(self)
+	}
+}
+
+extension SlidingPoint: Observer {
+	func update() {
+		rawPoint = oneDimensional.point(at: fraction)
+	}
 }
 
 extension SlidingPoint: Drawable {
@@ -27,6 +43,6 @@ extension SlidingPoint: Point {
 
 extension SlidingPoint: DraggablePoint {
     func takeOnValue(nearestTo point: RawPoint<RawValue>) {
-        rawPoint = oneDimensional.nearestPoint(to: point)
+        fraction = oneDimensional.fractionOfNearestPoint(to: point)
     }
 }
