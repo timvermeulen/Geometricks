@@ -21,12 +21,6 @@ final class Curve<RawValue: FloatingPoint> {
     }
 }
 
-extension Curve: Observable {
-	func update() {
-		updateObservers()
-	}
-}
-
 extension Curve: Drawable {
     func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
         drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: identifier)

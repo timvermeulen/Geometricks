@@ -25,3 +25,9 @@ extension Observable {
 protocol Observer {
 	func update()
 }
+
+extension Observer where Self: Observable {
+	func update() {
+		updateObservers()
+	}
+}

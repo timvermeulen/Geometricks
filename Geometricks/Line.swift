@@ -18,9 +18,6 @@ final class Line<RawValue: FloatingPoint> {
 }
 
 extension Line: Observer {
-	func update() {
-		updateObservers()
-	}
 }
 
 extension Line: Drawable {
