@@ -1,6 +1,6 @@
 final class LineSegment<RawValue: FloatingPoint> {
-    let start: AnyPoint<RawValue>
-    let end: AnyPoint<RawValue>
+    private let start: AnyPoint<RawValue>
+    private let end: AnyPoint<RawValue>
 	
 	let observableStorage = ObservableStorage()
     

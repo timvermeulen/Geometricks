@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CC1EE896A30016C1D1 /* Circle.swift */; };
 		2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */; };
 		224BC5721EE77FBD00C29CE3 /* OneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */; };
 		224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221BF5CC1EE896A30016C1D1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaInteractionUnit.swift; sourceTree = "<group>"; };
 		224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDimensional.swift; sourceTree = "<group>"; };
 		224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOneDimensional.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */,
 				228783A81ED29ECA00FF8784 /* LineSegment.swift */,
 				228783CA1ED3A51700FF8784 /* Curve.swift */,
+				221BF5CC1EE896A30016C1D1 /* Circle.swift */,
 			);
 			name = OneDimensional;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
 				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
+				221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */,
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,

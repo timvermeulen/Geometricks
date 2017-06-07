@@ -1,8 +1,8 @@
 final class Curve<RawValue: FloatingPoint> {
-    let start: AnyPoint<RawValue>
-    let end: AnyPoint<RawValue>
-    let controlPoint1: AnyPoint<RawValue>
-    let controlPoint2: AnyPoint<RawValue>
+    private let start: AnyPoint<RawValue>
+    private let end: AnyPoint<RawValue>
+    private let controlPoint1: AnyPoint<RawValue>
+    private let controlPoint2: AnyPoint<RawValue>
 	
 	let observableStorage = ObservableStorage()
     
