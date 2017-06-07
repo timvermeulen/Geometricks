@@ -23,3 +23,6 @@ extension AnyPoint: ConvertibleToRawPoint {
         return _makeRawPoint()
     }
 }
+
+extension AnyPoint: Point {
+}
