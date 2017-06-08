@@ -29,9 +29,6 @@ extension SlidingPoint: Observer {
 }
 
 extension SlidingPoint: Drawable {
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
-    }
 }
 
 extension SlidingPoint: ConvertibleToRawPoint {

@@ -13,9 +13,6 @@ final class FreePoint<_RawValue: FloatingPoint> {
 }
 
 extension FreePoint: Drawable {
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
-    }
 }
 
 extension FreePoint: ConvertibleToRawPoint {
