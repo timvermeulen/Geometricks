@@ -1,6 +1,6 @@
 protocol OneDimensional: Observable {
-    associatedtype RawValue: FloatingPoint
+    associatedtype OneDimensionalRawValue: FloatingPoint
     
-    func point(at fraction: RawValue) -> RawPoint<RawValue>
-    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue
+    func point(at fraction: OneDimensionalRawValue) -> RawPoint<OneDimensionalRawValue>
+    func fractionOfNearestPoint(to point: RawPoint<OneDimensionalRawValue>) -> OneDimensionalRawValue
 }

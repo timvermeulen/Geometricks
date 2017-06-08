@@ -1,9 +1,9 @@
 protocol ConvertibleFromRawVector {
-    associatedtype RawValue: FloatingPoint
-    init(_ rawVector: RawVector<RawValue>)
+    associatedtype ConvertibleFromRawVectorRawValue: FloatingPoint
+    init(_ rawVector: RawVector<ConvertibleFromRawVectorRawValue>)
 }
 
 protocol ConvertibleToRawVector {
-    associatedtype RawValue: FloatingPoint
-    func makeRawVector() -> RawVector<RawValue>
+    associatedtype ConvertibleToRawVectorRawValue: FloatingPoint
+    func makeRawVector() -> RawVector<ConvertibleToRawVectorRawValue>
 }

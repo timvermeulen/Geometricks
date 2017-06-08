@@ -4,7 +4,7 @@ struct AnyOneDimensional<RawValue: FloatingPoint> {
 	
 	let observableStorage: ObservableStorage
     
-    init<T: OneDimensional>(_ oneDimensional: T) where T.RawValue == RawValue {
+    init<T: OneDimensional>(_ oneDimensional: T) where T.OneDimensionalRawValue == RawValue {
         _point = oneDimensional.point
         _fractionOfNearestPoint = oneDimensional.fractionOfNearestPoint
 		

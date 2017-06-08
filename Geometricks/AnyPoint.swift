@@ -5,7 +5,7 @@ struct AnyPoint<RawValue: FloatingPoint> {
     let identifier: Identifier
 	let observableStorage: ObservableStorage
     
-    init<P: Point>(_ point: P) where P.RawValue == RawValue {
+    init<P: Point>(_ point: P) where P.DrawableRawValue == RawValue {
         _draw = point.draw
         _makeRawPoint = point.makeRawPoint
         

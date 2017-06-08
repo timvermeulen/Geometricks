@@ -11,7 +11,7 @@ final class SlidingPoint<RawValue: FloatingPoint> {
 	
 	let observableStorage = ObservableStorage()
     
-    init<T: OneDimensional>(oneDimensional: T, fraction: RawValue) where T.RawValue == RawValue {
+    init<T: OneDimensional>(oneDimensional: T, fraction: RawValue) where T.OneDimensionalRawValue == RawValue {
         self.floor = AnyOneDimensional(oneDimensional)
         self.fraction = fraction
 		rawPoint = oneDimensional.point(at: fraction)

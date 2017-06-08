@@ -18,7 +18,7 @@ final class Curve<RawValue: FloatingPoint> {
 		controlPoint2.keepUpdated(self)
     }
     
-    convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
+    convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.DrawableRawValue == RawValue, P2.DrawableRawValue == RawValue, P3.DrawableRawValue == RawValue, P4.DrawableRawValue == RawValue {
 		self.init(
 			from: AnyPoint(start),
 			to: AnyPoint(end),

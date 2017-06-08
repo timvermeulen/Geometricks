@@ -12,7 +12,7 @@ final class LineSegment<RawValue: FloatingPoint> {
 		end.keepUpdated(self)
     }
     
-    convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+    convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.DrawableRawValue == RawValue, P2.DrawableRawValue == RawValue {
 		self.init(from: AnyPoint(start), to: AnyPoint(end))
     }
 }

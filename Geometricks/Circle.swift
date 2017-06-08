@@ -12,7 +12,7 @@ final class Circle<RawValue: FloatingPoint> {
 		pointOnBoundary.keepUpdated(self)
 	}
 	
-	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.DrawableRawValue == RawValue, P2.DrawableRawValue == RawValue {
 		self.init(center: AnyPoint(center), pointOnBoundary: AnyPoint(pointOnBoundary))
 	}
 }

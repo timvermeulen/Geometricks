@@ -1,22 +1,22 @@
 @testable import Geometricks
 
 final class BasicDrawingUnit<Raw: FloatingPoint> {
-    typealias RawValue = Raw
+    typealias DrawingUnitRawValue = Raw
     
     enum Log {
-        case point(RawPoint<RawValue>, size: RawValue)
-        case lineSegment(start: RawPoint<RawValue>, end: RawPoint<RawValue>)
-        case curve(start: RawPoint<RawValue>, end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>)
+        case point(RawPoint<DrawingUnitRawValue>, size: DrawingUnitRawValue)
+        case lineSegment(start: RawPoint<DrawingUnitRawValue>, end: RawPoint<DrawingUnitRawValue>)
+        case curve(start: RawPoint<DrawingUnitRawValue>, end: RawPoint<DrawingUnitRawValue>, controlPoint1: RawPoint<DrawingUnitRawValue>, controlPoint2: RawPoint<DrawingUnitRawValue>)
     }
     
-    private let defaultPointRadius: RawValue = 1
-    private var pointRadii: [Identifier: RawValue] = [:]
+    private let defaultPointRadius: DrawingUnitRawValue = 1
+    private var pointRadii: [Identifier: DrawingUnitRawValue] = [:]
     
-    private func pointRadius(of identifier: Identifier) -> RawValue {
+    private func pointRadius(of identifier: Identifier) -> DrawingUnitRawValue {
         return pointRadii[identifier] ?? defaultPointRadius
     }
     
-    func setPointRadius<P: Point>(_ pointRadius: RawValue, of point: P) {
+    func setPointRadius<P: Point>(_ pointRadius: DrawingUnitRawValue, of point: P) {
         pointRadii[point.identifier] = pointRadius
     }
     
@@ -29,11 +29,11 @@ final class BasicDrawingUnit<Raw: FloatingPoint> {
 }
 
 extension BasicDrawingUnit: DrawingUnit {
-    func drawPoint(at location: RawPoint<RawValue>, identifier: Identifier) {
+    func drawPoint(at location: RawPoint<DrawingUnitRawValue>, identifier: Identifier) {
         log(.point(location, size: pointRadius(of: identifier)))
     }
     
-    func drawLineSegment(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
+    func drawLineSegment(from start: RawPoint<DrawingUnitRawValue>, to end: RawPoint<DrawingUnitRawValue>, identifier: Identifier) {
         log(.lineSegment(start: start, end: end))
     }
     

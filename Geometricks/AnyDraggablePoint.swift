@@ -6,7 +6,7 @@ struct AnyDraggablePoint<RawValue: FloatingPoint> {
     let identifier: Identifier
 	let observableStorage: ObservableStorage
     
-    init<T: DraggablePoint>(_ draggable: T) where T.RawValue == RawValue {
+    init<T: DraggablePoint>(_ draggable: T) where T.DrawableRawValue == RawValue {
         _takeOnValue = draggable.takeOnValue
         _draw = draggable.draw
         _makeRawPoint = draggable.makeRawPoint
