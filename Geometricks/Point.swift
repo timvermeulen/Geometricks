@@ -1,2 +1,2 @@
-protocol Point: Drawable, ConvertibleToRawPoint, Observable where DrawableRawValue == ConvertibleToRawPointRawValue {
+protocol Point: Drawable, ConvertibleToRawPoint, Observable {
 }

@@ -1,6 +1,8 @@
 infix operator •: MultiplicationPrecedence
 
-struct RawVector<RawValue: FloatingPoint> {
+struct RawVector<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
     let changeInX, changeInY: RawValue
 }
 

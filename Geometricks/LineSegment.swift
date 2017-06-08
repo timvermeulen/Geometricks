@@ -1,4 +1,6 @@
-final class LineSegment<RawValue: FloatingPoint> {
+final class LineSegment<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
     private let start: AnyPoint<RawValue>
     private let end: AnyPoint<RawValue>
 	
@@ -12,7 +14,7 @@ final class LineSegment<RawValue: FloatingPoint> {
 		end.keepUpdated(self)
     }
     
-    convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.DrawableRawValue == RawValue, P2.DrawableRawValue == RawValue {
+    convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		self.init(from: AnyPoint(start), to: AnyPoint(end))
     }
 }

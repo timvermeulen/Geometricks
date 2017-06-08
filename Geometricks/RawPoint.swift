@@ -1,4 +1,6 @@
-struct RawPoint<RawValue: FloatingPoint> {
+struct RawPoint<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
     let x, y: RawValue
 }
 

@@ -2,20 +2,22 @@ protocol LogicUnitDelegate: class {
     func shouldRedraw()
 }
 
-final class LogicUnit<RawValue: FloatingPoint> {
+final class LogicUnit<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
     private var figures: [AnyDrawable<RawValue>] = []
     private var draggablePoints: [AnyDraggablePoint<RawValue>] = []
     
     weak var delegate: LogicUnitDelegate?
     
-    func nearestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.ConvertibleToRawPointRawValue == RawValue {
+    func nearestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
         return draggablePoints
             .lazy
             .map { (point: $0, distance: $0.distance(to: point)) }
             .min(by: { $0.distance < $1.distance })
     }
     
-    func draggablePoints<P: ConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.ConvertibleToRawPointRawValue == RawValue {
+    func draggablePoints<P: ConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
         return draggablePoints.map { (point: $0, distance: $0.distance(to: point)) }
     }
     
@@ -30,11 +32,11 @@ final class LogicUnit<RawValue: FloatingPoint> {
     func stopDragging(_ point: AnyDraggablePoint<RawValue>) {
     }
     
-    func addFigure<T: Drawable>(_ drawable: T) where T.DrawableRawValue == RawValue {
+    func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
         figures.append(AnyDrawable(drawable))
     }
     
-    func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.DrawableRawValue == RawValue {
+    func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.RawValue == RawValue {
 		addFigure(point)
         draggablePoints.append(AnyDraggablePoint(point))
     }

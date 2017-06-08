@@ -39,4 +39,5 @@ func acos<T: FloatingPoint>(_ x: T) -> T {
 }
 
 func atan<T: FloatingPoint>(_ x: T) -> T {
-	return x._atan}
+	return x._atan
+}

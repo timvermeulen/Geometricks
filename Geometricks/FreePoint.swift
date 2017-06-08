@@ -1,4 +1,6 @@
-final class FreePoint<RawValue: FloatingPoint> {
+final class FreePoint<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
 	private var rawPoint: RawPoint<RawValue> {
 		didSet { updateObservers() }
 	}

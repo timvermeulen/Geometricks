@@ -1,19 +1,17 @@
-protocol ConvertibleFromRawPoint {
-    associatedtype ConvertibleFromRawPointRawValue: FloatingPoint
-    init(_ rawPoint: RawPoint<ConvertibleFromRawPointRawValue>)
+protocol ConvertibleFromRawPoint: RawValueType {
+    init(_ rawPoint: RawPoint<RawValue>)
 }
 
-protocol ConvertibleToRawPoint {
-    associatedtype ConvertibleToRawPointRawValue: FloatingPoint
-    func makeRawPoint() -> RawPoint<ConvertibleToRawPointRawValue>
+protocol ConvertibleToRawPoint: RawValueType {
+    func makeRawPoint() -> RawPoint<RawValue>
 }
 
 extension ConvertibleToRawPoint {
-    func distance(to point: RawPoint<ConvertibleToRawPointRawValue>) -> ConvertibleToRawPointRawValue {
+    func distance(to point: RawPoint<RawValue>) -> RawValue {
         return makeRawPoint().distance(to: point)
     }
     
-    func distance<T: ConvertibleToRawPoint>(to point: T) -> ConvertibleToRawPointRawValue where T.ConvertibleToRawPointRawValue == ConvertibleToRawPointRawValue {
+    func distance<T: ConvertibleToRawPoint>(to point: T) -> RawValue where T.RawValue == RawValue {
         return makeRawPoint().distance(to: point.makeRawPoint())
     }
 }

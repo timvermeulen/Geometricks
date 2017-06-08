@@ -1,7 +1,7 @@
 import AppKit
 
 final class CocoaDrawingUnit {
-    typealias DrawingUnitRawValue = CGFloat
+    typealias RawValue = CGFloat
     
     private let defaultLineWidth: CGFloat
     private let defaultCurveColor: NSColor

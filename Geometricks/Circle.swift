@@ -1,4 +1,6 @@
-final class Circle<RawValue: FloatingPoint> {
+final class Circle<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
 	private let center: AnyPoint<RawValue>
 	private let pointOnBoundary: AnyPoint<RawValue>
 	
@@ -12,7 +14,7 @@ final class Circle<RawValue: FloatingPoint> {
 		pointOnBoundary.keepUpdated(self)
 	}
 	
-	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.DrawableRawValue == RawValue, P2.DrawableRawValue == RawValue {
+	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		self.init(center: AnyPoint(center), pointOnBoundary: AnyPoint(pointOnBoundary))
 	}
 }
@@ -34,7 +36,6 @@ extension Circle: OneDimensional {
 	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
 		let rawCenter = center.makeRawPoint()
 		let angle = (point - rawCenter).angleWithXAxis - (pointOnBoundary.makeRawPoint() - rawCenter).angleWithXAxis
-//		print(point - rawCenter, (point - rawCenter).angleWithXAxis)
 		return angle.mod(.tau)
 	}
 }

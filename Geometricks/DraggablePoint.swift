@@ -1,3 +1,3 @@
 protocol DraggablePoint: Point {
-    func takeOnValue(nearestTo point: RawPoint<DrawableRawValue>)
+    func takeOnValue(nearestTo point: RawPoint<RawValue>)
 }

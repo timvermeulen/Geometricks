@@ -45,6 +45,7 @@
 		228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */; };
 		229590DF1ED840500062F101 /* BasicDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */; };
 		229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */; };
+		22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D66A5C1EE9765500CBF912 /* RawValueType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
 		229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPoint.swift; sourceTree = "<group>"; };
+		22D66A5C1EE9765500CBF912 /* RawValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawValueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 				221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */,
 				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
+				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
@@ -446,6 +449,7 @@
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
 				224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
+				22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */,
 				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
 				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,
 				224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */,

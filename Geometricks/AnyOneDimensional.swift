@@ -1,10 +1,12 @@
-struct AnyOneDimensional<RawValue: FloatingPoint> {
+struct AnyOneDimensional<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
     private let _point: (RawValue) -> RawPoint<RawValue>
     private let _fractionOfNearestPoint: (RawPoint<RawValue>) -> RawValue
 	
 	let observableStorage: ObservableStorage
     
-    init<T: OneDimensional>(_ oneDimensional: T) where T.OneDimensionalRawValue == RawValue {
+    init<T: OneDimensional>(_ oneDimensional: T) where T.RawValue == RawValue {
         _point = oneDimensional.point
         _fractionOfNearestPoint = oneDimensional.fractionOfNearestPoint
 		
