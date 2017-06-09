@@ -9,7 +9,7 @@ final class CocoaDrawingUnit {
     private let defaultPointBorderWidth: CGFloat
     private let defaultPointBorderColor: NSColor
     private let defaultPointFillColor: NSColor
-    
+	
     init(defaultLineWidth: CGFloat = 2, defaultCurveColor: NSColor = .black, defaultPointRadius: CGFloat = 3, defaultPointBorderWidth: CGFloat = 1, defaultPointBorderColor: NSColor = .black, defaultPointFillColor: NSColor = .white) {
         self.defaultLineWidth = defaultLineWidth
         self.defaultCurveColor = defaultCurveColor
@@ -40,13 +40,23 @@ extension CocoaDrawingUnit {
 }
 
 extension CocoaDrawingUnit {
-    func setCurveWidth(_ width: CGFloat, of curve: Curve<CGFloat>) {
-        lineWidths[curve.identifier] = width
-    }
-    
-    func curveWidth(of curve: Curve<CGFloat>) -> CGFloat {
-        return lineWidth(of: curve.identifier)
-    }
+	func setLineWidth(_ width: CGFloat, of line: Line<CGFloat>) {
+		lineWidths[line.identifier] = width
+	}
+	
+	func lineWidth(of line: Line<CGFloat>) -> CGFloat {
+		return lineWidth(of: line.identifier)
+	}
+}
+
+extension CocoaDrawingUnit {
+	func setCurveWidth(_ width: CGFloat, of curve: Curve<CGFloat>) {
+		lineWidths[curve.identifier] = width
+	}
+	
+	func curveWidth(of curve: Curve<CGFloat>) -> CGFloat {
+		return lineWidth(of: curve.identifier)
+	}
 }
 
 extension CocoaDrawingUnit {
@@ -131,12 +141,12 @@ extension CocoaDrawingUnit: DrawingUnit {
         path.fill()
         path.stroke()
     }
-    
-    func drawLineSegment(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
-        let path = NSBezierPath.lineSegment(from: start, to: end)
-        path.lineWidth = lineWidth(of: identifier)
-        path.stroke()
-    }
+	
+	func drawLine(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
+		let path = NSBezierPath.line(from: start, to: end)
+		path.lineWidth = lineWidth(of: identifier)
+		path.stroke()
+	}
     
     func drawCurve(from start: NSPoint, to end: NSPoint, controlPoint1: NSPoint, controlPoint2: NSPoint, identifier: Identifier) {
         let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)

@@ -11,12 +11,12 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadCircle()
+		loadLine()
     }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        logicUnit.draw(in: drawingUnit)
+        logicUnit.draw(in: dirtyRect, using: drawingUnit)
     }
 }
 
@@ -46,6 +46,23 @@ extension Canvas {
 		drawingUnit.setPointFillColor(.red, of: midPoint)
 		drawingUnit.setLineWidth(0.5, of: line1)
 		drawingUnit.setLineWidth(0.5, of: line2)
+	}
+	
+	func loadLine() {
+		let startPoint = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let endPoint   = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 150))
+		let line = Line(from: startPoint, to: endPoint)
+		let midPoint = SlidingPoint(oneDimensional: line, fraction: 1 / 2)
+		
+		logicUnit.addFigure(line)
+		logicUnit.addFigure(midPoint)
+		logicUnit.addDraggablePoint(startPoint)
+		logicUnit.addDraggablePoint(endPoint)
+		logicUnit.addDraggablePoint(midPoint)
+		
+		drawingUnit.setPointRadius(6, of: midPoint)
+		drawingUnit.setPointBorderWidth(0, of: midPoint)
+		drawingUnit.setPointFillColor(.red, of: midPoint)
 	}
 	
 	func loadLineSegment() {

@@ -2,6 +2,7 @@ import Foundation
 
 extension NSPoint: ConvertibleFromRawPoint {
 	typealias RawValue = CGFloat
+	
     init(_ rawPoint: RawPoint<CGFloat>) {
         x = rawPoint.x
         y = rawPoint.y

@@ -10,8 +10,7 @@ final class LineSegment<_RawValue: FloatingPoint> {
         self.start = start
         self.end = end
 		
-		start.keepUpdated(self)
-		end.keepUpdated(self)
+		observe(start, end)
     }
     
     convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
@@ -23,8 +22,8 @@ extension LineSegment: Observer {
 }
 
 extension LineSegment: Drawable {
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawLineSegment(from: start, to: end, identifier: identifier)
+    func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+        drawingUnit.drawLine(from: start, to: end, identifier: identifier)
     }
 }
 

@@ -25,29 +25,33 @@ extension RawPoint {
 extension RawPoint {
 	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
 	static func fractionOfProjection(of point: RawPoint, onLineBetween start: RawPoint, and end: RawPoint) -> RawValue {
-		let delta1 = end - start
+		let delta1 = start - end
 		let delta2 = start - point
 		
-		let xConstant = delta1.changeInX * delta2.changeInX
-		let xCoefficient = delta1.changeInX.squared()
-		let yConstant = delta1.changeInY * delta2.changeInY
-		let yCoefficient = delta1.changeInY.squared()
+		let xConstant    = delta1.changeInX * delta2.changeInX
+		let xCoefficient = delta1.changeInX * delta1.changeInX
+		let yConstant    = delta1.changeInY * delta2.changeInY
+		let yCoefficient = delta1.changeInY * delta1.changeInY
 		
-		return -(xConstant + yConstant) / (xCoefficient + yCoefficient)
+		return (xConstant + yConstant) / (xCoefficient + yCoefficient)
 	}
 	
 	static func pointOnCurve(at fraction: RawValue, start: RawPoint, end: RawPoint, controlPoint1: RawPoint, controlPoint2: RawPoint) -> RawPoint {
 		let oppositeFraction = 1 - fraction
 		
-		let b1 = 3 * fraction         * oppositeFraction * oppositeFraction
-		let b2 = 3 * fraction 	      * fraction 	     * oppositeFraction
-		let b3 =     fraction 	      * fraction 	     * fraction
+		let b1 = 3 * fraction * oppositeFraction * oppositeFraction
+		let b2 = 3 * fraction * fraction 	     * oppositeFraction
+		let b3 =     fraction * fraction 	     * fraction
 		
 		let v1 = b1 * (controlPoint1 - start)
 		let v2 = b2 * (controlPoint2 - start)
 		let v3 = b3 * (end           - start)
 		
 		return start + v1 + v2 + v3
+	}
+	
+	static func point(at fraction: RawValue, between start: RawPoint, and end: RawPoint) -> RawPoint {
+		return start + fraction * (end - start)
 	}
 	
 	static func fractionOfProjectionOnCurve(of point: RawPoint, start: RawPoint, end: RawPoint, controlPoint1: RawPoint, controlPoint2: RawPoint) -> RawValue {
@@ -70,6 +74,13 @@ extension RawPoint {
 		_ = "\(a0) + \(a1)x + \(a2)x^2 + \(a3)x^3 + \(a4)x^4 + \(a5)x^5"
 		
 		return 1/2
+	}
+	
+	static func fractionsOfLineIntersections(line1: (start: RawPoint, end: RawPoint), line2: (start: RawPoint, end: RawPoint)) -> (RawValue, RawValue)? {
+		let matrix = TwoTwoMatrix(line1.end - line1.start, line2.start - line2.end)
+		let vector = line2.start - line1.start
+		
+		return matrix.inverse.map { vector * $0 }.map { ($0.changeInX, $0.changeInY) }
 	}
 }
 

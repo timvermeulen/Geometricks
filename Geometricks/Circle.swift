@@ -10,8 +10,7 @@ final class Circle<_RawValue: FloatingPoint> {
 		self.center = center
 		self.pointOnBoundary = pointOnBoundary
 		
-		center.keepUpdated(self)
-		pointOnBoundary.keepUpdated(self)
+		observe(center, pointOnBoundary)
 	}
 	
 	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
@@ -23,7 +22,7 @@ extension Circle: Observer {
 }
 
 extension Circle: Drawable {
-	func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+	func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		drawingUnit.drawCircle(center: center, radius: pointOnBoundary.distance(to: center), identifier: identifier)
 	}
 }

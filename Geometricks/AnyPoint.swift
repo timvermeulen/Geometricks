@@ -1,7 +1,7 @@
 struct AnyPoint<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
-    private let _draw: (AnyDrawingUnit<RawValue>) -> Void
+    private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>
     
     let identifier: Identifier
@@ -17,8 +17,8 @@ struct AnyPoint<_RawValue: FloatingPoint> {
 }
 
 extension AnyPoint: Drawable {
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        _draw(drawingUnit)
+    func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+        _draw(rect, drawingUnit)
     }
 }
 

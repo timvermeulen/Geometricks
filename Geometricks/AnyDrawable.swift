@@ -1,7 +1,7 @@
 struct AnyDrawable<_RawValue: FloatingPoint>: Drawable {
 	typealias RawValue = _RawValue
 	
-    private let _draw: (AnyDrawingUnit<RawValue>) -> Void
+    private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
 	let identifier: Identifier
     
     init<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
@@ -9,11 +9,7 @@ struct AnyDrawable<_RawValue: FloatingPoint>: Drawable {
 		identifier = drawable.identifier
     }
     
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
-        _draw(drawingUnit)
-    }
-    
-    func draw<T: DrawingUnit>(in drawingUnit: T) where T.RawValue == RawValue {
-        draw(in: AnyDrawingUnit(drawingUnit))
+    func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+        _draw(rect, drawingUnit)
     }
 }

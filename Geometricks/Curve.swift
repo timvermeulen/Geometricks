@@ -14,10 +14,7 @@ final class Curve<_RawValue: FloatingPoint> {
         self.controlPoint1 = controlPoint1
         self.controlPoint2 = controlPoint2
 		
-		start.keepUpdated(self)
-		end.keepUpdated(self)
-		controlPoint1.keepUpdated(self)
-		controlPoint2.keepUpdated(self)
+		observe(start, end, controlPoint1, controlPoint2)
     }
     
     convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
@@ -34,7 +31,7 @@ extension Curve: Observer {
 }
 
 extension Curve: Drawable {
-    func draw(in drawingUnit: AnyDrawingUnit<RawValue>) {
+    func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
         drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2, identifier: identifier)
     }
 }

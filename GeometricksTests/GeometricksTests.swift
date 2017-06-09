@@ -16,7 +16,7 @@ class GeometricksTests: XCTestCase {
         
         drawingUnit.setPointRadius(5, of: end)
         
-        logicUnit.draw(in: drawingUnit)
+		logicUnit.draw(in: RawRect(origin: RawPoint(x: 0, y: 0), size: RawVector(changeInX: 0, changeInY: 0)), using: drawingUnit)
         
         let expectedLogs: Set<BasicDrawingUnit<Double>.Log> = [
             .point(RawPoint(x: 100, y: 100), size: 1),
