@@ -7,7 +7,7 @@ protocol DrawingUnit: RawValueType {
     func drawCurve(from start: Point, to end: Point, controlPoint1: Point, controlPoint2: Point, identifier: Identifier)
 	func drawCircle(center: Point, radius: RawValue, identifier: Identifier)
 	
-	func drawingWillStart(in rect: Rect)
+	func drawingWillStart(in rect: Rect?)
     func drawingDidEnd()
 }
 
@@ -28,13 +28,13 @@ extension DrawingUnit {
 		drawCircle(center: Point(center), radius: radius, identifier: identifier)
 	}
 	
-	func drawingWillStart(in rect: RawRect<RawValue>) {
-		drawingWillStart(in: Rect(rect))
+	func drawingWillStart(in rect: RawRect<RawValue>?) {
+		drawingWillStart(in: rect.map(Rect.init))
 	}
     
     func drawingDidEnd() {}
 }
 
 extension DrawingUnit where Rect == RawRect<RawValue> {
-	func drawingWillStart(in rect: RawRect<RawValue>) {}
+	func drawingWillStart(in rect: RawRect<RawValue>?) {}
 }

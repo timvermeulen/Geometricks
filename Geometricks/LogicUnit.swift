@@ -43,7 +43,7 @@ final class LogicUnit<_RawValue: FloatingPoint> {
 }
 
 extension LogicUnit: Drawable {
-	func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		drawingUnit.drawingWillStart(in: rect)
 		figures.forEach { $0.draw(in: rect, using: drawingUnit) }
 		drawingUnit.drawingDidEnd()

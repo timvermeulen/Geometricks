@@ -3,7 +3,7 @@ struct AnyDrawingUnit<RawValue: FloatingPoint> {
 	private let _drawLine: (RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
     private let _drawCurve: (RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
 	private let _drawCircle: (RawPoint<RawValue>, RawValue, Identifier) -> Void
-	private let _drawingWillStart: (RawRect<RawValue>) -> Void
+	private let _drawingWillStart: (RawRect<RawValue>?) -> Void
     private let _drawingDidEnd: () -> Void
     
     init<T: DrawingUnit>(_ drawingUnit: T) where T.RawValue == RawValue {
@@ -31,8 +31,8 @@ struct AnyDrawingUnit<RawValue: FloatingPoint> {
 		_drawCircle(center.makeRawPoint(), radius, identifier)
 	}
 	
-	func drawingWillStart<T: ConvertibleToRawRect>(in rect: T) where T.RawValue == RawValue {
-		_drawingWillStart(rect.makeRawRect())
+	func drawingWillStart<T: ConvertibleToRawRect>(in rect: T?) where T.RawValue == RawValue {
+		_drawingWillStart(rect?.makeRawRect())
 	}
     
     func drawingDidEnd() {

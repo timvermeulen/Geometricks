@@ -22,7 +22,9 @@ extension Line: Observer {
 }
 
 extension Line: Drawable {
-	func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
+		guard let rect = rect else { return }
+		
 		// TODO: put somewhere else
 		let rawStart = start.makeRawPoint()
 		let rawEnd = end.makeRawPoint()

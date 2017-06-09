@@ -22,7 +22,7 @@ extension LineSegment: Observer {
 }
 
 extension LineSegment: Drawable {
-    func draw(in rect: RawRect<RawValue>, using drawingUnit: AnyDrawingUnit<RawValue>) {
+    func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
         drawingUnit.drawLine(from: start, to: end, identifier: identifier)
     }
 }
