@@ -1,7 +1,7 @@
 enum Math<RawValue: FloatingPoint> {
-	static func fractionsOfLineIntersections(_ line1: RawLine<RawValue>, _ line2: RawLine<RawValue>) -> (RawValue, RawValue)? {
-		let matrix = TwoTwoMatrix(line1.end - line1.start, line2.start - line2.end)
-		let vector = line2.start - line1.start
+	static func fractionsOfIntersections(line line0: RawLine<RawValue>, line line1: RawLine<RawValue>) -> (RawValue, RawValue)? {
+		let matrix = TwoTwoMatrix(line0.end - line0.start, line1.start - line1.end)
+		let vector = line1.start - line0.start
 		
 		return matrix.inverse.map { vector * $0 }.map { ($0.changeInX, $0.changeInY) }
 	}
@@ -10,7 +10,7 @@ enum Math<RawValue: FloatingPoint> {
 		let sides = rect.sides
 		
 		let fractions = [sides.0, sides.1, sides.2, sides.3]
-			.flatMap { fractionsOfLineIntersections(line, $0) }
+			.flatMap { fractionsOfIntersections(line: line, line: $0) }
 			.filter { 0...1 ~= $0.1 }
 			.map { $0.0 }
 			.sorted()
@@ -20,6 +20,27 @@ enum Math<RawValue: FloatingPoint> {
 		return (fractions[0], fractions[1])
 	}
 	
+	static func fractionOfIntersection(line: RawLine<RawValue>, circle: RawCircle<RawValue>, option: LineCircleIntersection<RawValue>.Option) -> RawValue? {
+		let delta = line.start - circle.center
+		
+		let c0 = delta • delta - circle.radius.squared()
+		let c1 = 2 * (delta • line.delta)
+		let c2 = line.delta • line.delta
+		
+		let polynomial = QuadraticPolynomial(c0, c1, c2)
+		
+		switch (option, polynomial.realRoots) {
+		case (.only, .one(let root)):
+			return root
+		case (.first, .two(let root0, _)):
+			return root0
+		case (.second, .two(_, let root1)):
+			return root1
+		default:
+			return nil
+		}
+	}
+		
 	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
 	static func fractionOfProjection(of point: RawPoint<RawValue>, on line: RawLine<RawValue>) -> RawValue {
 		let delta1 = line.delta
@@ -52,6 +73,7 @@ enum Math<RawValue: FloatingPoint> {
 		
 		_ = "\(a0) + \(a1)x + \(a2)x^2 + \(a3)x^3 + \(a4)x^4 + \(a5)x^5"
 		
+		// TODO
 		return 1/2
 	}
 }

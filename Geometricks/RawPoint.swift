@@ -14,7 +14,7 @@ extension RawPoint {
     }
     
     func distance(to point: RawPoint) -> RawValue {
-        return (point - self).length
+        return (point - self).norm
     }
 	
 	func rotated(by angle: RawValue, around point: RawPoint) -> RawPoint {

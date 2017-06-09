@@ -91,6 +91,8 @@ extension CocoaDrawingUnit: DrawingUnit {
     }
 	
 	func drawLine(from start: NSPoint, to end: NSPoint, identifier: Identifier) {
+		strokeColor(of: identifier).setStroke()
+		
 		let path = NSBezierPath.line(from: start, to: end)
 		path.lineWidth = strokeWidth(of: identifier)
 		path.stroke()
@@ -105,6 +107,8 @@ extension CocoaDrawingUnit: DrawingUnit {
     }
 	
 	func drawCircle(center: NSPoint, radius: CGFloat, identifier: Identifier) {
+		strokeColor(of: identifier).setStroke()
+		
 		let path = NSBezierPath(ovalIn: NSRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2))
 		path.lineWidth = strokeWidth(of: identifier)
 		path.stroke()

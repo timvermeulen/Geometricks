@@ -35,11 +35,19 @@ final class LogicUnit<_RawValue: FloatingPoint> {
     func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
         figures.append(AnyDrawable(drawable))
     }
+	
+	func addFigures<T: Drawable>(_ drawables: T...) where T.RawValue == RawValue {
+		drawables.forEach(addFigure)
+	}
     
     func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.RawValue == RawValue {
 		addFigure(point)
         draggablePoints.append(AnyDraggablePoint(point))
     }
+	
+	func addDraggablePoints<P: DraggablePoint>(_ points: P...) where P.RawValue == RawValue {
+		points.forEach(addDraggablePoint)
+	}
 }
 
 extension LogicUnit: Drawable {

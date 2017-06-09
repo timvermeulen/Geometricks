@@ -26,9 +26,13 @@ extension RawVector {
 	static prefix func - (vector: RawVector) -> RawVector {
 		return RawVector(changeInX: -vector.changeInX, changeInY: -vector.changeInY)
 	}
+	
+	var squaredNorm: RawValue {
+		return self • self
+	}
     
-    var length: RawValue {
-        return (changeInX * changeInX + changeInY * changeInY).squareRoot()
+    var norm: RawValue {
+        return squaredNorm.squareRoot()
     }
 	
 	func rotated(by angle: RawValue) -> RawVector {

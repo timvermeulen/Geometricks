@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadIntersection()
+		loadLineCircle()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -116,6 +116,31 @@ extension Canvas {
 		drawingUnit.setPointRadius(6, of: intersection)
 		drawingUnit.setStrokeWidth(0, of: intersection)
 		drawingUnit.setFillColor(.red, of: intersection)
+	}
+	
+	func loadLineCircle() {
+		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 100))
+		let line = Line(from: point0, to: point1)
+		
+		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 300, y: 200))
+		let point3 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 300, y: 250))
+		let circle = Circle(center: point2, pointOnBoundary: point3)
+		
+		let intersection0 = LineCircleIntersection(line: line, circle: circle, option: .first)
+		let intersection1 = LineCircleIntersection(line: line, circle: circle, option: .second)
+		
+		let segment0 = LineSegment(from: point0, to: point1)
+		let segment1 = LineSegment(from: intersection0, to: intersection1)
+		
+		logicUnit.addFigure(line)
+		logicUnit.addFigure(circle)
+		logicUnit.addFigures(segment0, segment1)
+		logicUnit.addFigures(intersection0, intersection1)
+		logicUnit.addDraggablePoints(point0, point1)
+		
+		drawingUnit.setStrokeColor(.clear, of: line)
+		drawingUnit.setStrokeColor(.red, of: segment1)
 	}
 }
 
