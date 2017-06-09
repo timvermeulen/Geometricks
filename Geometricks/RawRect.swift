@@ -13,6 +13,20 @@ struct RawRect<_RawValue: FloatingPoint> {
 	var topLeft:     RawPoint<RawValue> { return RawPoint(x: minX, y: maxY) }
 	var topRight:    RawPoint<RawValue> { return RawPoint(x: maxX, y: maxY) }
 	var bottomRight: RawPoint<RawValue> { return RawPoint(x: maxX, y: minY) }
+	
+	struct Side {
+		let start: RawPoint<RawValue>
+		let end: RawPoint<RawValue>
+	}
+	
+	var sides: (Side, Side, Side, Side) {
+		return (
+			Side(start: bottomLeft, end: topLeft),
+			Side(start: topLeft, end: topRight),
+			Side(start: topRight, end: bottomRight),
+			Side(start: bottomRight, end: bottomLeft)
+		)
+	}
 }
 
 extension RawRect: ConvertibleFromRawRect {

@@ -38,7 +38,7 @@ extension Curve: Drawable {
 
 extension Curve: OneDimensional {
     func point(at fraction: RawValue) -> RawPoint<RawValue> {
-        return RawPoint.pointOnCurve(
+        return .pointOnCurve(
 			at: fraction,
 			start: start.makeRawPoint(),
 			end: end.makeRawPoint(),
@@ -48,7 +48,7 @@ extension Curve: OneDimensional {
     }
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-        return RawPoint.fractionOfProjectionOnCurve(
+        return Math.fractionOfProjectionOnCurve(
 			of: point,
 			start: start.makeRawPoint(),
 			end: end.makeRawPoint(),

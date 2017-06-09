@@ -23,19 +23,6 @@ extension RawPoint {
 }
 
 extension RawPoint {
-	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
-	static func fractionOfProjection(of point: RawPoint, onLineBetween start: RawPoint, and end: RawPoint) -> RawValue {
-		let delta1 = start - end
-		let delta2 = start - point
-		
-		let xConstant    = delta1.changeInX * delta2.changeInX
-		let xCoefficient = delta1.changeInX * delta1.changeInX
-		let yConstant    = delta1.changeInY * delta2.changeInY
-		let yCoefficient = delta1.changeInY * delta1.changeInY
-		
-		return (xConstant + yConstant) / (xCoefficient + yCoefficient)
-	}
-	
 	static func pointOnCurve(at fraction: RawValue, start: RawPoint, end: RawPoint, controlPoint1: RawPoint, controlPoint2: RawPoint) -> RawPoint {
 		let oppositeFraction = 1 - fraction
 		
@@ -52,35 +39,6 @@ extension RawPoint {
 	
 	static func point(at fraction: RawValue, between start: RawPoint, and end: RawPoint) -> RawPoint {
 		return start + fraction * (end - start)
-	}
-	
-	static func fractionOfProjectionOnCurve(of point: RawPoint, start: RawPoint, end: RawPoint, controlPoint1: RawPoint, controlPoint2: RawPoint) -> RawValue {
-		let p0 = start - point
-		let p1 = 3 * (controlPoint1 - start)
-		let p2 = 3 * ((start - controlPoint1) + (controlPoint2 - controlPoint1))
-		let p3 = (end - start) + 3 * (controlPoint1 - controlPoint2)
-		
-		let d0 = p1
-		let d1 = 2 * p2
-		let d2 = 3 * p3
-		
-		let a0 = p0 • d0
-		let a1 = p0 • d1 + p1 • d0
-		let a2 = p0 • d2 + p1 • d1 + p2 • d0
-		let a3 = p1 • d2 + p2 • d1 + p3 • d0
-		let a4 = p2 • d2 + p3 • d1
-		let a5 = p3 • d2
-		
-		_ = "\(a0) + \(a1)x + \(a2)x^2 + \(a3)x^3 + \(a4)x^4 + \(a5)x^5"
-		
-		return 1/2
-	}
-	
-	static func fractionsOfLineIntersections(line1: (start: RawPoint, end: RawPoint), line2: (start: RawPoint, end: RawPoint)) -> (RawValue, RawValue)? {
-		let matrix = TwoTwoMatrix(line1.end - line1.start, line2.start - line2.end)
-		let vector = line2.start - line1.start
-		
-		return matrix.inverse.map { vector * $0 }.map { ($0.changeInX, $0.changeInY) }
 	}
 }
 
