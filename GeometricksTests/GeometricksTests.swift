@@ -21,9 +21,9 @@ class GeometricksTests: XCTestCase {
         let expectedLogs: Set<BasicDrawingUnit<Double>.Log> = [
             .point(RawPoint(x: 100, y: 100), size: 1),
             .point(RawPoint(x: 200, y: 200), size: 5),
-            .lineSegment(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
+            .line(start: RawPoint(x: 100, y: 100), end: RawPoint(x: 200, y: 200))
         ]
-        
+		
         XCTAssertEqual(drawingUnit.logs, [expectedLogs])
     }
 }

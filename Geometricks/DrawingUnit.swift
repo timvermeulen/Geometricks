@@ -12,19 +12,19 @@ protocol DrawingUnit: RawValueType {
 }
 
 extension DrawingUnit {
-    func drawPoint(at location: RawPoint<RawValue>, identifier: Identifier) {
+    func drawRawPoint(at location: RawPoint<RawValue>, identifier: Identifier) {
         drawPoint(at: Point(location), identifier: identifier)
     }
 	
-	func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
+	func drawRawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
 		drawLine(from: Point(start), to: Point(end), identifier: identifier)
 	}
     
-    func drawCurve(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>, identifier: Identifier) {
+    func drawRawCurve(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>, identifier: Identifier) {
         drawCurve(from: Point(start), to: Point(end), controlPoint1: Point(controlPoint1), controlPoint2: Point(controlPoint2), identifier: identifier)
     }
 	
-	func drawCircle(center: RawPoint<RawValue>, radius: RawValue, identifier: Identifier) {
+	func drawRawCircle(center: RawPoint<RawValue>, radius: RawValue, identifier: Identifier) {
 		drawCircle(center: Point(center), radius: radius, identifier: identifier)
 	}
 	

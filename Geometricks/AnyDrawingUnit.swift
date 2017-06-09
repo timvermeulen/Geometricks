@@ -7,10 +7,10 @@ struct AnyDrawingUnit<RawValue: FloatingPoint> {
     private let _drawingDidEnd: () -> Void
     
     init<T: DrawingUnit>(_ drawingUnit: T) where T.RawValue == RawValue {
-        _drawPoint = drawingUnit.drawPoint
-		_drawLine = drawingUnit.drawLine
-        _drawCurve = drawingUnit.drawCurve
-		_drawCircle = drawingUnit.drawCircle
+        _drawPoint = drawingUnit.drawRawPoint
+		_drawLine = drawingUnit.drawRawLine
+        _drawCurve = drawingUnit.drawRawCurve
+		_drawCircle = drawingUnit.drawRawCircle
 		_drawingWillStart = drawingUnit.drawingWillStart
         _drawingDidEnd = drawingUnit.drawingDidEnd
     }
