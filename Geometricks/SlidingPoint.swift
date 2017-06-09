@@ -7,7 +7,7 @@ final class SlidingPoint<_RawValue: FloatingPoint> {
 		didSet { rawPoint = floor.point(at: fraction) }
 	}
 	
-	var rawPoint: RawPoint<RawValue> {
+	private var rawPoint: RawPoint<RawValue> {
 		didSet { updateObservers() }
 	}
 	
@@ -28,16 +28,10 @@ extension SlidingPoint: Observer {
 	}
 }
 
-extension SlidingPoint: Drawable {
-}
-
 extension SlidingPoint: ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue> {
         return rawPoint
     }
-}
-
-extension SlidingPoint: Point {
 }
 
 extension SlidingPoint: DraggablePoint {

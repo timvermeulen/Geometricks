@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadLine()
+		loadIntersection()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -95,6 +95,27 @@ extension Canvas {
 		
 		drawingUnit.setPointRadius(6, of: sliding)
 		drawingUnit.setPointFillColor(.red, of: sliding)
+	}
+	
+	func loadIntersection() {
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 100))
+		let point3 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
+		let point4 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 150))
+		
+		let line1 = Line(from: point1, to: point2)
+		let line2 = Line(from: point3, to: point4)
+		
+		let intersection = LineLineIntersection(line1, line2)
+		
+		[point1, point2, point3, point4].forEach(logicUnit.addDraggablePoint)
+		[point1, point2, point3, point4].forEach(logicUnit.addFigure)
+		[line1, line2].forEach(logicUnit.addFigure)
+		logicUnit.addFigure(intersection)
+		
+		drawingUnit.setPointRadius(6, of: intersection)
+		drawingUnit.setPointBorderWidth(0, of: intersection)
+		drawingUnit.setPointFillColor(.red, of: intersection)
 	}
 }
 

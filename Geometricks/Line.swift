@@ -1,8 +1,8 @@
 final class Line<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
-	private let start: AnyPoint<RawValue>
-	private let end: AnyPoint<RawValue>
+	let start: AnyPoint<RawValue>
+	let end: AnyPoint<RawValue>
 	
 	let observableStorage = ObservableStorage()
 	
