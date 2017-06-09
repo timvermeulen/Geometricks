@@ -3,11 +3,11 @@ final class SlidingPoint<_RawValue: FloatingPoint> {
 	
     private let floor: AnyOneDimensional<RawValue>
 	
-	private var fraction: RawValue {
-		didSet { rawPoint = floor.point(at: fraction) }
+	private var fraction: RawValue? {
+		didSet { rawPoint = fraction.flatMap(floor.point(at:)) }
 	}
 	
-	private var rawPoint: RawPoint<RawValue> {
+	private var rawPoint: RawPoint<RawValue>? {
 		didSet { updateObservers() }
 	}
 	
@@ -24,12 +24,12 @@ final class SlidingPoint<_RawValue: FloatingPoint> {
 
 extension SlidingPoint: Observer {
 	func update() {
-		rawPoint = floor.point(at: fraction)
+		rawPoint = fraction.flatMap(floor.point(at:))
 	}
 }
 
 extension SlidingPoint: ConvertibleToRawPoint {
-    func makeRawPoint() -> RawPoint<RawValue> {
+    func makeRawPoint() -> RawPoint<RawValue>? {
         return rawPoint
     }
 }

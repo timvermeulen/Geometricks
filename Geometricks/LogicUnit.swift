@@ -10,15 +10,16 @@ final class LogicUnit<_RawValue: FloatingPoint> {
     
     weak var delegate: LogicUnitDelegate?
     
-    func nearestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
-        return draggablePoints
-            .lazy
-            .map { (point: $0, distance: $0.distance(to: point)) }
-            .min(by: { $0.distance < $1.distance })
+    func nearestDraggablePoint<P: ConvertibleToRawPoint>(to point: P) -> (point: AnyDraggablePoint<RawValue>, rawPoint: RawPoint<RawValue>, distance: RawValue)? where P.RawValue == RawValue {
+		return draggablePoints(near: point).min(by: { $0.distance < $1.distance })
     }
     
-    func draggablePoints<P: ConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
-        return draggablePoints.map { (point: $0, distance: $0.distance(to: point)) }
+	func draggablePoints<P: ConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, rawPoint: RawPoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
+		return draggablePoints.flatMap {
+			guard let rawPoint = $0.makeRawPoint() else { return nil }
+			// TODO: fix `!` by adding a protocol?
+			return (point: $0, rawPoint: rawPoint, distance: rawPoint.distance(to: point)!)
+		}
     }
     
     func startDragging(_ point: AnyDraggablePoint<RawValue>) {

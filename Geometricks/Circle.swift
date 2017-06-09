@@ -23,18 +23,26 @@ extension Circle: Observer {
 
 extension Circle: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-		drawingUnit.drawCircle(center: center, radius: pointOnBoundary.distance(to: center), identifier: identifier)
+		guard let radius = pointOnBoundary.distance(to: center) else { return }
+		
+		drawingUnit.drawCircle(center: center, radius: radius, identifier: identifier)
 	}
 }
 
 extension Circle: OneDimensional {
-	func point(at fraction: RawValue) -> RawPoint<RawValue> {
-		return pointOnBoundary.makeRawPoint().rotated(by: fraction, around: center.makeRawPoint())
+	func point(at fraction: RawValue) -> RawPoint<RawValue>? {
+		guard let rawCenter = center.makeRawPoint() else { return nil }
+		
+		return pointOnBoundary.makeRawPoint()?.rotated(by: fraction, around: rawCenter)
 	}
 	
-	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		let rawCenter = center.makeRawPoint()
-		let angle = (point - rawCenter).angleWithXAxis - (pointOnBoundary.makeRawPoint() - rawCenter).angleWithXAxis
+	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
+		guard
+			let rawCenter = center.makeRawPoint(),
+			let rawPointOnBoundary = pointOnBoundary.makeRawPoint()
+			else { return nil }
+		
+		let angle = (point - rawCenter).angleWithXAxis - (rawPointOnBoundary - rawCenter).angleWithXAxis
 		return angle.mod(.tau)
 	}
 }

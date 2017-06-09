@@ -37,23 +37,39 @@ extension Curve: Drawable {
 }
 
 extension Curve: OneDimensional {
-    func point(at fraction: RawValue) -> RawPoint<RawValue> {
+    func point(at fraction: RawValue) -> RawPoint<RawValue>? {
+		// TODO: raw curve type?
+		
+		guard
+			let rawStart = start.makeRawPoint(),
+			let rawEnd = end.makeRawPoint(),
+			let rawControl1 = controlPoint1.makeRawPoint(),
+			let rawControl2 = controlPoint2.makeRawPoint()
+			else { return nil }
+		
         return .pointOnCurve(
 			at: fraction,
-			start: start.makeRawPoint(),
-			end: end.makeRawPoint(),
-			controlPoint1: controlPoint1.makeRawPoint(),
-			controlPoint2: controlPoint2.makeRawPoint()
+			start: rawStart,
+			end: rawEnd,
+			controlPoint1: rawControl1,
+			controlPoint2: rawControl2
 		)
     }
     
-    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
+		guard
+			let rawStart = start.makeRawPoint(),
+			let rawEnd = end.makeRawPoint(),
+			let rawControl1 = controlPoint1.makeRawPoint(),
+			let rawControl2 = controlPoint2.makeRawPoint()
+			else { return nil }
+		
         return Math.fractionOfProjectionOnCurve(
 			of: point,
-			start: start.makeRawPoint(),
-			end: end.makeRawPoint(),
-			controlPoint1: controlPoint1.makeRawPoint(),
-			controlPoint2: controlPoint2.makeRawPoint()
+			start: rawStart,
+			end: rawEnd,
+			controlPoint1: rawControl1,
+			controlPoint2: rawControl2
 		)
     }
 }

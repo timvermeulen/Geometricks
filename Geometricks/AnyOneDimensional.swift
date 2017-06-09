@@ -1,8 +1,8 @@
 struct AnyOneDimensional<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
-    private let _point: (RawValue) -> RawPoint<RawValue>
-    private let _fractionOfNearestPoint: (RawPoint<RawValue>) -> RawValue
+    private let _point: (RawValue) -> RawPoint<RawValue>?
+    private let _fractionOfNearestPoint: (RawPoint<RawValue>) -> RawValue?
 	
 	let observableStorage: ObservableStorage
     
@@ -15,11 +15,11 @@ struct AnyOneDimensional<_RawValue: FloatingPoint> {
 }
 
 extension AnyOneDimensional: OneDimensional {
-    func point(at fraction: RawValue) -> RawPoint<RawValue> {
+    func point(at fraction: RawValue) -> RawPoint<RawValue>? {
         return _point(fraction)
     }
     
-    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
         return _fractionOfNearestPoint(point)
     }
 }

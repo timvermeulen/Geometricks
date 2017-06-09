@@ -13,6 +13,10 @@ extension NSPoint: ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<CGFloat> {
         return RawPoint(x: x, y: y)
     }
+	
+	func makeRawPoint() -> RawPoint<CGFloat>? {
+		return .some(makeRawPoint())
+	}
 }
 
 extension NSPoint: ConvertibleFromRawVector {

@@ -15,10 +15,10 @@ final class CocoaInteractionUnit {
 		switch recognizer.state {
 		case .began:
 			let point = recognizer.location(in: recognizer.view)
-			guard let nearestPoint = logicUnit.draggablePoints(near: point).first(where: { $0.distance < drawingUnit.pointRadius(of: $0.point) })?.point else { return }
+			guard let (nearestPoint, rawPoint, _) = logicUnit.draggablePoints(near: point).first(where: { $0.distance < drawingUnit.pointRadius(of: $0.point) }) else { return }
 			
 			logicUnit.startDragging(nearestPoint)
-			self.point = (nearestPoint, nearestPoint.makeRawPoint())
+			self.point = (nearestPoint, rawPoint)
 			
 		case .changed:
 			let translation = recognizer.translation(in: recognizer.view)

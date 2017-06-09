@@ -3,7 +3,7 @@ struct AnyDraggablePoint<_RawValue: FloatingPoint> {
 	
     private let _takeOnValue: (RawPoint<RawValue>) -> Void
     private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
-    private let _makeRawPoint: () -> RawPoint<RawValue>
+    private let _makeRawPoint: () -> RawPoint<RawValue>?
     
     let identifier: Identifier
 	let observableStorage: ObservableStorage
@@ -23,7 +23,7 @@ extension AnyDraggablePoint: DraggablePoint {
         _draw(rect, drawingUnit)
     }
     
-    func makeRawPoint() -> RawPoint<RawValue> {
+    func makeRawPoint() -> RawPoint<RawValue>? {
         return _makeRawPoint()
     }
     

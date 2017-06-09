@@ -25,22 +25,23 @@ extension Line: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		guard
 			let rect = rect,
-			let fractions = Math.fractionsOfLine(RawLine(start: start, end: end), intersectingWith: rect)
+			let rawLine = RawLine(self),
+			let fractions = Math.fractionsOfLine(rawLine, intersectingWith: rect),
+			let lineStart = point(at: fractions.0),
+			let lineEnd = point(at: fractions.1)
 			else { return }
 		
-		let lineStart = point(at: fractions.0)
-		let lineEnd   = point(at: fractions.1)
 		
 		drawingUnit.drawLine(from: lineStart, to: lineEnd, identifier: identifier)
 	}
 }
 
 extension Line: OneDimensional {
-	func point(at fraction: RawValue) -> RawPoint<RawValue> {
-		return .point(at: fraction, between: start.makeRawPoint(), and: end.makeRawPoint())
+	func point(at fraction: RawValue) -> RawPoint<RawValue>? {
+		return RawLine(self).map { .point(at: fraction, on: $0) }
 	}
 	
-	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		return Math.fractionOfProjection(of: point, onLine: RawLine(start: start, end: end))
+	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
+		return RawLine(self).map { Math.fractionOfProjection(of: point, onLine: $0) }
 	}
 }

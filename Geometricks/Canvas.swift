@@ -101,7 +101,7 @@ extension Canvas {
 		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
 		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 100))
 		let point3 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
-		let point4 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 150))
+		let point4 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 150, y: 200))
 		
 		let line1 = Line(from: point1, to: point2)
 		let line2 = Line(from: point3, to: point4)

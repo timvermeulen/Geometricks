@@ -37,8 +37,8 @@ extension RawPoint {
 		return start + v1 + v2 + v3
 	}
 	
-	static func point(at fraction: RawValue, between start: RawPoint, and end: RawPoint) -> RawPoint {
-		return start + fraction * (end - start)
+	static func point(at fraction: RawValue, on line: RawLine<RawValue>) -> RawPoint {
+		return line.start + fraction * line.delta
 	}
 }
 
@@ -61,7 +61,7 @@ extension RawPoint: ConvertibleFromRawPoint {
 }
 
 extension RawPoint: ConvertibleToRawPoint {
-    func makeRawPoint() -> RawPoint {
+    func makeRawPoint() -> RawPoint? {
         return self
     }
 }

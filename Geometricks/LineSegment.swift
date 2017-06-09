@@ -28,15 +28,15 @@ extension LineSegment: Drawable {
 }
 
 extension LineSegment: OneDimensional {
-    func point(at fraction: RawValue) -> RawPoint<RawValue> {
-        let rawStart = start.makeRawPoint()
-        let rawEnd = end.makeRawPoint()
-        
+    func point(at fraction: RawValue) -> RawPoint<RawValue>? {
+		guard let rawStart = start.makeRawPoint(), let rawEnd = end.makeRawPoint() else { return nil }
         return rawStart + fraction * (rawEnd - rawStart)
     }
     
-    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		let fraction = Math.fractionOfProjection(of: point, onLine: RawLine(self))
+    func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
+		guard let rawLine = RawLine(self) else { return nil }
+		
+		let fraction = Math.fractionOfProjection(of: point, onLine: rawLine)
 		return fraction.clamped(to: 0...1)
     }
 }

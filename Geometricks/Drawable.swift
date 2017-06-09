@@ -14,6 +14,8 @@ extension Drawable {
 
 extension Drawable where Self: ConvertibleToRawPoint {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-		drawingUnit.drawPoint(at: makeRawPoint(), identifier: identifier)
+		if let rawPoint = makeRawPoint() {
+			drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
+		}
 	}
 }

@@ -2,7 +2,7 @@ struct AnyPoint<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
     private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
-    private let _makeRawPoint: () -> RawPoint<RawValue>
+    private let _makeRawPoint: () -> RawPoint<RawValue>?
     
     let identifier: Identifier
 	let observableStorage: ObservableStorage
@@ -23,7 +23,7 @@ extension AnyPoint: Drawable {
 }
 
 extension AnyPoint: ConvertibleToRawPoint {
-    func makeRawPoint() -> RawPoint<RawValue> {
+    func makeRawPoint() -> RawPoint<RawValue>? {
         return _makeRawPoint()
     }
 }

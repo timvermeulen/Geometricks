@@ -16,19 +16,29 @@ struct AnyDrawingUnit<RawValue: FloatingPoint> {
     }
     
     func drawPoint<P: ConvertibleToRawPoint>(at location: P, identifier: Identifier) where P.RawValue == RawValue {
-        _drawPoint(location.makeRawPoint(), identifier)
+		guard let rawPoint = location.makeRawPoint() else { return }
+        _drawPoint(rawPoint, identifier)
     }
 	
 	func drawLine<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint>(from start: P1, to end: P2, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue {
-		_drawLine(start.makeRawPoint(), end.makeRawPoint(), identifier)
+		guard let rawStart = start.makeRawPoint(), let rawEnd = end.makeRawPoint() else { return }
+		_drawLine(rawStart, rawEnd, identifier)
 	}
     
     func drawCurve<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint, P3: ConvertibleToRawPoint, P4: ConvertibleToRawPoint>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
-        _drawCurve(start.makeRawPoint(), end.makeRawPoint(), controlPoint1.makeRawPoint(), controlPoint2.makeRawPoint(), identifier)
+		guard
+			let rawStart = start.makeRawPoint(),
+			let rawEnd = end.makeRawPoint(),
+			let rawControlPoint1 = controlPoint1.makeRawPoint(),
+			let rawControlPoint2 = controlPoint2.makeRawPoint()
+			else { return }
+		
+        _drawCurve(rawStart, rawEnd, rawControlPoint1, rawControlPoint2, identifier)
     }
 	
 	func drawCircle<P: ConvertibleToRawPoint>(center: P, radius: RawValue, identifier: Identifier) where P.RawValue == RawValue {
-		_drawCircle(center.makeRawPoint(), radius, identifier)
+		guard let rawCenter = center.makeRawPoint() else { return }
+		_drawCircle(rawCenter, radius, identifier)
 	}
 	
 	func drawingWillStart<T: ConvertibleToRawRect>(in rect: T?) where T.RawValue == RawValue {
