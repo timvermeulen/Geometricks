@@ -42,10 +42,10 @@ extension Canvas {
 		logicUnit.addFigure(line2)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
-		drawingUnit.setPointBorderWidth(0, of: midPoint)
-		drawingUnit.setPointFillColor(.red, of: midPoint)
-		drawingUnit.setLineWidth(0.5, of: line1)
-		drawingUnit.setLineWidth(0.5, of: line2)
+		drawingUnit.setStrokeWidth(0, of: midPoint)
+		drawingUnit.setFillColor(.red, of: midPoint)
+		drawingUnit.setStrokeWidth(0.5, of: line1)
+		drawingUnit.setStrokeWidth(0.5, of: line2)
 	}
 	
 	func loadLine() {
@@ -61,8 +61,8 @@ extension Canvas {
 		logicUnit.addDraggablePoint(midPoint)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
-		drawingUnit.setPointBorderWidth(0, of: midPoint)
-		drawingUnit.setPointFillColor(.red, of: midPoint)
+		drawingUnit.setStrokeWidth(0, of: midPoint)
+		drawingUnit.setFillColor(.red, of: midPoint)
 	}
 	
 	func loadLineSegment() {
@@ -78,8 +78,8 @@ extension Canvas {
 		logicUnit.addFigure(midPoint)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
-		drawingUnit.setPointBorderWidth(0, of: midPoint)
-		drawingUnit.setPointFillColor(.red, of: midPoint)
+		drawingUnit.setStrokeWidth(0, of: midPoint)
+		drawingUnit.setFillColor(.red, of: midPoint)
 	}
 	
 	func loadCircle() {
@@ -94,7 +94,7 @@ extension Canvas {
 		logicUnit.addDraggablePoint(sliding)
 		
 		drawingUnit.setPointRadius(6, of: sliding)
-		drawingUnit.setPointFillColor(.red, of: sliding)
+		drawingUnit.setFillColor(.red, of: sliding)
 	}
 	
 	func loadIntersection() {
@@ -109,13 +109,13 @@ extension Canvas {
 		let intersection = LineLineIntersection(line1, line2)
 		
 		[point1, point2, point3, point4].forEach(logicUnit.addDraggablePoint)
-		[point1, point2, point3, point4].forEach(logicUnit.addFigure)
 		[line1, line2].forEach(logicUnit.addFigure)
+		[point1, point2, point3, point4].forEach(logicUnit.addFigure)
 		logicUnit.addFigure(intersection)
 		
 		drawingUnit.setPointRadius(6, of: intersection)
-		drawingUnit.setPointBorderWidth(0, of: intersection)
-		drawingUnit.setPointFillColor(.red, of: intersection)
+		drawingUnit.setStrokeWidth(0, of: intersection)
+		drawingUnit.setFillColor(.red, of: intersection)
 	}
 }
 
