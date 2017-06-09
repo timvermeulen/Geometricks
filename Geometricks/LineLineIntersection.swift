@@ -16,7 +16,7 @@ final class LineLineIntersection<_RawValue: FloatingPoint> {
 	init(_ line1: Line<RawValue>, _ line2: Line<RawValue>) {
 		lines = (line1, line2)
 		// TODO: clean up
-		fraction = Math.fractionsOfLineIntersections(line1: (line1.start.makeRawPoint(), line1.end.makeRawPoint()), line2: (line2.start.makeRawPoint(), line2.end.makeRawPoint()))!.0
+		fraction = Math.fractionsOfLineIntersections(RawLine(line1), RawLine(line2))!.0
 		rawPoint = line1.point(at: fraction)
 		
 		observe(line1, line2)
@@ -25,7 +25,7 @@ final class LineLineIntersection<_RawValue: FloatingPoint> {
 
 extension LineLineIntersection: Observer {
 	func update() {
-		fraction = Math.fractionsOfLineIntersections(line1: (lines.0.start.makeRawPoint(), lines.0.end.makeRawPoint()), line2: (lines.1.start.makeRawPoint(), lines.1.end.makeRawPoint()))!.0
+		fraction = Math.fractionsOfLineIntersections(RawLine(lines.0), RawLine(lines.1))!.0
 	}
 }
 

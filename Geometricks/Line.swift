@@ -25,7 +25,7 @@ extension Line: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		guard
 			let rect = rect,
-			let fractions = Math.fractionsOfLine(from: start.makeRawPoint(), to: end.makeRawPoint(), intersectingWith: rect)
+			let fractions = Math.fractionsOfLine(RawLine(start: start, end: end), intersectingWith: rect)
 			else { return }
 		
 		let lineStart = point(at: fractions.0)
@@ -41,6 +41,6 @@ extension Line: OneDimensional {
 	}
 	
 	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		return Math.fractionOfProjection(of: point, onLineBetween: start.makeRawPoint(), and: end.makeRawPoint())
+		return Math.fractionOfProjection(of: point, onLine: RawLine(start: start, end: end))
 	}
 }

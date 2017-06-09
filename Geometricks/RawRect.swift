@@ -14,17 +14,12 @@ struct RawRect<_RawValue: FloatingPoint> {
 	var topRight:    RawPoint<RawValue> { return RawPoint(x: maxX, y: maxY) }
 	var bottomRight: RawPoint<RawValue> { return RawPoint(x: maxX, y: minY) }
 	
-	struct Side {
-		let start: RawPoint<RawValue>
-		let end: RawPoint<RawValue>
-	}
-	
-	var sides: (Side, Side, Side, Side) {
+	var sides: (RawLine<RawValue>, RawLine<RawValue>, RawLine<RawValue>, RawLine<RawValue>) {
 		return (
-			Side(start: bottomLeft, end: topLeft),
-			Side(start: topLeft, end: topRight),
-			Side(start: topRight, end: bottomRight),
-			Side(start: bottomRight, end: bottomLeft)
+			RawLine(start: bottomLeft, end: topLeft),
+			RawLine(start: topLeft, end: topRight),
+			RawLine(start: topRight, end: bottomRight),
+			RawLine(start: bottomRight, end: bottomLeft)
 		)
 	}
 }

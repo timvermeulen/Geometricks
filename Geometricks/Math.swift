@@ -1,16 +1,16 @@
 enum Math<RawValue: FloatingPoint> {
-	static func fractionsOfLineIntersections(line1: (start: RawPoint<RawValue>, end: RawPoint<RawValue>), line2: (start: RawPoint<RawValue>, end: RawPoint<RawValue>)) -> (RawValue, RawValue)? {
+	static func fractionsOfLineIntersections(_ line1: RawLine<RawValue>, _ line2: RawLine<RawValue>) -> (RawValue, RawValue)? {
 		let matrix = TwoTwoMatrix(line1.end - line1.start, line2.start - line2.end)
 		let vector = line2.start - line1.start
 		
 		return matrix.inverse.map { vector * $0 }.map { ($0.changeInX, $0.changeInY) }
 	}
 	
-	static func fractionsOfLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, intersectingWith rect: RawRect<RawValue>) -> (RawValue, RawValue)? {
+	static func fractionsOfLine(_ line: RawLine<RawValue>, intersectingWith rect: RawRect<RawValue>) -> (RawValue, RawValue)? {
 		let sides = rect.sides
 		
 		let fractions = [sides.0, sides.1, sides.2, sides.3]
-			.flatMap { fractionsOfLineIntersections(line1: (start, end), line2: ($0.start, $0.end)) }
+			.flatMap { fractionsOfLineIntersections(line, $0) }
 			.filter { 0...1 ~= $0.1 }
 			.map { $0.0 }
 			.sorted()
@@ -21,9 +21,9 @@ enum Math<RawValue: FloatingPoint> {
 	}
 	
 	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
-	static func fractionOfProjection(of point: RawPoint<RawValue>, onLineBetween start: RawPoint<RawValue>, and end: RawPoint<RawValue>) -> RawValue {
-		let delta1 = start - end
-		let delta2 = start - point
+	static func fractionOfProjection(of point: RawPoint<RawValue>, onLine line: RawLine<RawValue>) -> RawValue {
+		let delta1 = line.delta
+		let delta2 = line.start - point
 		
 		let xConstant    = delta1.changeInX * delta2.changeInX
 		let xCoefficient = delta1.changeInX * delta1.changeInX

@@ -1,8 +1,8 @@
 final class LineSegment<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
-    private let start: AnyPoint<RawValue>
-    private let end: AnyPoint<RawValue>
+    let start: AnyPoint<RawValue>
+    let end: AnyPoint<RawValue>
 	
 	let observableStorage = ObservableStorage()
     
@@ -36,7 +36,7 @@ extension LineSegment: OneDimensional {
     }
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue {
-		let fraction = Math.fractionOfProjection(of: point, onLineBetween: start.makeRawPoint(), and: end.makeRawPoint())
+		let fraction = Math.fractionOfProjection(of: point, onLine: RawLine(self))
 		return fraction.clamped(to: 0...1)
     }
 }
