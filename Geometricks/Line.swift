@@ -42,6 +42,6 @@ extension Line: OneDimensional {
 	}
 	
 	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
-		return RawLine(self).map { Math.fractionOfProjection(of: point, onLine: $0) }
+		return RawLine(self).map { Math.fractionOfProjection(of: point, on: $0) }
 	}
 }

@@ -54,6 +54,7 @@
 		22C62D541EE99FCE00C73E0F /* RawRectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */; };
 		22C62D571EE9A08400C73E0F /* NSRect+RawRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */; };
 		22C62D591EE9A1AC00C73E0F /* NSSize+RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */; };
+		22D62E091EEB0482009D2E26 /* RawCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D62E081EEB0482009D2E26 /* RawCurve.swift */; };
 		22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D66A5C1EE9765500CBF912 /* RawValueType.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRectConvertible.swift; sourceTree = "<group>"; };
 		22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+RawRect.swift"; sourceTree = "<group>"; };
 		22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSize+RawVector.swift"; sourceTree = "<group>"; };
+		22D62E081EEB0482009D2E26 /* RawCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCurve.swift; sourceTree = "<group>"; };
 		22D66A5C1EE9765500CBF912 /* RawValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawValueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,7 +300,6 @@
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 				2239AB4B1EEAB43F00528A7B /* Math.swift */,
 				2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */,
-				2239AB4F1EEAD4DB00528A7B /* RawLine.swift */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
@@ -307,6 +308,7 @@
 				228783C71ED29F2200FF8784 /* RawPoint */,
 				228783C81ED29F2700FF8784 /* RawVector */,
 				22C62D551EE99FE900C73E0F /* RawRect */,
+				22D62E0A1EEB04B8009D2E26 /* Raw */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -318,6 +320,15 @@
 				22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */,
 			);
 			name = RawRect;
+			sourceTree = "<group>";
+		};
+		22D62E0A1EEB04B8009D2E26 /* Raw */ = {
+			isa = PBXGroup;
+			children = (
+				2239AB4F1EEAD4DB00528A7B /* RawLine.swift */,
+				22D62E081EEB0482009D2E26 /* RawCurve.swift */,
+			);
+			name = Raw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +483,7 @@
 				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
 				228783CB1ED3A51700FF8784 /* Curve.swift in Sources */,
 				228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */,
+				22D62E091EEB0482009D2E26 /* RawCurve.swift in Sources */,
 				228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */,
 				228783BF1ED29ECA00FF8784 /* RawPointConvertible.swift in Sources */,
 				228783B21ED29ECA00FF8784 /* AnyDrawingUnit.swift in Sources */,

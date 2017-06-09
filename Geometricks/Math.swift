@@ -21,7 +21,7 @@ enum Math<RawValue: FloatingPoint> {
 	}
 	
 	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
-	static func fractionOfProjection(of point: RawPoint<RawValue>, onLine line: RawLine<RawValue>) -> RawValue {
+	static func fractionOfProjection(of point: RawPoint<RawValue>, on line: RawLine<RawValue>) -> RawValue {
 		let delta1 = line.delta
 		let delta2 = line.start - point
 		
@@ -33,11 +33,11 @@ enum Math<RawValue: FloatingPoint> {
 		return (xConstant + yConstant) / (xCoefficient + yCoefficient)
 	}
 	
-	static func fractionOfProjectionOnCurve(of point: RawPoint<RawValue>, start: RawPoint<RawValue>, end: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, controlPoint2: RawPoint<RawValue>) -> RawValue {
-		let p0 = start - point
-		let p1 = 3 * (controlPoint1 - start)
-		let p2 = 3 * ((start - controlPoint1) + (controlPoint2 - controlPoint1))
-		let p3 = (end - start) + 3 * (controlPoint1 - controlPoint2)
+	static func fractionOfProjection(of point: RawPoint<RawValue>, on curve: RawCurve<RawValue>) -> RawValue {
+		let p0 = curve.line.delta
+		let p1 = 3 * (curve.controlPoints.0 - curve.start)
+		let p2 = 3 * ((curve.start - curve.controlPoints.0) + (curve.controlPoints.1 - curve.controlPoints.0))
+		let p3 = p0 + 3 * (curve.controlPoints.0 - curve.controlPoints.1)
 		
 		let d0 = p1
 		let d1 = 2 * p2
