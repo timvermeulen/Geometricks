@@ -15,9 +15,8 @@ final class FreePoint<_RawValue: FloatingPoint> {
 extension FreePoint: Drawable {
 }
 
-// TODO: conform to a protocol with a method that doesn't return an optional
-extension FreePoint: ConvertibleToRawPoint {
-    func makeRawPoint() -> RawPoint<RawValue>? {
+extension FreePoint: AlwaysConvertibleToRawPoint {
+    func makeRawPoint() -> RawPoint<RawValue> {
         return rawPoint
     }
 }
