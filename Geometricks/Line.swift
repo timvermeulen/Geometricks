@@ -18,6 +18,22 @@ final class Line<_RawValue: FloatingPoint> {
 	}
 }
 
+extension Line {
+	static func perpendicularBisector(_ point0: AnyPoint<RawValue>, _ point1: AnyPoint<RawValue>) -> Line {
+		let circle0 = Circle(center: point0, pointOnBoundary: point1)
+		let circle1 = Circle(center: point1, pointOnBoundary: point0)
+		
+		let intersection0 = CircleCircleIntersection(circle0, circle1, option: .first)
+		let intersection1 = CircleCircleIntersection(circle0, circle1, option: .second)
+		
+		return Line(from: intersection0, to: intersection1)
+	}
+	
+	static func perpendicularBisector<P0: Point, P1: Point>(_ point0: P0, _ point1: P1) -> Line where P0.RawValue == RawValue, P1.RawValue == RawValue {
+		return perpendicularBisector(AnyPoint(point0), AnyPoint(point1))
+	}
+}
+
 extension Line: Observer {
 }
 

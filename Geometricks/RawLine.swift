@@ -10,7 +10,7 @@ struct RawLine<RawValue: FloatingPoint> {
 		return start + (1 / 2) * delta
 	}
 	
-	var perpendicularBisector: RawLine<RawValue> {
+	var perpendicularBisector: RawLine {
 		let midPoint = self.midPoint
 		let delta = self.delta
 		let vector = RawVector(changeInX: delta.changeInX, changeInY: -delta.changeInY)

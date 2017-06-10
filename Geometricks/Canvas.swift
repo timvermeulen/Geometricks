@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadCircles()
+		loadSquare()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -163,6 +163,61 @@ extension Canvas {
 		logicUnit.addFigures(intersection0, intersection1)
 		
 		drawingUnit.setStrokeColor(.red, of: segment)
+	}
+	
+	func loadPerpendicularBisector() {
+		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		
+		let circle0 = Circle(center: point0, pointOnBoundary: point1)
+		let circle1 = Circle(center: point1, pointOnBoundary: point0)
+		
+		let intersection0 = CircleCircleIntersection(circle0, circle1, option: .first)
+		let intersection1 = CircleCircleIntersection(circle0, circle1, option: .second)
+		
+		let bisector = Line(from: intersection0, to: intersection1)
+		
+		logicUnit.addFigure(bisector)
+		logicUnit.addDraggablePoints(point0, point1)
+	}
+	
+	func loadSquare() {
+		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let line0 = Line(from: point0, to: point1)
+		
+		let circle0 = Circle(center: point0, pointOnBoundary: point1)
+		let circle1 = Circle(center: point1, pointOnBoundary: point0)
+		
+		let point2 = LineCircleIntersection(line: line0, circle: circle0, option: .first)
+		let point3 = LineCircleIntersection(line: line0, circle: circle1, option: .second)
+		
+		let bisector0 = Line.perpendicularBisector(point2, point1)
+		let bisector1 = Line.perpendicularBisector(point0, point3)
+		
+		let point4 = LineCircleIntersection(line: bisector0, circle: circle0, option: .second)
+		let point5 = LineCircleIntersection(line: bisector1, circle: circle1, option: .second)
+		
+		let segment0 = LineSegment(from: point0, to: point1)
+		let segment1 = LineSegment(from: point1, to: point5)
+		let segment2 = LineSegment(from: point5, to: point4)
+		let segment3 = LineSegment(from: point4, to: point0)
+		
+		logicUnit.addFigures(circle0, circle1)
+		logicUnit.addFigures(line0, bisector0, bisector1)
+		logicUnit.addFigures(segment0, segment1, segment2, segment3)
+		logicUnit.addFigures(point2, point3, point4, point5)
+		logicUnit.addDraggablePoints(point0, point1)
+		
+		drawingUnit.setStrokeWidth(0, of: circle0)
+		drawingUnit.setStrokeWidth(0, of: circle1)
+		drawingUnit.setStrokeWidth(0, of: line0)
+		drawingUnit.setStrokeWidth(0, of: bisector0)
+		drawingUnit.setStrokeWidth(0, of: bisector1)
+		drawingUnit.setPointRadius(3, of: point2)
+		drawingUnit.setPointRadius(3, of: point3)
+		drawingUnit.setStrokeWidth(0, of: point2)
+		drawingUnit.setStrokeWidth(0, of: point3)
 	}
 }
 
