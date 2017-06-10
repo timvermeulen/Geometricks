@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadSquare()
+		loadOffsetPoint()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -218,6 +218,16 @@ extension Canvas {
 		drawingUnit.setPointRadius(3, of: point3)
 		drawingUnit.setStrokeWidth(0, of: point2)
 		drawingUnit.setStrokeWidth(0, of: point3)
+	}
+	
+	func loadOffsetPoint() {
+		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point1 = OffsetPoint(anchor: point0, offset: NSPoint(x: 50, y: 0))
+		let circle = Circle(center: point0, pointOnBoundary: point1)
+		
+		logicUnit.addFigure(circle)
+		logicUnit.addDraggablePoint(point0)
+		logicUnit.addDraggablePoint(point1)
 	}
 }
 

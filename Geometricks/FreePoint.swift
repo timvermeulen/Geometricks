@@ -12,16 +12,10 @@ final class FreePoint<_RawValue: FloatingPoint> {
     }
 }
 
-extension FreePoint: Drawable {
-}
-
 extension FreePoint: AlwaysConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue> {
         return rawPoint
     }
-}
-
-extension FreePoint: Point {
 }
 
 extension FreePoint: DraggablePoint {
