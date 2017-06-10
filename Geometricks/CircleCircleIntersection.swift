@@ -27,6 +27,13 @@ final class CircleCircleIntersection<_RawValue: FloatingPoint> {
 		
 		observe(circle0, circle1)
 	}
+	
+	static func bothIntersections(_ circle0: Circle<RawValue>, _ circle1: Circle<RawValue>) -> (CircleCircleIntersection, CircleCircleIntersection) {
+		return (
+			CircleCircleIntersection(circle0, circle1, option: .first),
+			CircleCircleIntersection(circle0, circle1, option: .second)
+		)
+	}
 }
 
 extension CircleCircleIntersection: Observer {

@@ -3,7 +3,9 @@ final class OffsetPoint<_RawValue: FloatingPoint> {
 	
 	private let anchor: AnyPoint<RawValue>
 	private var offset: RawVector<RawValue>?
-	private var rawPoint: RawPoint<RawValue>?
+	private var rawPoint: RawPoint<RawValue>? {
+		didSet { updateObservers() }
+	}
 	
 	let observableStorage = ObservableStorage()
 	

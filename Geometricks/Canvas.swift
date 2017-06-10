@@ -223,11 +223,21 @@ extension Canvas {
 	func loadOffsetPoint() {
 		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
 		let point1 = OffsetPoint(anchor: point0, offset: NSPoint(x: 50, y: 0))
-		let circle = Circle(center: point0, pointOnBoundary: point1)
+		let circle0 = Circle(center: point0, pointOnBoundary: point1)
 		
-		logicUnit.addFigure(circle)
-		logicUnit.addDraggablePoint(point0)
+		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 250, y: 100))
+		let point3 = OffsetPoint(anchor: point2, offset: NSPoint(x: 50, y: 0))
+		let circle1 = Circle(center: point2, pointOnBoundary: point3)
+		
+		let intersections = CircleCircleIntersection.bothIntersections(circle0, circle1)
+		let line = LineSegment(from: intersections.0, to: intersections.1)
+		
+		logicUnit.addFigure(line)
+		logicUnit.addFigures(circle0, circle1)
+		logicUnit.addDraggablePoints(point0)
 		logicUnit.addDraggablePoint(point1)
+		
+		drawingUnit.setStrokeColor(.red, of: line)
 	}
 }
 
