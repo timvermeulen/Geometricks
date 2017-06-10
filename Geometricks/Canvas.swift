@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadOffsetPoint()
+		loadSharedBoundaryPoint()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -238,6 +238,26 @@ extension Canvas {
 		logicUnit.addDraggablePoint(point1)
 		
 		drawingUnit.setStrokeColor(.red, of: line)
+	}
+	
+	func loadSharedBoundaryPoint() {
+		let point = FreePoint<CGFloat>(x: 100, y: 100)
+		
+		let center0 = FreePoint<CGFloat>(x: 100, y: 150)
+		let center1 = FreePoint<CGFloat>(x: 175, y: 100)
+		
+		let circle0 = Circle(center: center0, pointOnBoundary: point)
+		let circle1 = Circle(center: center1, pointOnBoundary: point)
+		
+		let intersections = CircleCircleIntersection.bothIntersections(circle0, circle1)
+		
+		logicUnit.addFigures(circle0, circle1)
+		logicUnit.addFigures(intersections.0, intersections.1)
+		logicUnit.addDraggablePoints(point, center0, center1)
+		
+		drawingUnit.setFillColor(.red, of: point)
+		drawingUnit.setFillColor(.green, of: intersections.0)
+		drawingUnit.setFillColor(.blue, of: intersections.1)
 	}
 }
 

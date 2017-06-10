@@ -20,8 +20,7 @@ extension Drawable where Self: AlwaysConvertibleToRawPoint {
 
 extension Drawable where Self: ConvertibleToRawPoint {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-		if let rawPoint = makeRawPoint() {
-			drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
-		}
+		guard let rawPoint = makeRawPoint() else { return }
+		drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
 	}
 }

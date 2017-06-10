@@ -36,7 +36,7 @@ enum Math<RawValue: FloatingPoint> {
 			return root0
 		case (.second, .two(_, let root1)):
 			return root1
-		default:
+		case (.only, _), (.first, _), (.second, _):
 			return nil
 		}
 	}

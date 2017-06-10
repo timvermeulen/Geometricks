@@ -5,7 +5,7 @@ struct QuadraticPolynomial<RawValue: FloatingPoint> {
 		case two(RawValue, RawValue)
 	}
 	
-	let coefficients: (RawValue, RawValue, RawValue)
+	private let coefficients: (RawValue, RawValue, RawValue)
 	
 	init(_ c0: RawValue, _ c1: RawValue, _ c2: RawValue) {
 		coefficients = (c0, c1, c2)
@@ -15,7 +15,7 @@ struct QuadraticPolynomial<RawValue: FloatingPoint> {
 		return coefficients.0 + x * coefficients.1 + x * x * coefficients.2
 	}
 	
-	var discriminant: RawValue {
+	private var discriminant: RawValue {
 		return coefficients.1 * coefficients.1 - 4 * coefficients.0 * coefficients.2
 	}
 	

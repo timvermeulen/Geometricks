@@ -10,6 +10,10 @@ final class FreePoint<_RawValue: FloatingPoint> {
     init(rawPoint: RawPoint<RawValue>) {
         self.rawPoint = rawPoint
     }
+	
+	convenience init(x: RawValue, y: RawValue) {
+		self.init(rawPoint: RawPoint(x: x, y: y))
+	}
 }
 
 extension FreePoint: AlwaysConvertibleToRawPoint {

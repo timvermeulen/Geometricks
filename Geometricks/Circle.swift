@@ -24,7 +24,6 @@ extension Circle: Observer {
 extension Circle: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		guard let radius = RawCircle(self)?.radius else { return }
-		
 		drawingUnit.drawCircle(center: center, radius: radius, identifier: identifier)
 	}
 }
@@ -32,7 +31,6 @@ extension Circle: Drawable {
 extension Circle: OneDimensional {
 	func point(at fraction: RawValue) -> RawPoint<RawValue>? {
 		guard let rawCenter = center.makeRawPoint() else { return nil }
-		
 		return pointOnBoundary.makeRawPoint()?.rotated(by: fraction, around: rawCenter)
 	}
 	
