@@ -1,0 +1,54 @@
+final class CircleCircleIntersection<_RawValue: FloatingPoint> {
+	typealias RawValue = _RawValue
+	
+	enum Option {
+		case first, second, only
+	}
+	
+	private let circles: (Circle<RawValue>, Circle<RawValue>)
+	private let option: Option
+	
+	private var fraction: RawValue? {
+		didSet { rawPoint = fraction.flatMap(circles.0.point(at:)) }
+	}
+	
+	private var rawPoint: RawPoint<RawValue>? {
+		didSet { updateObservers() }
+	}
+	
+	let observableStorage = ObservableStorage()
+	
+	init(_ circle0: Circle<RawValue>, _ circle1: Circle<RawValue>, option: Option) {
+		circles = (circle0, circle1)
+		self.option = option
+		
+		fraction = CircleCircleIntersection.getFraction(circle0: circle0, circle1: circle1, option: option)
+		rawPoint = fraction.flatMap(circle0.point(at:))
+		
+		observe(circle0, circle1)
+	}
+}
+
+extension CircleCircleIntersection: Observer {
+	private static func getFraction(circle0: Circle<RawValue>, circle1: Circle<RawValue>, option: Option) -> RawValue? {
+		guard
+			let rawCircle0 = RawCircle(circle0),
+			let rawCircle1 = RawCircle(circle1)
+			else { return nil }
+		
+		return Math.fractionOfintersection(circle: rawCircle0, circle: rawCircle1, option: option, makeFraction: circle0.fractionOfNearestPoint)
+	}
+	
+	func update() {
+		fraction = CircleCircleIntersection.getFraction(circle0: circles.0, circle1: circles.1, option: option)
+	}
+}
+
+extension CircleCircleIntersection: ConvertibleToRawPoint {
+	func makeRawPoint() -> RawPoint<RawValue>? {
+		return rawPoint
+	}
+}
+
+extension CircleCircleIntersection: Point {
+}

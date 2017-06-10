@@ -5,9 +5,9 @@ struct RawCircle<RawValue: FloatingPoint> {
 
 extension RawCircle {
 	init?(_ circle: Circle<RawValue>) {
-		guard let center = circle.center.makeRawPoint(), let radius = circle.radius else { return nil }
+		guard let rawCenter = circle.center.makeRawPoint(), let rawPointOnBoundary = circle.pointOnBoundary.makeRawPoint() else { return nil }
 		
-		self.center = center
-		self.radius = radius
+		center = rawCenter
+		radius = rawCenter.distance(to: rawPointOnBoundary)
 	}
 }

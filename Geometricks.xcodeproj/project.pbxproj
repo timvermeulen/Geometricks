@@ -48,6 +48,7 @@
 		228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */; };
 		228783CB1ED3A51700FF8784 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CA1ED3A51700FF8784 /* Curve.swift */; };
 		228783CD1ED3B3B500FF8784 /* NSBezierPath+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */; };
+		228E65361EEB89D500AA5931 /* CircleCircleIntersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E65351EEB89D500AA5931 /* CircleCircleIntersection.swift */; };
 		229590DF1ED840500062F101 /* BasicDrawingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */; };
 		229819381EEA231300C1E7A1 /* TwoTwoMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */; };
 		229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */; };
@@ -127,6 +128,7 @@
 		228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicDrawingUnit.swift; path = ../Geometricks/BasicDrawingUnit.swift; sourceTree = "<group>"; };
 		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
+		228E65351EEB89D500AA5931 /* CircleCircleIntersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCircleIntersection.swift; sourceTree = "<group>"; };
 		229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTwoMatrix.swift; sourceTree = "<group>"; };
 		229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPoint.swift; sourceTree = "<group>"; };
 		22C62D4F1EE99CC300C73E0F /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */,
 				2249D4291EEB10580027746F /* LineCircleIntersection.swift */,
+				228E65351EEB89D500AA5931 /* CircleCircleIntersection.swift */,
 			);
 			name = Intersection;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				22C62D571EE9A08400C73E0F /* NSRect+RawRect.swift in Sources */,
 				2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */,
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
+				228E65361EEB89D500AA5931 /* CircleCircleIntersection.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
 				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
 				2249D42C1EEB1E600027746F /* RawCircle.swift in Sources */,

@@ -6,18 +6,6 @@ protocol ConvertibleToRawPoint: RawValueType {
     func makeRawPoint() -> RawPoint<RawValue>?
 }
 
-extension ConvertibleToRawPoint {
-    func distance(to point: RawPoint<RawValue>) -> RawValue? {
-		guard let rawPoint =  makeRawPoint() else { return nil }
-		// TODO: report bug
-		return .some(rawPoint.distance(to: point))
-    }
-    
-    func distance<T: ConvertibleToRawPoint>(to point: T) -> RawValue? where T.RawValue == RawValue {
-		return point.makeRawPoint().flatMap { makeRawPoint()?.distance(to: $0) }
-    }
-}
-
 protocol AlwaysConvertibleToRawPoint: ConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>
 }

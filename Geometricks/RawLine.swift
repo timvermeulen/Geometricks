@@ -5,9 +5,26 @@ struct RawLine<RawValue: FloatingPoint> {
 	var delta: RawVector<RawValue> {
 		return end - start
 	}
+	
+	var midPoint: RawPoint<RawValue> {
+		return start + (1 / 2) * delta
+	}
+	
+	var perpendicularBisector: RawLine<RawValue> {
+		let midPoint = self.midPoint
+		let delta = self.delta
+		let vector = RawVector(changeInX: delta.changeInX, changeInY: -delta.changeInY)
+		
+		return RawLine(start: midPoint, delta: vector)
+	}
 }
 
 extension RawLine {
+	init(start: RawPoint<RawValue>, delta: RawVector<RawValue>) {
+		self.start = start
+		end = start + delta
+	}
+	
 	init?<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		guard
 			let rawStart = start.makeRawPoint(),

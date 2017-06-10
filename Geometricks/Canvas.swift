@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadLineCircle()
+		loadCircles()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -141,6 +141,28 @@ extension Canvas {
 		
 		drawingUnit.setStrokeColor(.clear, of: line)
 		drawingUnit.setStrokeColor(.red, of: segment1)
+	}
+	
+	func loadCircles() {
+		let point0 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 100))
+		let point1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 150))
+		let point2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 200))
+		let point3 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 200, y: 150))
+		
+		let circle0 = Circle(center: point0, pointOnBoundary: point1)
+		let circle1 = Circle(center: point2, pointOnBoundary: point3)
+		
+		let intersection0 = CircleCircleIntersection(circle0, circle1, option: .first)
+		let intersection1 = CircleCircleIntersection(circle0, circle1, option: .second)
+		
+		let segment = LineSegment(from: intersection0, to: intersection1)
+		
+		logicUnit.addFigures(circle0, circle1)
+		logicUnit.addFigure(segment)
+		logicUnit.addDraggablePoint(point1)
+		logicUnit.addFigures(intersection0, intersection1)
+		
+		drawingUnit.setStrokeColor(.red, of: segment)
 	}
 }
 

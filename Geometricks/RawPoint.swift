@@ -20,10 +20,14 @@ extension RawPoint {
 	func rotated(by angle: RawValue, around point: RawPoint) -> RawPoint {
 		return point + (self - point).rotated(by: angle)
 	}
+	
+	func angle(relativeTo other: RawPoint) -> RawValue {
+		return (self - other).angleWithXAxis
+	}
 }
 
 extension RawPoint {
-	static func pointOnCurve(_ curve: RawCurve<RawValue>, at fraction: RawValue) -> RawPoint {
+	static func point(on curve: RawCurve<RawValue>, at fraction: RawValue) -> RawPoint {
 		let oppositeFraction = 1 - fraction
 		
 		let b1 = 3 * fraction * oppositeFraction * oppositeFraction
@@ -37,7 +41,7 @@ extension RawPoint {
 		return curve.start + v1 + v2 + v3
 	}
 	
-	static func point(at fraction: RawValue, on line: RawLine<RawValue>) -> RawPoint {
+	static func point(on line: RawLine<RawValue>, at fraction: RawValue) -> RawPoint {
 		return line.start + fraction * line.delta
 	}
 }

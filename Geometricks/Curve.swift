@@ -39,7 +39,7 @@ extension Curve: Drawable {
 extension Curve: OneDimensional {
     func point(at fraction: RawValue) -> RawPoint<RawValue>? {
 		guard let rawCurve = RawCurve(self) else { return nil }
-		return .pointOnCurve(rawCurve, at: fraction)
+		return .point(on: rawCurve, at: fraction)
     }
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {

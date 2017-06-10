@@ -40,6 +40,53 @@ enum Math<RawValue: FloatingPoint> {
 			return nil
 		}
 	}
+	
+	static func fractionOfintersection(circle circle0: RawCircle<RawValue>, circle circle1: RawCircle<RawValue>, option: CircleCircleIntersection<RawValue>.Option, makeFraction: (RawPoint<RawValue>) -> RawValue?) -> RawValue? {
+		let line = RawLine(start: circle0.center, end: circle1.center)
+		let delta = line.delta
+		let squaredDistance = delta.squaredNorm
+		let distance = delta.norm
+		
+		let t0 = -distance - circle0.radius + circle1.radius
+		let t1 = -distance + circle0.radius - circle1.radius
+		let t2 = -distance + circle0.radius + circle1.radius
+		let t3 =  distance + circle0.radius + circle1.radius
+		let product = t0 * t1 * t2 * t3
+		
+		guard product >= 0 else { return nil }
+		
+		let x = (squaredDistance + circle0.radius.squared() - circle1.radius.squared()) / (2 * distance)
+		let y = (1 / (2 * distance)) * (t0 * t1 * t2 * t3).squareRoot()
+		
+		let vector0 = RawVector(changeInX: x, changeInY: y)
+		let vector1 = RawVector(changeInX: x, changeInY: -y)
+		
+		let angle = circle1.center.angle(relativeTo: circle0.center)
+		
+		let rotated0 = vector0.rotated(by: angle)
+		let rotated1 = vector1.rotated(by: angle)
+		
+		let intersection0 = circle0.center + rotated0
+		let intersection1 = circle0.center + rotated1
+		
+		guard
+			let fraction0 = makeFraction(intersection0),
+			let fraction1 = makeFraction(intersection1)
+			else { return nil }
+		
+		switch (product, option) {
+		case (0, .only):
+			return fraction0
+		case (0, _):
+			return nil
+		case (_, .first):
+			return min(fraction0, fraction1)
+		case (_, .second):
+			return max(fraction0, fraction1)
+		case (_, .only):
+			return nil
+		}
+	}
 		
 	// solve for fraction: (start + (end - start) * fraction - point) • (end - start) = 0
 	static func fractionOfProjection(of point: RawPoint<RawValue>, on line: RawLine<RawValue>) -> RawValue {

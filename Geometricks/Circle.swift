@@ -16,10 +16,6 @@ final class Circle<_RawValue: FloatingPoint> {
 	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		self.init(center: AnyPoint(center), pointOnBoundary: AnyPoint(pointOnBoundary))
 	}
-	
-	var radius: RawValue? {
-		return pointOnBoundary.distance(to: center)
-	}
 }
 
 extension Circle: Observer {
@@ -27,7 +23,7 @@ extension Circle: Observer {
 
 extension Circle: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-		guard let radius = self.radius else { return }
+		guard let radius = RawCircle(self)?.radius else { return }
 		
 		drawingUnit.drawCircle(center: center, radius: radius, identifier: identifier)
 	}
@@ -46,7 +42,7 @@ extension Circle: OneDimensional {
 			let rawPointOnBoundary = pointOnBoundary.makeRawPoint()
 			else { return nil }
 		
-		let angle = (point - rawCenter).angleWithXAxis - (rawPointOnBoundary - rawCenter).angleWithXAxis
+		let angle = point.angle(relativeTo: rawCenter) - rawPointOnBoundary.angle(relativeTo: rawCenter)
 		return angle.mod(.tau)
 	}
 }

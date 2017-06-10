@@ -38,7 +38,7 @@ extension Line: Drawable {
 
 extension Line: OneDimensional {
 	func point(at fraction: RawValue) -> RawPoint<RawValue>? {
-		return RawLine(self).map { .point(at: fraction, on: $0) }
+		return RawLine(self).map { .point(on: $0, at: fraction) }
 	}
 	
 	func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
