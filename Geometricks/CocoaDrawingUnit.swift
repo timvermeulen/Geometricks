@@ -113,4 +113,13 @@ extension CocoaDrawingUnit: DrawingUnit {
 		path.lineWidth = strokeWidth(of: identifier)
 		path.stroke()
 	}
+    
+    func drawCircleCircleIntersectionArea(center0: CGPoint, radius0: CGFloat, startAngle0: CGFloat, endAngle0: CGFloat, center1: CGPoint, radius1: CGFloat, startAngle1: CGFloat, endAngle1: CGFloat, identifier: Identifier) {
+        fillColor(of: identifier).setFill()
+        
+        let path = NSBezierPath()
+        path.appendArc(withCenter: center0, radius: radius0, startAngle: startAngle0, endAngle: startAngle1)
+        path.appendArc(withCenter: center1, radius: radius1, startAngle: startAngle0, endAngle: endAngle1)
+        path.fill()
+    }
 }

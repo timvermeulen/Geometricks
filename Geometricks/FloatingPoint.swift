@@ -1,3 +1,4 @@
+// TODO: rename to `Real`
 protocol FloatingPoint: Swift.FloatingPoint {
 	var _sin: Self { get }
 	var _cos: Self { get }

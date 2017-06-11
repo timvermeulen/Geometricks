@@ -27,11 +27,27 @@ final class CircleCircleIntersection<_RawValue: FloatingPoint> {
 		
 		observe(circle0, circle1)
 	}
+    
+    private init(_ circle0: Circle<RawValue>, _ circle1: Circle<RawValue>, option: Option, fraction: RawValue?) {
+        circles = (circle0, circle1)
+        self.option = option
+        self.fraction = fraction
+        rawPoint = fraction.flatMap(circle0.point(at:))
+        
+        observe(circle0, circle1)
+    }
 	
 	static func bothIntersections(_ circle0: Circle<RawValue>, _ circle1: Circle<RawValue>) -> (CircleCircleIntersection, CircleCircleIntersection) {
+        guard
+            let rawCircle0 = RawCircle(circle0),
+            let rawCircle1 = RawCircle(circle1)
+            else { return (CircleCircleIntersection(circle0, circle1, option: .first, fraction: nil), CircleCircleIntersection(circle0, circle1, option: .second, fraction: nil)) }
+        
+        let fractions = Math.fractionsOfintersections(circle: rawCircle0, circle: rawCircle1, makeFraction: circle0.fractionOfNearestPoint)
+        
 		return (
-			CircleCircleIntersection(circle0, circle1, option: .first),
-			CircleCircleIntersection(circle0, circle1, option: .second)
+            CircleCircleIntersection(circle0, circle1, option: .first,  fraction: fractions?.0),
+            CircleCircleIntersection(circle0, circle1, option: .second, fraction: fractions?.1)
 		)
 	}
 }
