@@ -29,8 +29,8 @@ extension DrawingUnit {
 		drawCircle(center: Point(center), radius: radius, identifier: identifier)
 	}
     
-    func drawRawCircleCircleIntersectionArea(center0: RawPoint<RawValue>, radius0: RawValue, startAngle0: RawValue, endAngle0: RawValue, center1: RawPoint<RawValue>, radius1: RawValue, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) {
-        drawCircleCircleIntersectionArea(center0: Point(center0), radius0: radius0, startAngle0: startAngle0, endAngle0: endAngle0, center1: Point(center1), radius1: radius1, startAngle1: startAngle1, endAngle1: endAngle1, identifier: identifier)
+    func drawRawCircleCircleIntersectionArea(circle0: RawCircle<RawValue>, startAngle0: RawValue, endAngle0: RawValue, circle1: RawCircle<RawValue>, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) {
+        drawCircleCircleIntersectionArea(center0: Point(circle0.center), radius0: circle0.radius, startAngle0: startAngle0, endAngle0: endAngle0, center1: Point(circle1.center), radius1: circle1.radius, startAngle1: startAngle1, endAngle1: endAngle1, identifier: identifier)
     }
 	
 	func drawingWillStart(in rect: RawRect<RawValue>?) {

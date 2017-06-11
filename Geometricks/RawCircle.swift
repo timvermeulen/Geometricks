@@ -10,4 +10,8 @@ extension RawCircle {
 		center = rawCenter
 		radius = rawCenter.distance(to: rawPointOnBoundary)
 	}
+    
+    func encloses(_ other: RawCircle) -> Bool {
+        return radius > center.distance(to: other.center) + other.radius
+    }
 }

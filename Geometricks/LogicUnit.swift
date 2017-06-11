@@ -32,6 +32,7 @@ final class LogicUnit<_RawValue: FloatingPoint> {
     func stopDragging(_ point: AnyDraggablePoint<RawValue>) {
     }
     
+    // TODO: make private?
     func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
         figures.append(AnyDrawable(drawable))
     }

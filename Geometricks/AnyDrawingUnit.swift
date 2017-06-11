@@ -5,7 +5,7 @@ struct AnyDrawingUnit<_RawValue: FloatingPoint> {
 	private let _drawLine: (RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
     private let _drawCurve: (RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
 	private let _drawCircle: (RawPoint<RawValue>, RawValue, Identifier) -> Void
-    private let _drawCircleCircleIntersectionArea: (RawPoint<RawValue>, RawValue, RawValue, RawValue, RawPoint<RawValue>, RawValue, RawValue, RawValue, Identifier) -> Void
+    private let _drawCircleCircleIntersectionArea: (RawCircle<RawValue>, RawValue, RawValue, RawCircle<RawValue>, RawValue, RawValue, Identifier) -> Void
 	private let _drawingWillStart: (RawRect<RawValue>?) -> Void
     private let _drawingDidEnd: () -> Void
     
@@ -20,7 +20,7 @@ struct AnyDrawingUnit<_RawValue: FloatingPoint> {
     }
 }
 
-extension AnyDrawingUnit: DrawingUnit {
+extension AnyDrawingUnit {
     func drawPoint<P: ConvertibleToRawPoint>(at location: P, identifier: Identifier) where P.RawValue == RawValue {
         guard let rawPoint = location.makeRawPoint() else { return }
         _drawPoint(rawPoint, identifier)
@@ -47,9 +47,8 @@ extension AnyDrawingUnit: DrawingUnit {
         _drawCircle(rawCenter, radius, identifier)
     }
     
-    func drawCircleCircleIntersectionArea<P0: ConvertibleToRawPoint, P1: ConvertibleToRawPoint>(center0: P0, radius0: RawValue, startAngle0: RawValue, endAngle0: RawValue, center1: P1, radius1: RawValue, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) where P0.RawValue == RawValue, P1.RawValue == RawValue {
-        guard let rawCenter0 = center0.makeRawPoint(), let rawCenter1 = center1.makeRawPoint() else { return }
-        _drawCircleCircleIntersectionArea(rawCenter0, radius0, startAngle0, endAngle0, rawCenter1, radius1, startAngle1, endAngle1, identifier)
+    func drawCircleCircleIntersectionArea(circle0: RawCircle<RawValue>, startAngle0: RawValue, endAngle0: RawValue, circle1: RawCircle<RawValue>, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) {
+        _drawCircleCircleIntersectionArea(circle0, startAngle0, endAngle0, circle1, startAngle1, endAngle1, identifier)
     }
     
     func drawingWillStart<T: ConvertibleToRawRect>(in rect: T?) where T.RawValue == RawValue {

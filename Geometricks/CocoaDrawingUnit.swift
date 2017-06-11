@@ -118,8 +118,8 @@ extension CocoaDrawingUnit: DrawingUnit {
         fillColor(of: identifier).setFill()
         
         let path = NSBezierPath()
-        path.appendArc(withCenter: center0, radius: radius0, startAngle: startAngle0, endAngle: startAngle1)
-        path.appendArc(withCenter: center1, radius: radius1, startAngle: startAngle0, endAngle: endAngle1)
+        path.appendArc(withCenter: center0, radius: radius0, startAngle: startAngle0 / .pi * 180, endAngle: endAngle0 / .pi * 180)
+        path.appendArc(withCenter: center1, radius: radius1, startAngle: startAngle1 / .pi * 180, endAngle: endAngle1 / .pi * 180)
         path.fill()
     }
 }
