@@ -36,8 +36,8 @@ extension RawVector {
     }
 	
 	func rotated(by angle: RawValue) -> RawVector {
-		let s = sin(angle)
-		let c = cos(angle)
+		let s = angle.sin
+		let c = angle.cos
 		
 		return RawVector(
 			changeInX: changeInX * c - changeInY * s,
@@ -47,7 +47,7 @@ extension RawVector {
 	
 	var angleWithXAxis: RawValue {
 		let isLeft = changeInX < 0
-		let angle = atan(changeInY / changeInX)
+		let angle = (changeInY / changeInX).atan
 		let corrected = isLeft ? angle + .pi : angle
 		
 		return corrected.mod(.tau)
