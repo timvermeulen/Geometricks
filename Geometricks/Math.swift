@@ -128,37 +128,4 @@ enum Math<RawValue: Real> {
 		
 		return (xConstant + yConstant) / (xCoefficient + yCoefficient)
 	}
-	
-	static func fractionOfProjection(of point: RawPoint<RawValue>, on curve: RawCurve<RawValue>) -> RawValue {
-		let p0 = curve.start - point
-		let p1 = 3 * (curve.controlPoints.0 - curve.start)
-		let p2 = 3 * ((curve.start - curve.controlPoints.0) + (curve.controlPoints.1 - curve.controlPoints.0))
-		let p3 = curve.line.delta + 3 * (curve.controlPoints.0 - curve.controlPoints.1)
-		
-		let d0 = p1
-		let d1 = 2 * p2
-		let d2 = 3 * p3
-        
-        let polynomial = QuinticPolynomial(
-            p0 • d0,
-            p0 • d1 + p1 • d0,
-            p0 • d2 + p1 • d1 + p2 • d0,
-            p1 • d2 + p2 • d1 + p3 • d0,
-            p2 • d2 + p3 • d1,
-            p3 • d2
-        )
-        
-        let roots = [0, 1] + (polynomial.realRoots?.filter { 0 ... 1 ~= $0 } ?? [])
-        
-        func distance(of root: RawValue) -> RawValue {
-            let pointOnCurve = RawPoint.point(on: curve, at: root)
-            return point.distance(to: pointOnCurve)
-        }
-        
-        return roots
-            .lazy
-            .map { (root: $0, distance: distance(of: $0)) }
-            .min(by: { $0.distance < $1.distance })!
-            .root
-	}
 }

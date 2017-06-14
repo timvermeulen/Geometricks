@@ -38,12 +38,10 @@ extension Curve: Drawable {
 
 extension Curve: OneDimensional {
     func point(at fraction: RawValue) -> RawPoint<RawValue>? {
-		guard let rawCurve = RawCurve(self) else { return nil }
-		return .point(on: rawCurve, at: fraction)
+		return RawCurve(self)?.point(at: fraction)
     }
     
     func fractionOfNearestPoint(to point: RawPoint<RawValue>) -> RawValue? {
-		guard let rawCurve = RawCurve(self) else { return nil }
-		return Math.fractionOfProjection(of: point, on: rawCurve)
+		return RawCurve(self)?.fractionOfNearestPoint(to: point)
     }
 }

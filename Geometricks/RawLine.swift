@@ -1,22 +1,28 @@
 struct RawLine<RawValue: Real> {
 	let start: RawPoint<RawValue>
 	let end: RawPoint<RawValue>
-	
-	var delta: RawVector<RawValue> {
-		return end - start
-	}
-	
-	var midPoint: RawPoint<RawValue> {
-		return start + (1 / 2) * delta
-	}
-	
-	var perpendicularBisector: RawLine {
-		let midPoint = self.midPoint
-		let delta = self.delta
-		let vector = RawVector(changeInX: delta.changeInX, changeInY: -delta.changeInY)
-		
-		return RawLine(start: midPoint, delta: vector)
-	}
+}
+
+extension RawLine {
+    var delta: RawVector<RawValue> {
+        return end - start
+    }
+    
+    var midPoint: RawPoint<RawValue> {
+        return start + (1 / 2) * delta
+    }
+    
+    var perpendicularBisector: RawLine {
+        let midPoint = self.midPoint
+        let delta = self.delta
+        let vector = RawVector(changeInX: delta.changeInX, changeInY: -delta.changeInY)
+        
+        return RawLine(start: midPoint, delta: vector)
+    }
+    
+    func point(at fraction: RawValue) -> RawPoint<RawValue> {
+        return start + fraction * delta
+    }
 }
 
 extension RawLine {
@@ -33,7 +39,7 @@ extension RawLine {
 		
 		self.init(start: rawStart, end: rawEnd)
 	}
-	
+    
 	// TODO: more generic?
 	
 	init?(_ line: Line<RawValue>) {
