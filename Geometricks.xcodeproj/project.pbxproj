@@ -23,7 +23,6 @@
 		221BF5D11EE8B93F0016C1D1 /* Types+FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */; };
 		221BF5D31EE8BDB40016C1D1 /* Comparable+clamped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */; };
 		2238997B1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */; };
-		2239AB4C1EEAB43F00528A7B /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239AB4B1EEAB43F00528A7B /* Math.swift */; };
 		2239AB4E1EEAC0F200528A7B /* LineLineIntersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */; };
 		2239AB501EEAD4DB00528A7B /* RawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239AB4F1EEAD4DB00528A7B /* RawLine.swift */; };
 		2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */; };
@@ -108,7 +107,6 @@
 		221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Types+FloatingPoint.swift"; sourceTree = "<group>"; };
 		221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+clamped.swift"; sourceTree = "<group>"; };
 		2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCircleOverlappingArea.swift; sourceTree = "<group>"; };
-		2239AB4B1EEAB43F00528A7B /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLineIntersection.swift; sourceTree = "<group>"; };
 		2239AB4F1EEAD4DB00528A7B /* RawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawLine.swift; sourceTree = "<group>"; };
 		2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaInteractionUnit.swift; sourceTree = "<group>"; };
@@ -359,7 +357,6 @@
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
 				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
-				2239AB4B1EEAB43F00528A7B /* Math.swift */,
 				2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */,
 				221684291EF0B27000ED288B /* Polynomial */,
 				228783C51ED29F0400FF8784 /* Drawable */,
@@ -576,7 +573,6 @@
 				228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */,
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
 				221684371EF0B2BE00ED288B /* ComplexSolvable.swift in Sources */,
-				2239AB4C1EEAB43F00528A7B /* Math.swift in Sources */,
 				2239AB501EEAD4DB00528A7B /* RawLine.swift in Sources */,
 				224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,

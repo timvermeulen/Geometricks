@@ -34,7 +34,7 @@ final class LineCircleIntersection<_RawValue: Real> {
 extension LineCircleIntersection: Observer {
 	private static func getFraction(line: Line<RawValue>, circle: Circle<RawValue>, option: Option) -> RawValue? {
 		guard let rawLine = RawLine(line), let rawCircle = RawCircle(circle) else { return nil }
-		return Math.fractionOfIntersection(line: rawLine, circle: rawCircle, option: option)
+		return rawLine.fractionOfIntersection(with: rawCircle, option: option)
 	}
 	
 	func update() {

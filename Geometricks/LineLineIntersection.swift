@@ -26,7 +26,7 @@ final class LineLineIntersection<_RawValue: Real> {
 extension LineLineIntersection: Observer {
 	private static func getFraction(for lines: (Line<RawValue>, Line<RawValue>)) -> RawValue? {
 		guard let rawLine0 = RawLine(lines.0), let rawLine1 = RawLine(lines.1) else { return nil }
-		return Math.fractionsOfIntersections(line: rawLine0, line: rawLine1)?.0
+		return rawLine0.fractionsOfIntersections(with: rawLine1)?.0
 	}
 	
 	func update() {

@@ -43,7 +43,7 @@ final class CircleCircleIntersection<_RawValue: Real> {
             let rawCircle1 = RawCircle(circle1)
             else { return (CircleCircleIntersection(circle0, circle1, option: .first, fraction: nil), CircleCircleIntersection(circle0, circle1, option: .second, fraction: nil)) }
         
-        let fractions = Math.fractionsOfintersections(circle: rawCircle0, circle: rawCircle1, makeFraction: circle0.fractionOfNearestPoint)
+        let fractions = rawCircle0.fractionsOfIntersections(with: rawCircle1, makeFraction: circle0.fractionOfNearestPoint)
         
 		return (
             CircleCircleIntersection(circle0, circle1, option: .first,  fraction: fractions?.0),
@@ -59,7 +59,7 @@ extension CircleCircleIntersection: Observer {
 			let rawCircle1 = RawCircle(circle1)
 			else { return nil }
 		
-		return Math.fractionOfintersection(circle: rawCircle0, circle: rawCircle1, option: option, makeFraction: circle0.fractionOfNearestPoint)
+		return rawCircle0.fractionOfIntersection(with: rawCircle1, option: option, makeFraction: circle0.fractionOfNearestPoint)
 	}
 	
 	func update() {
