@@ -27,20 +27,22 @@ extension RawPoint {
 }
 
 extension RawPoint {
+    // TODO: move to RawCurve
 	static func point(on curve: RawCurve<RawValue>, at fraction: RawValue) -> RawPoint {
 		let oppositeFraction = 1 - fraction
-		
+        
 		let b1 = 3 * fraction * oppositeFraction * oppositeFraction
 		let b2 = 3 * fraction * fraction 	     * oppositeFraction
 		let b3 =     fraction * fraction 	     * fraction
 		
 		let v1 = b1 * (curve.controlPoints.0 - curve.start)
-		let v2 = b2 * (curve.controlPoints.1 - curve.end)
+		let v2 = b2 * (curve.controlPoints.1 - curve.start)
 		let v3 = b3 * (curve.end             - curve.start)
-		
+        
 		return curve.start + v1 + v2 + v3
 	}
-	
+    
+    // TODO: move to RawLine
 	static func point(on line: RawLine<RawValue>, at fraction: RawValue) -> RawPoint {
 		return line.start + fraction * line.delta
 	}

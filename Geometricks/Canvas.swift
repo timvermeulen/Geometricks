@@ -2,7 +2,7 @@ import Cocoa
 
 final class Canvas: NSView {
     let logicUnit = LogicUnit<CGFloat>()
-	let drawingUnit = CocoaDrawingUnit()
+    let drawingUnit = CocoaDrawingUnit(defaultPointRadius: 3)
     let interactionUnit: CocoaInteractionUnit
     
     required init?(coder: NSCoder) {
@@ -11,7 +11,7 @@ final class Canvas: NSView {
         logicUnit.delegate = self
         addGestureRecognizer(NSPanGestureRecognizer(target: interactionUnit, action: #selector(CocoaInteractionUnit.handlePan)))
 		
-		loadIntersectionArea()
+		loadCurve()
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -27,19 +27,19 @@ extension Canvas {
 		let controlPoint1 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 400, y: 200))
 		let controlPoint2 = FreePoint<CGFloat>(rawPoint: RawPoint(x: 100, y: 200))
 		let curve = Curve(from: startPoint, to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-		let midPoint = SlidingPoint(oneDimensional: curve, fraction: 2 / 3)
+		let midPoint = SlidingPoint(oneDimensional: curve, fraction: 1 / 2)
 		let line1 = LineSegment(from: startPoint, to: controlPoint1)
 		let line2 = LineSegment(from: endPoint, to: controlPoint2)
 		
 		logicUnit.addFigure(curve)
+        logicUnit.addFigure(line1)
+        logicUnit.addFigure(line2)
 		logicUnit.addDraggablePoint(startPoint)
 		logicUnit.addDraggablePoint(endPoint)
 		logicUnit.addDraggablePoint(controlPoint1)
 		logicUnit.addDraggablePoint(controlPoint2)
 		logicUnit.addFigure(midPoint)
 		logicUnit.addDraggablePoint(midPoint)
-		logicUnit.addFigure(line1)
-		logicUnit.addFigure(line2)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
 		drawingUnit.setStrokeWidth(0, of: midPoint)
