@@ -1,4 +1,4 @@
-final class LineLineIntersection<_RawValue: FloatingPoint> {
+final class LineLineIntersection<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	private let lines: (Line<RawValue>, Line<RawValue>)

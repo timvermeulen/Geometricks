@@ -19,7 +19,7 @@
 		221684401EF0B2BE00ED288B /* QuarticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684301EF0B2AC00ED288B /* QuarticPolynomial.swift */; };
 		221684411EF0B2BE00ED288B /* QuinticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684311EF0B2AC00ED288B /* QuinticPolynomial.swift */; };
 		221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CC1EE896A30016C1D1 /* Circle.swift */; };
-		221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */; };
+		221BF5CF1EE8B6130016C1D1 /* Real.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CE1EE8B6130016C1D1 /* Real.swift */; };
 		221BF5D11EE8B93F0016C1D1 /* Types+FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */; };
 		221BF5D31EE8BDB40016C1D1 /* Comparable+clamped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */; };
 		2238997B1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */; };
@@ -104,7 +104,7 @@
 		221684331EF0B2AC00ED288B /* QuadraticPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticPolynomial.swift; sourceTree = "<group>"; };
 		221684341EF0B2AC00ED288B /* ConstantPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPolynomial.swift; sourceTree = "<group>"; };
 		221BF5CC1EE896A30016C1D1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		221BF5CE1EE8B6130016C1D1 /* Real.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real.swift; sourceTree = "<group>"; };
 		221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Types+FloatingPoint.swift"; sourceTree = "<group>"; };
 		221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+clamped.swift"; sourceTree = "<group>"; };
 		2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCircleOverlappingArea.swift; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
 				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
 				227EBE581EE8500200456AFB /* Observable.swift */,
-				221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */,
+				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
 				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
 				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
@@ -548,7 +548,7 @@
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
 				228783BC1ED29ECA00FF8784 /* NSPoint+Raw.swift in Sources */,
-				221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */,
+				221BF5CF1EE8B6130016C1D1 /* Real.swift in Sources */,
 				2238997B1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift in Sources */,
 				228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */,
 				2216843F1EF0B2BE00ED288B /* QuadraticPolynomial.swift in Sources */,

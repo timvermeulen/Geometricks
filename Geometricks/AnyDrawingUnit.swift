@@ -1,4 +1,4 @@
-struct AnyDrawingUnit<_RawValue: FloatingPoint> {
+struct AnyDrawingUnit<_RawValue: Real> {
     typealias RawValue = _RawValue
     
     private let _drawPoint: (RawPoint<RawValue>, Identifier) -> Void

@@ -1,4 +1,4 @@
-struct RawCircle<RawValue: FloatingPoint> {
+struct RawCircle<RawValue: Real> {
 	let center: RawPoint<RawValue>
 	let radius: RawValue
 }

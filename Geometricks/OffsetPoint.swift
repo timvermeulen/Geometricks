@@ -1,4 +1,4 @@
-final class OffsetPoint<_RawValue: FloatingPoint> {
+final class OffsetPoint<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	private let anchor: AnyPoint<RawValue>

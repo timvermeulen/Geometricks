@@ -2,7 +2,7 @@ protocol LogicUnitDelegate: class {
     func shouldRedraw()
 }
 
-final class LogicUnit<_RawValue: FloatingPoint> {
+final class LogicUnit<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     private var figures: [AnyDrawable<RawValue>] = []

@@ -1,4 +1,4 @@
-struct RawLine<RawValue: FloatingPoint> {
+struct RawLine<RawValue: Real> {
 	let start: RawPoint<RawValue>
 	let end: RawPoint<RawValue>
 	

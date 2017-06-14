@@ -1,4 +1,4 @@
-struct AnyOneDimensional<_RawValue: FloatingPoint> {
+struct AnyOneDimensional<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     private let _point: (RawValue) -> RawPoint<RawValue>?

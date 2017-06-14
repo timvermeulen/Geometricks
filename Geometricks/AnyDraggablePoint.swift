@@ -1,4 +1,4 @@
-struct AnyDraggablePoint<_RawValue: FloatingPoint> {
+struct AnyDraggablePoint<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     private let _takeOnValue: (RawPoint<RawValue>) -> Void

@@ -1,4 +1,4 @@
-struct RawVector<_RawValue: FloatingPoint> {
+struct RawVector<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     let changeInX, changeInY: RawValue

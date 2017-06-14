@@ -1,4 +1,4 @@
-final class CircleCircleIntersection<_RawValue: FloatingPoint> {
+final class CircleCircleIntersection<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	enum Option {

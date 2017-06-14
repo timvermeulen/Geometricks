@@ -1,4 +1,4 @@
-struct RawCurve<RawValue: FloatingPoint> {
+struct RawCurve<RawValue: Real> {
 	let line: RawLine<RawValue>
 	let controlPoints: (RawPoint<RawValue>, RawPoint<RawValue>)
 	

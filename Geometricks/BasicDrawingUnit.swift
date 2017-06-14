@@ -1,6 +1,6 @@
 @testable import Geometricks
 
-final class BasicDrawingUnit<_RawValue: Geometricks.FloatingPoint> {
+final class BasicDrawingUnit<_RawValue: Real> {
     typealias RawValue = _RawValue
     
     enum Log {

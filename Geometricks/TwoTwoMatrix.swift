@@ -1,4 +1,4 @@
-struct TwoTwoMatrix<RawValue: FloatingPoint> {
+struct TwoTwoMatrix<RawValue: Real> {
 	private let topLeft, topRight, bottomLeft, bottomRight: RawValue
 }
 

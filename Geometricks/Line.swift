@@ -1,4 +1,4 @@
-final class Line<_RawValue: FloatingPoint> {
+final class Line<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	let start: AnyPoint<RawValue>

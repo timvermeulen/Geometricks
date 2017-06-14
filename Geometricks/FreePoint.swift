@@ -1,4 +1,4 @@
-final class FreePoint<_RawValue: FloatingPoint> {
+final class FreePoint<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	private var rawPoint: RawPoint<RawValue> {

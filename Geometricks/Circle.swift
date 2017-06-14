@@ -1,4 +1,4 @@
-final class Circle<_RawValue: FloatingPoint> {
+final class Circle<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
 	let center: AnyPoint<RawValue>

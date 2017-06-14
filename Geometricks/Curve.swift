@@ -1,4 +1,4 @@
-final class Curve<_RawValue: FloatingPoint> {
+final class Curve<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     let start: AnyPoint<RawValue>

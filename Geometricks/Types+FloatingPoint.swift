@@ -1,6 +1,6 @@
 import CoreGraphics
 
-extension CGFloat: FloatingPoint {
+extension CGFloat: Real {
 	var sin: CGFloat { return CoreGraphics.sin(self) }
 	var cos: CGFloat { return CoreGraphics.cos(self) }
 	var tan: CGFloat { return CoreGraphics.tan(self) }
@@ -20,7 +20,7 @@ extension CGFloat: FloatingPoint {
 	static let tau: CGFloat = .pi * 2
 }
 
-extension Double: FloatingPoint {
+extension Double: Real {
     var sin: Double { return Darwin.sin(self) }
 	var cos: Double { return Darwin.cos(self) }
 	var tan: Double { return Darwin.tan(self) }
@@ -40,7 +40,7 @@ extension Double: FloatingPoint {
 	static let tau: Double = .pi * 2
 }
 
-extension Float: FloatingPoint {
+extension Float: Real {
 	var sin: Float { return Darwin.sin(self) }
 	var cos: Float { return Darwin.cos(self) }
 	var tan: Float { return Darwin.tan(self) }

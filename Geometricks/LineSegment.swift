@@ -1,4 +1,4 @@
-final class LineSegment<_RawValue: FloatingPoint> {
+final class LineSegment<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     let start: AnyPoint<RawValue>

@@ -1,4 +1,4 @@
-final class CircleCircleOverlappingArea<_RawValue: FloatingPoint> {
+final class CircleCircleOverlappingArea<_RawValue: Real> {
     typealias RawValue = _RawValue
     
     private let circles: (Circle<RawValue>, Circle<RawValue>)

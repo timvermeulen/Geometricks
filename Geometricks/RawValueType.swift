@@ -1,3 +1,3 @@
 protocol RawValueType {
-	associatedtype RawValue: FloatingPoint
+	associatedtype RawValue: Real
 }

@@ -1,5 +1,4 @@
-// TODO: rename to `Real`
-protocol FloatingPoint: Swift.FloatingPoint {
+protocol Real: FloatingPoint {
 	var sin: Self { get }
 	var cos: Self { get }
 	var tan: Self { get }
@@ -15,7 +14,7 @@ protocol FloatingPoint: Swift.FloatingPoint {
 	static var tau: Self { get }
 }
 
-extension FloatingPoint {
+extension Real {
 	func mod(_ x: Self) -> Self {
 		let rem = remainder(dividingBy: x)
 		return rem < 0 ? rem + x : rem

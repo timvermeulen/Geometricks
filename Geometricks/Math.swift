@@ -1,4 +1,4 @@
-enum Math<RawValue: FloatingPoint> {
+enum Math<RawValue: Real> {
 	static func fractionsOfIntersections(line line0: RawLine<RawValue>, line line1: RawLine<RawValue>) -> (RawValue, RawValue)? {
 		let matrix = TwoTwoMatrix(line0.end - line0.start, line1.start - line1.end)
 		let vector = line1.start - line0.start

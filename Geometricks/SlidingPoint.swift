@@ -1,4 +1,4 @@
-final class SlidingPoint<_RawValue: FloatingPoint> {
+final class SlidingPoint<_RawValue: Real> {
 	typealias RawValue = _RawValue
 	
     private let floor: AnyOneDimensional<RawValue>
