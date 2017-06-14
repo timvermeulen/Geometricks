@@ -28,16 +28,14 @@ enum Math<RawValue: FloatingPoint> {
 		let c2 = line.delta • line.delta
 		
 		let polynomial = QuadraticPolynomial(c0, c1, c2)
+        
+        guard let roots = polynomial.realRoots, roots.count == 2 else { return nil }
 		
-		switch (option, polynomial.realRoots) {
-		case (.only, .one(let root)):
-			return root
-		case (.first, .two(let root0, _)):
-			return root0
-		case (.second, .two(_, let root1)):
-			return root1
-		case (.only, _), (.first, _), (.second, _):
-			return nil
+		switch (option) {
+        case .first:
+            return roots[0]
+        case .second:
+            return roots[1]
 		}
 	}
 	
@@ -74,17 +72,11 @@ enum Math<RawValue: FloatingPoint> {
             let fraction1 = makeFraction(intersection1)
             else { return nil }
         
-        switch (product, option) {
-        case (0, .only):
+        switch option {
+        case .first:
             return fraction0
-        case (0, _):
-            return nil
-        case (_, .first):
-            return fraction0
-        case (_, .second):
+        case .second:
             return fraction1
-        case (_, .only):
-            return nil
         }
     }
     

@@ -2,7 +2,7 @@ final class CircleCircleIntersection<_RawValue: FloatingPoint> {
 	typealias RawValue = _RawValue
 	
 	enum Option {
-		case first, second, only
+		case first, second
 	}
 	
 	private let circles: (Circle<RawValue>, Circle<RawValue>)

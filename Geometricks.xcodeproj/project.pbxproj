@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221684361EF0B2BE00ED288B /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842F1EF0B2AC00ED288B /* Complex.swift */; };
+		221684371EF0B2BE00ED288B /* ComplexSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842B1EF0B2AB00ED288B /* ComplexSolvable.swift */; };
+		221684381EF0B2BE00ED288B /* ConstantPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684341EF0B2AC00ED288B /* ConstantPolynomial.swift */; };
+		221684391EF0B2BE00ED288B /* CubicPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684321EF0B2AC00ED288B /* CubicPolynomial.swift */; };
+		2216843B1EF0B2BE00ED288B /* LinearPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842D1EF0B2AC00ED288B /* LinearPolynomial.swift */; };
+		2216843C1EF0B2BE00ED288B /* NonConstantComplexSolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842E1EF0B2AC00ED288B /* NonConstantComplexSolvable.swift */; };
+		2216843D1EF0B2BE00ED288B /* NonConstantPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842C1EF0B2AB00ED288B /* NonConstantPolynomial.swift */; };
+		2216843E1EF0B2BE00ED288B /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216842A1EF0B2AB00ED288B /* Polynomial.swift */; };
+		2216843F1EF0B2BE00ED288B /* QuadraticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684331EF0B2AC00ED288B /* QuadraticPolynomial.swift */; };
+		221684401EF0B2BE00ED288B /* QuarticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684301EF0B2AC00ED288B /* QuarticPolynomial.swift */; };
+		221684411EF0B2BE00ED288B /* QuinticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221684311EF0B2AC00ED288B /* QuinticPolynomial.swift */; };
 		221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CC1EE896A30016C1D1 /* Circle.swift */; };
 		221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */; };
 		221BF5D11EE8B93F0016C1D1 /* Types+FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */; };
@@ -59,7 +70,6 @@
 		22C62D541EE99FCE00C73E0F /* RawRectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */; };
 		22C62D571EE9A08400C73E0F /* NSRect+RawRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */; };
 		22C62D591EE9A1AC00C73E0F /* NSSize+RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */; };
-		22CE90981EEB54B6007BCC7D /* QuadraticPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CE90971EEB54B6007BCC7D /* QuadraticPolynomial.swift */; };
 		22D62E091EEB0482009D2E26 /* RawCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D62E081EEB0482009D2E26 /* RawCurve.swift */; };
 		22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D66A5C1EE9765500CBF912 /* RawValueType.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +92,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2216842A1EF0B2AB00ED288B /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
+		2216842B1EF0B2AB00ED288B /* ComplexSolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexSolvable.swift; sourceTree = "<group>"; };
+		2216842C1EF0B2AB00ED288B /* NonConstantPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonConstantPolynomial.swift; sourceTree = "<group>"; };
+		2216842D1EF0B2AC00ED288B /* LinearPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearPolynomial.swift; sourceTree = "<group>"; };
+		2216842E1EF0B2AC00ED288B /* NonConstantComplexSolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonConstantComplexSolvable.swift; sourceTree = "<group>"; };
+		2216842F1EF0B2AC00ED288B /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		221684301EF0B2AC00ED288B /* QuarticPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarticPolynomial.swift; sourceTree = "<group>"; };
+		221684311EF0B2AC00ED288B /* QuinticPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuinticPolynomial.swift; sourceTree = "<group>"; };
+		221684321EF0B2AC00ED288B /* CubicPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicPolynomial.swift; sourceTree = "<group>"; };
+		221684331EF0B2AC00ED288B /* QuadraticPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticPolynomial.swift; sourceTree = "<group>"; };
+		221684341EF0B2AC00ED288B /* ConstantPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPolynomial.swift; sourceTree = "<group>"; };
 		221BF5CC1EE896A30016C1D1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		221BF5CE1EE8B6130016C1D1 /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
 		221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Types+FloatingPoint.swift"; sourceTree = "<group>"; };
@@ -140,7 +161,6 @@
 		22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRectConvertible.swift; sourceTree = "<group>"; };
 		22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+RawRect.swift"; sourceTree = "<group>"; };
 		22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSize+RawVector.swift"; sourceTree = "<group>"; };
-		22CE90971EEB54B6007BCC7D /* QuadraticPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticPolynomial.swift; sourceTree = "<group>"; };
 		22D62E081EEB0482009D2E26 /* RawCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCurve.swift; sourceTree = "<group>"; };
 		22D66A5C1EE9765500CBF912 /* RawValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawValueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +190,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221684291EF0B27000ED288B /* Polynomial */ = {
+			isa = PBXGroup;
+			children = (
+				2216842F1EF0B2AC00ED288B /* Complex.swift */,
+				2216842B1EF0B2AB00ED288B /* ComplexSolvable.swift */,
+				221684341EF0B2AC00ED288B /* ConstantPolynomial.swift */,
+				221684321EF0B2AC00ED288B /* CubicPolynomial.swift */,
+				2216842D1EF0B2AC00ED288B /* LinearPolynomial.swift */,
+				2216842E1EF0B2AC00ED288B /* NonConstantComplexSolvable.swift */,
+				2216842C1EF0B2AB00ED288B /* NonConstantPolynomial.swift */,
+				2216842A1EF0B2AB00ED288B /* Polynomial.swift */,
+				221684331EF0B2AC00ED288B /* QuadraticPolynomial.swift */,
+				221684301EF0B2AC00ED288B /* QuarticPolynomial.swift */,
+				221684311EF0B2AC00ED288B /* QuinticPolynomial.swift */,
+			);
+			name = Polynomial;
+			sourceTree = "<group>";
+		};
 		2249D42D1EEB20310027746F /* Intersection */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,8 +360,8 @@
 				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 				2239AB4B1EEAB43F00528A7B /* Math.swift */,
-				22CE90971EEB54B6007BCC7D /* QuadraticPolynomial.swift */,
 				2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */,
+				221684291EF0B27000ED288B /* Polynomial */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
@@ -494,15 +532,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				224BC5721EE77FBD00C29CE3 /* OneDimensional.swift in Sources */,
+				2216843E1EF0B2BE00ED288B /* Polynomial.swift in Sources */,
 				22C62D571EE9A08400C73E0F /* NSRect+RawRect.swift in Sources */,
+				221684401EF0B2BE00ED288B /* QuarticPolynomial.swift in Sources */,
 				2240F2A11EE6EAE400492619 /* CocoaInteractionUnit.swift in Sources */,
 				228783BD1ED29ECA00FF8784 /* Point.swift in Sources */,
 				228E65361EEB89D500AA5931 /* CircleCircleIntersection.swift in Sources */,
 				229FCFDE1ED3B81000CAAEE5 /* SlidingPoint.swift in Sources */,
 				228783751ED29E4900FF8784 /* ViewController.swift in Sources */,
 				2249D42C1EEB1E600027746F /* RawCircle.swift in Sources */,
+				2216843D1EF0B2BE00ED288B /* NonConstantPolynomial.swift in Sources */,
 				229819381EEA231300C1E7A1 /* TwoTwoMatrix.swift in Sources */,
-				22CE90981EEB54B6007BCC7D /* QuadraticPolynomial.swift in Sources */,
+				2216843B1EF0B2BE00ED288B /* LinearPolynomial.swift in Sources */,
 				221BF5CD1EE896A30016C1D1 /* Circle.swift in Sources */,
 				228783B41ED29ECA00FF8784 /* AnyPoint.swift in Sources */,
 				228783BE1ED29ECA00FF8784 /* RawPoint.swift in Sources */,
@@ -510,8 +551,10 @@
 				221BF5CF1EE8B6130016C1D1 /* FloatingPoint.swift in Sources */,
 				2238997B1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift in Sources */,
 				228783B51ED29ECA00FF8784 /* CocoaDrawingUnit.swift in Sources */,
+				2216843F1EF0B2BE00ED288B /* QuadraticPolynomial.swift in Sources */,
 				228783C01ED29ECA00FF8784 /* RawVector.swift in Sources */,
 				228783CB1ED3A51700FF8784 /* Curve.swift in Sources */,
+				221684391EF0B2BE00ED288B /* CubicPolynomial.swift in Sources */,
 				228783C11ED29ECA00FF8784 /* RawVectorConvertible.swift in Sources */,
 				22D62E091EEB0482009D2E26 /* RawCurve.swift in Sources */,
 				228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */,
@@ -522,18 +565,22 @@
 				22C62D501EE99CC300C73E0F /* Line.swift in Sources */,
 				2249D42A1EEB10580027746F /* LineCircleIntersection.swift in Sources */,
 				228783B11ED29ECA00FF8784 /* AnyDrawable.swift in Sources */,
+				221684411EF0B2BE00ED288B /* QuinticPolynomial.swift in Sources */,
 				228783B91ED29ECA00FF8784 /* DraggablePoint.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */,
+				2216843C1EF0B2BE00ED288B /* NonConstantComplexSolvable.swift in Sources */,
 				227EBE571EE84CE800456AFB /* Numeric+squared.swift in Sources */,
 				22C62D521EE99F7600C73E0F /* RawRect.swift in Sources */,
 				228783BA1ED29ECA00FF8784 /* LineSegment.swift in Sources */,
 				22C62D541EE99FCE00C73E0F /* RawRectConvertible.swift in Sources */,
 				228783B71ED29ECA00FF8784 /* DrawingUnit.swift in Sources */,
 				228783B61ED29ECA00FF8784 /* Drawable.swift in Sources */,
+				221684371EF0B2BE00ED288B /* ComplexSolvable.swift in Sources */,
 				2239AB4C1EEAB43F00528A7B /* Math.swift in Sources */,
 				2239AB501EEAD4DB00528A7B /* RawLine.swift in Sources */,
 				224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
+				221684381EF0B2BE00ED288B /* ConstantPolynomial.swift in Sources */,
 				22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */,
 				22C62D591EE9A1AC00C73E0F /* NSSize+RawVector.swift in Sources */,
 				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
@@ -542,6 +589,7 @@
 				225824CB1EEC6F1100752128 /* OffsetPoint.swift in Sources */,
 				224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */,
 				221BF5D11EE8B93F0016C1D1 /* Types+FloatingPoint.swift in Sources */,
+				221684361EF0B2BE00ED288B /* Complex.swift in Sources */,
 				221BF5D31EE8BDB40016C1D1 /* Comparable+clamped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

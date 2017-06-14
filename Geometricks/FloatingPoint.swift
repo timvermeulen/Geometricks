@@ -7,6 +7,9 @@ protocol FloatingPoint: Swift.FloatingPoint {
 	var _asin: Self { get }
 	var _acos: Self { get }
 	var _atan: Self { get }
+    
+    func cubeRoot() -> Self
+    func atan2(_ x: Self) -> Self
 	
 	static var pi: Self { get }
 	static var tau: Self { get }
