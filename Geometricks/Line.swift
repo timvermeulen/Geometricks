@@ -12,6 +12,10 @@ final class Line<_RawValue: Real> {
 		
 		observe(start, end)
 	}
+    
+    deinit {
+        stopObserving(start, end)
+    }
 	
 	convenience init<P1: Point, P2: Point>(from start: P1, to end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		self.init(from: AnyPoint(start), to: AnyPoint(end))

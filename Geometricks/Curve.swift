@@ -8,21 +8,25 @@ final class Curve<_RawValue: Real> {
 	
 	let observableStorage = ObservableStorage()
     
-    init(from start: AnyPoint<RawValue>, to end: AnyPoint<RawValue>, controlPoint1: AnyPoint<RawValue>, controlPoint2: AnyPoint<RawValue>) {
+    init(from start: AnyPoint<RawValue>, to end: AnyPoint<RawValue>, controlPoint0: AnyPoint<RawValue>, controlPoint1: AnyPoint<RawValue>) {
         self.start = start
         self.end = end
-        self.controlPoint0 = controlPoint1
-        self.controlPoint1 = controlPoint2
+        self.controlPoint0 = controlPoint0
+        self.controlPoint1 = controlPoint1
 		
-		observe(start, end, controlPoint1, controlPoint2)
+		observe(start, end, controlPoint0, controlPoint1)
     }
     
-    convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
+    deinit {
+        stopObserving(start, end, controlPoint0, controlPoint1)
+    }
+    
+    convenience init<P1: Point, P2: Point, P3: Point, P4: Point>(from start: P1, to end: P2, controlPoint0: P3, controlPoint1: P4) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
 		self.init(
 			from: AnyPoint(start),
 			to: AnyPoint(end),
-			controlPoint1: AnyPoint(controlPoint1),
-			controlPoint2: AnyPoint(controlPoint2)
+			controlPoint0: AnyPoint(controlPoint0),
+			controlPoint1: AnyPoint(controlPoint1)
 		)
     }
 }

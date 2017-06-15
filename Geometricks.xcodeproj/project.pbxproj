@@ -206,6 +206,14 @@
 			name = Polynomial;
 			sourceTree = "<group>";
 		};
+		22326C7F1EF2FC2C00950225 /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */,
+			);
+			name = Area;
+			sourceTree = "<group>";
+		};
 		2249D42D1EEB20310027746F /* Intersection */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +365,7 @@
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
 				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
-				2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */,
+				22326C7F1EF2FC2C00950225 /* Area */,
 				221684291EF0B27000ED288B /* Polynomial */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,

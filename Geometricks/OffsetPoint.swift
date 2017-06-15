@@ -16,6 +16,10 @@ final class OffsetPoint<_RawValue: Real> {
 		
 		observe(anchor)
 	}
+    
+    deinit {
+        stopObserving(anchor)
+    }
 	
 	convenience init<P: Point, T: ConvertibleToRawVector>(anchor: P, offset: T) where P.RawValue == RawValue, T.RawValue == RawValue {
 		self.init(anchor: AnyPoint(anchor), offset: offset.makeRawVector())

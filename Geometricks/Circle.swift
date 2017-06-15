@@ -12,6 +12,10 @@ final class Circle<_RawValue: Real> {
 		
 		observe(center, pointOnBoundary)
 	}
+    
+    deinit {
+        stopObserving(center, pointOnBoundary)
+    }
 	
 	convenience init<P1: Point, P2: Point>(center: P1, pointOnBoundary: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		self.init(center: AnyPoint(center), pointOnBoundary: AnyPoint(pointOnBoundary))

@@ -13,14 +13,18 @@ final class LineLineIntersection<_RawValue: Real> {
 	
 	let observableStorage = ObservableStorage()
 	
-	init(_ line1: Line<RawValue>, _ line2: Line<RawValue>) {
-		lines = (line1, line2)
+	init(_ line0: Line<RawValue>, _ line1: Line<RawValue>) {
+		lines = (line0, line1)
 		
 		fraction = LineLineIntersection.getFraction(for: lines)
-		rawPoint = fraction.flatMap(line1.point(at:))
+		rawPoint = fraction.flatMap(line0.point(at:))
 		
-		observe(line1, line2)
+		observe(line0, line1)
 	}
+    
+    deinit {
+        stopObserving(lines.0, lines.1)
+    }
 }
 
 extension LineLineIntersection: Observer {

@@ -36,6 +36,10 @@ final class CircleCircleIntersection<_RawValue: Real> {
         
         observe(circle0, circle1)
     }
+    
+    deinit {
+        stopObserving(circles.0, circles.1)
+    }
 	
 	static func bothIntersections(_ circle0: Circle<RawValue>, _ circle1: Circle<RawValue>) -> (CircleCircleIntersection, CircleCircleIntersection) {
         guard

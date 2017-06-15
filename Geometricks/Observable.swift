@@ -1,5 +1,5 @@
 final class ObservableStorage {
-	fileprivate var observers: [Observer]
+	fileprivate var observers: [() -> Observer?]
 	
 	init() {
 		observers = []
@@ -13,19 +13,29 @@ protocol Observable {
 extension Observable {
 	func updateObservers() {
 		for observer in observableStorage.observers {
-			observer.update()
+			observer()?.update()
 		}
 	}
 }
 
-protocol Observer {
+protocol Observer: class {
 	func update()
 }
 
 extension Observer {
 	func observe(_ observables: Observable...) {
-		observables.forEach { $0.observableStorage.observers.append(self) }
+        for observable in observables {
+            let closure = { [weak self] in self }
+            observable.observableStorage.observers.append(closure)
+        }
 	}
+    
+    func stopObserving(_ observables: Observable...) {
+        for observable in observables {
+            let storage = observable.observableStorage
+            storage.observers = storage.observers.filter { $0() !== self }
+        }
+    }
 }
 
 extension Observer where Self: Observable {

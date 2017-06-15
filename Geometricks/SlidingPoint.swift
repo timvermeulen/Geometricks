@@ -20,6 +20,10 @@ final class SlidingPoint<_RawValue: Real> {
 		
 		observe(floor)
 	}
+    
+    deinit {
+        stopObserving(floor)
+    }
 }
 
 extension SlidingPoint: Observer {

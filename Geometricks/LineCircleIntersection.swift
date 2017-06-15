@@ -29,6 +29,10 @@ final class LineCircleIntersection<_RawValue: Real> {
 		
 		observe(line, circle)
 	}
+    
+    deinit {
+        stopObserving(line, circle)
+    }
 }
 
 extension LineCircleIntersection: Observer {
