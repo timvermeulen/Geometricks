@@ -31,15 +31,15 @@ extension Canvas {
 		let line1 = LineSegment(from: startPoint, to: controlPoint0)
 		let line2 = LineSegment(from: endPoint, to: controlPoint1)
 		
-		logicUnit.addFigure(curve)
-        logicUnit.addFigure(line1)
-        logicUnit.addFigure(line2)
-		logicUnit.addDraggablePoint(startPoint)
-		logicUnit.addDraggablePoint(endPoint)
-		logicUnit.addDraggablePoint(controlPoint0)
-		logicUnit.addDraggablePoint(controlPoint1)
-		logicUnit.addFigure(midPoint)
-		logicUnit.addDraggablePoint(midPoint)
+		logicUnit.addFigures(curve)
+        logicUnit.addFigures(line1)
+        logicUnit.addFigures(line2)
+		logicUnit.addDraggablePoints(startPoint)
+		logicUnit.addDraggablePoints(endPoint)
+		logicUnit.addDraggablePoints(controlPoint0)
+		logicUnit.addDraggablePoints(controlPoint1)
+		logicUnit.addFigures(midPoint)
+		logicUnit.addDraggablePoints(midPoint)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
 		drawingUnit.setStrokeWidth(0, of: midPoint)
@@ -54,11 +54,11 @@ extension Canvas {
 		let line = Line(from: startPoint, to: endPoint)
 		let midPoint = SlidingPoint(oneDimensional: line, fraction: 1 / 2)
 		
-		logicUnit.addFigure(line)
-		logicUnit.addFigure(midPoint)
-		logicUnit.addDraggablePoint(startPoint)
-		logicUnit.addDraggablePoint(endPoint)
-		logicUnit.addDraggablePoint(midPoint)
+		logicUnit.addFigures(line)
+		logicUnit.addFigures(midPoint)
+		logicUnit.addDraggablePoints(startPoint)
+		logicUnit.addDraggablePoints(endPoint)
+		logicUnit.addDraggablePoints(midPoint)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
 		drawingUnit.setStrokeWidth(0, of: midPoint)
@@ -71,11 +71,11 @@ extension Canvas {
 		let lineSegment = LineSegment(from: startPoint, to: endPoint)
 		let midPoint = SlidingPoint(oneDimensional: lineSegment, fraction: 1 / 3)
 		
-		logicUnit.addFigure(lineSegment)
-		logicUnit.addDraggablePoint(startPoint)
-		logicUnit.addDraggablePoint(endPoint)
-		logicUnit.addDraggablePoint(midPoint)
-		logicUnit.addFigure(midPoint)
+		logicUnit.addFigures(lineSegment)
+		logicUnit.addDraggablePoints(startPoint)
+		logicUnit.addDraggablePoints(endPoint)
+		logicUnit.addDraggablePoints(midPoint)
+		logicUnit.addFigures(midPoint)
 		
 		drawingUnit.setPointRadius(6, of: midPoint)
 		drawingUnit.setStrokeWidth(0, of: midPoint)
@@ -88,10 +88,10 @@ extension Canvas {
 		let circle = Circle(center: point1, pointOnBoundary: point2)
 		let sliding = SlidingPoint(oneDimensional: circle, fraction: .pi)
 		
-		logicUnit.addFigure(circle)
-		logicUnit.addDraggablePoint(point1)
-		logicUnit.addDraggablePoint(point2)
-		logicUnit.addDraggablePoint(sliding)
+		logicUnit.addFigures(circle)
+		logicUnit.addDraggablePoints(point1)
+		logicUnit.addDraggablePoints(point2)
+		logicUnit.addDraggablePoints(sliding)
 		
 		drawingUnit.setPointRadius(6, of: sliding)
 		drawingUnit.setFillColor(.red, of: sliding)
@@ -107,11 +107,11 @@ extension Canvas {
 		let line2 = Line(from: point3, to: point4)
 		
 		let intersection = LineLineIntersection(line1, line2)
-		
-		[point1, point2, point3, point4].forEach(logicUnit.addDraggablePoint)
-		[line1, line2].forEach(logicUnit.addFigure)
-		[point1, point2, point3, point4].forEach(logicUnit.addFigure)
-		logicUnit.addFigure(intersection)
+        
+        logicUnit.addDraggablePoints(point1, point2, point3, point4)
+        logicUnit.addFigures(line1, line2)
+        logicUnit.addFigures(point1, point2, point3, point4)
+		logicUnit.addFigures(intersection)
 		
 		drawingUnit.setPointRadius(6, of: intersection)
 		drawingUnit.setStrokeWidth(0, of: intersection)
@@ -133,8 +133,8 @@ extension Canvas {
 		let segment0 = LineSegment(from: point0, to: point1)
 		let segment1 = LineSegment(from: intersection0, to: intersection1)
 		
-		logicUnit.addFigure(line)
-		logicUnit.addFigure(circle)
+		logicUnit.addFigures(line)
+		logicUnit.addFigures(circle)
 		logicUnit.addFigures(segment0, segment1)
 		logicUnit.addFigures(intersection0, intersection1)
 		logicUnit.addDraggablePoints(point0, point1)
@@ -158,8 +158,8 @@ extension Canvas {
 		let segment = LineSegment(from: intersection0, to: intersection1)
 		
 		logicUnit.addFigures(circle0, circle1)
-		logicUnit.addFigure(segment)
-		logicUnit.addDraggablePoint(point1)
+		logicUnit.addFigures(segment)
+		logicUnit.addDraggablePoints(point1)
 		logicUnit.addFigures(intersection0, intersection1)
 		
 		drawingUnit.setStrokeColor(.red, of: segment)
@@ -177,7 +177,7 @@ extension Canvas {
 		
 		let bisector = Line(from: intersection0, to: intersection1)
 		
-		logicUnit.addFigure(bisector)
+		logicUnit.addFigures(bisector)
 		logicUnit.addDraggablePoints(point0, point1)
 	}
 	
@@ -232,10 +232,10 @@ extension Canvas {
 		let intersections = CircleCircleIntersection.bothIntersections(circle0, circle1)
 		let line = LineSegment(from: intersections.0, to: intersections.1)
 		
-		logicUnit.addFigure(line)
+		logicUnit.addFigures(line)
 		logicUnit.addFigures(circle0, circle1)
 		logicUnit.addDraggablePoints(point0)
-		logicUnit.addDraggablePoint(point1)
+		logicUnit.addDraggablePoints(point1)
 		
 		drawingUnit.setStrokeColor(.red, of: line)
 	}
@@ -271,7 +271,7 @@ extension Canvas {
         
         let intersectionArea = CircleCircleOverlappingArea(circle0, circle1)
         
-        logicUnit.addFigure(intersectionArea)
+        logicUnit.addFigures(intersectionArea)
         logicUnit.addFigures(circle0, circle1)
         logicUnit.addDraggablePoints(point1, point3)
         

@@ -32,8 +32,7 @@ final class LogicUnit<_RawValue: Real> {
     func stopDragging(_ point: AnyDraggablePoint<RawValue>) {
     }
     
-    // TODO: make private?
-    func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
+    private func addFigure<T: Drawable>(_ drawable: T) where T.RawValue == RawValue {
         figures.append(AnyDrawable(drawable))
     }
 	
@@ -41,7 +40,7 @@ final class LogicUnit<_RawValue: Real> {
 		drawables.forEach(addFigure)
 	}
     
-    func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.RawValue == RawValue {
+    private func addDraggablePoint<P: DraggablePoint>(_ point: P) where P.RawValue == RawValue {
 		addFigure(point)
         draggablePoints.append(AnyDraggablePoint(point))
     }
