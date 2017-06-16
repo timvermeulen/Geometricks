@@ -27,26 +27,24 @@ extension CircleCircleOverlappingArea: Drawable {
         let startAngle1: RawValue
         let endAngle1: RawValue
         
-        if rawCircle0.encloses(rawCircle1) {
-            startAngle0 = 0
-            endAngle0 = 0
-            startAngle1 = 0
-            endAngle1 = .tau
-        } else if rawCircle1.encloses(rawCircle0) {
-            startAngle0 = 0
-            endAngle0 = .tau
-            startAngle1 = 0
-            endAngle1 = 0
-        } else {
-            guard
-                let intersection0 = intersections.0.makeRawPoint(),
-                let intersection1 = intersections.1.makeRawPoint()
-                else { return }
-            
+        if let intersection0 = intersections.0.makeRawPoint(), let intersection1 = intersections.1.makeRawPoint() {
             startAngle0 = intersection0.angle(relativeTo: rawCircle0.center)
             endAngle0   = intersection1.angle(relativeTo: rawCircle0.center)
             startAngle1 = intersection1.angle(relativeTo: rawCircle1.center)
             endAngle1   = intersection0.angle(relativeTo: rawCircle1.center)
+        } else {
+            startAngle0 = 0
+            startAngle1 = 0
+            
+            if rawCircle0.encloses(rawCircle1) {
+                endAngle0 = 0
+                endAngle1 = .tau
+            } else if rawCircle1.encloses(rawCircle0) {
+                endAngle0 = .tau
+                endAngle1 = 0
+            } else {
+                return
+            }
         }
         
         drawingUnit.drawCircleCircleIntersectionArea(
