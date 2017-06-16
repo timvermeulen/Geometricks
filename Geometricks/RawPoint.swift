@@ -44,7 +44,7 @@ extension RawPoint: ConvertibleFromRawPoint {
     }
 }
 
-extension RawPoint: AlwaysConvertibleToRawPoint {
+extension RawPoint: ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint {
         return self
     }

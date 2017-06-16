@@ -9,7 +9,7 @@ extension NSPoint: ConvertibleFromRawPoint {
     }
 }
 
-extension NSPoint: AlwaysConvertibleToRawPoint {
+extension NSPoint: ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<CGFloat> {
         return RawPoint(x: x, y: y)
     }

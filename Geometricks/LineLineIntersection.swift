@@ -38,7 +38,7 @@ extension LineLineIntersection: Observer {
 	}
 }
 
-extension LineLineIntersection: ConvertibleToRawPoint {
+extension LineLineIntersection: OptionallyConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>? {
 		return rawPoint
 	}

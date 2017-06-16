@@ -2,15 +2,15 @@ protocol ConvertibleFromRawPoint: RawValueType {
     init(_ rawPoint: RawPoint<RawValue>)
 }
 
-protocol ConvertibleToRawPoint: RawValueType {
+protocol OptionallyConvertibleToRawPoint: RawValueType {
     func makeRawPoint() -> RawPoint<RawValue>?
 }
 
-protocol AlwaysConvertibleToRawPoint: ConvertibleToRawPoint {
+protocol ConvertibleToRawPoint: OptionallyConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>
 }
 
-extension AlwaysConvertibleToRawPoint {
+extension ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue>? {
         return .some(makeRawPoint())
 	}

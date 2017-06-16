@@ -84,7 +84,7 @@ extension RawLine {
 		end = start + delta
 	}
 	
-	init?<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+	init?<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
 		guard
 			let rawStart = start.makeRawPoint(),
 			let rawEnd = end.makeRawPoint()

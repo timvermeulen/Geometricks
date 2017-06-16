@@ -71,7 +71,7 @@ extension CircleCircleIntersection: Observer {
 	}
 }
 
-extension CircleCircleIntersection: ConvertibleToRawPoint {
+extension CircleCircleIntersection: OptionallyConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>? {
 		return rawPoint
 	}

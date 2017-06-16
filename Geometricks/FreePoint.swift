@@ -16,7 +16,7 @@ final class FreePoint<_RawValue: Real> {
 	}
 }
 
-extension FreePoint: AlwaysConvertibleToRawPoint {
+extension FreePoint: ConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue> {
         return rawPoint
     }

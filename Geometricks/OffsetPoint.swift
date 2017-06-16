@@ -33,7 +33,7 @@ extension OffsetPoint: Observer {
 	}
 }
 
-extension OffsetPoint: ConvertibleToRawPoint {
+extension OffsetPoint: OptionallyConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>? {
 		return rawPoint
 	}

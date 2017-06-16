@@ -21,17 +21,17 @@ struct AnyDrawingUnit<_RawValue: Real> {
 }
 
 extension AnyDrawingUnit {
-    func drawPoint<P: ConvertibleToRawPoint>(at location: P, identifier: Identifier) where P.RawValue == RawValue {
+    func drawPoint<P: OptionallyConvertibleToRawPoint>(at location: P, identifier: Identifier) where P.RawValue == RawValue {
         guard let rawPoint = location.makeRawPoint() else { return }
         _drawPoint(rawPoint, identifier)
     }
     
-    func drawLine<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint>(from start: P1, to end: P2, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+    func drawLine<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint>(from start: P1, to end: P2, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue {
         guard let rawStart = start.makeRawPoint(), let rawEnd = end.makeRawPoint() else { return }
         _drawLine(rawStart, rawEnd, identifier)
     }
     
-    func drawCurve<P1: ConvertibleToRawPoint, P2: ConvertibleToRawPoint, P3: ConvertibleToRawPoint, P4: ConvertibleToRawPoint>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
+    func drawCurve<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint, P3: OptionallyConvertibleToRawPoint, P4: OptionallyConvertibleToRawPoint>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
         guard
             let rawStart = start.makeRawPoint(),
             let rawEnd = end.makeRawPoint(),
@@ -42,7 +42,7 @@ extension AnyDrawingUnit {
         _drawCurve(rawStart, rawEnd, rawControlPoint1, rawControlPoint2, identifier)
     }
     
-    func drawCircle<P: ConvertibleToRawPoint>(center: P, radius: RawValue, identifier: Identifier) where P.RawValue == RawValue {
+    func drawCircle<P: OptionallyConvertibleToRawPoint>(center: P, radius: RawValue, identifier: Identifier) where P.RawValue == RawValue {
         guard let rawCenter = center.makeRawPoint() else { return }
         _drawCircle(rawCenter, radius, identifier)
     }

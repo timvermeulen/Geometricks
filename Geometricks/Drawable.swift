@@ -12,15 +12,15 @@ extension Drawable {
 	}
 }
 
-extension Drawable where Self: AlwaysConvertibleToRawPoint {
+extension Drawable where Self: ConvertibleToRawPoint {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		drawingUnit.drawPoint(at: makeRawPoint(), identifier: identifier)
 	}
 }
 
-extension Drawable where Self: ConvertibleToRawPoint {
-	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-		guard let rawPoint = makeRawPoint() else { return }
-		drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
-	}
+extension Drawable where Self: OptionallyConvertibleToRawPoint {
+    func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
+        guard let rawPoint = makeRawPoint() else { return }
+        drawingUnit.drawPoint(at: rawPoint, identifier: identifier)
+    }
 }

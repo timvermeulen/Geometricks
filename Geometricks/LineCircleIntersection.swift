@@ -46,7 +46,7 @@ extension LineCircleIntersection: Observer {
 	}
 }
 
-extension LineCircleIntersection: ConvertibleToRawPoint {
+extension LineCircleIntersection: OptionallyConvertibleToRawPoint {
 	func makeRawPoint() -> RawPoint<RawValue>? {
 		return rawPoint
 	}

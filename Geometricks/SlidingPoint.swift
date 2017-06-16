@@ -32,7 +32,7 @@ extension SlidingPoint: Observer {
 	}
 }
 
-extension SlidingPoint: ConvertibleToRawPoint {
+extension SlidingPoint: OptionallyConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue>? {
         return rawPoint
     }

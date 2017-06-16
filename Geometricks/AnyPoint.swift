@@ -22,7 +22,7 @@ extension AnyPoint: Drawable {
     }
 }
 
-extension AnyPoint: ConvertibleToRawPoint {
+extension AnyPoint: OptionallyConvertibleToRawPoint {
     func makeRawPoint() -> RawPoint<RawValue>? {
         return _makeRawPoint()
     }
