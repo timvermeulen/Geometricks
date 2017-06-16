@@ -48,7 +48,7 @@ extension RawLine {
         
         guard let roots = polynomial.realRoots, roots.count == 2 else { return nil }
         
-        switch (option) {
+        switch option {
         case .first:
             return roots[0]
         case .second:
