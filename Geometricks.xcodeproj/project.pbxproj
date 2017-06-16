@@ -32,7 +32,6 @@
 		224BC5751EE7819A00C29CE3 /* AnyOneDimensional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */; };
 		224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BC5761EE7F47300C29CE3 /* Identifiable.swift */; };
 		225824CB1EEC6F1100752128 /* OffsetPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225824CA1EEC6F1100752128 /* OffsetPoint.swift */; };
-		227EBE571EE84CE800456AFB /* Numeric+squared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EBE561EE84CE800456AFB /* Numeric+squared.swift */; };
 		227EBE591EE8500200456AFB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EBE581EE8500200456AFB /* Observable.swift */; };
 		228783731ED29E4900FF8784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783721ED29E4900FF8784 /* AppDelegate.swift */; };
 		228783751ED29E4900FF8784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228783741ED29E4900FF8784 /* ViewController.swift */; };
@@ -115,7 +114,6 @@
 		224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOneDimensional.swift; sourceTree = "<group>"; };
 		224BC5761EE7F47300C29CE3 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		225824CA1EEC6F1100752128 /* OffsetPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPoint.swift; sourceTree = "<group>"; };
-		227EBE561EE84CE800456AFB /* Numeric+squared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+squared.swift"; sourceTree = "<group>"; };
 		227EBE581EE8500200456AFB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2287836F1ED29E4900FF8784 /* Geometricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geometricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228783721ED29E4900FF8784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -359,7 +357,6 @@
 				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
 				227EBE581EE8500200456AFB /* Observable.swift */,
 				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
-				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 				22326C7F1EF2FC2C00950225 /* Area */,
@@ -571,7 +568,6 @@
 				228783B91ED29ECA00FF8784 /* DraggablePoint.swift in Sources */,
 				228783BB1ED29ECA00FF8784 /* LogicUnit.swift in Sources */,
 				2216843C1EF0B2BE00ED288B /* NonConstantComplexSolvable.swift in Sources */,
-				227EBE571EE84CE800456AFB /* Numeric+squared.swift in Sources */,
 				22C62D521EE99F7600C73E0F /* RawRect.swift in Sources */,
 				228783BA1ED29ECA00FF8784 /* LineSegment.swift in Sources */,
 				22C62D541EE99FCE00C73E0F /* RawRectConvertible.swift in Sources */,

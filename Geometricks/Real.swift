@@ -19,4 +19,8 @@ extension Real {
 		let rem = remainder(dividingBy: x)
 		return rem < 0 ? rem + x : rem
 	}
+    
+    func squared() -> Self {
+        return self * self
+    }
 }
