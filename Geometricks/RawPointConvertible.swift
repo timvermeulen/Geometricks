@@ -11,15 +11,7 @@ protocol AlwaysConvertibleToRawPoint: ConvertibleToRawPoint {
 }
 
 extension AlwaysConvertibleToRawPoint {
-	func distance(to point: RawPoint<RawValue>) -> RawValue {
-		return makeRawPoint().distance(to: point)
-	}
-	
-	func distance<T: AlwaysConvertibleToRawPoint>(to point: T) -> RawValue where T.RawValue == RawValue {
-		return distance(to: point.makeRawPoint())
-	}
-	
-	func makeRawPoint() -> RawPoint<RawValue>? {
-		return .some(makeRawPoint())
+    func makeRawPoint() -> RawPoint<RawValue>? {
+        return .some(makeRawPoint())
 	}
 }

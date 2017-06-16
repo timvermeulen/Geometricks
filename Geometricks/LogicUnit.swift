@@ -17,7 +17,7 @@ final class LogicUnit<_RawValue: Real> {
 	func draggablePoints<P: AlwaysConvertibleToRawPoint>(near point: P) -> [(point: AnyDraggablePoint<RawValue>, rawPoint: RawPoint<RawValue>, distance: RawValue)] where P.RawValue == RawValue {
 		return draggablePoints.flatMap {
 			guard let rawPoint = $0.makeRawPoint() else { return nil }
-			return (point: $0, rawPoint: rawPoint, distance: rawPoint.distance(to: point))
+			return (point: $0, rawPoint: rawPoint, distance: rawPoint.distance(to: point.makeRawPoint()))
 		}
     }
     
