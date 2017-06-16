@@ -12,14 +12,6 @@ extension RawLine {
         return start + (1 / 2) * delta
     }
     
-    var perpendicularBisector: RawLine {
-        let midPoint = self.midPoint
-        let delta = self.delta
-        let vector = RawVector(changeInX: delta.changeInX, changeInY: -delta.changeInY)
-        
-        return RawLine(start: midPoint, delta: vector)
-    }
-    
     func point(at fraction: RawValue) -> RawPoint<RawValue> {
         return start + fraction * delta
     }
