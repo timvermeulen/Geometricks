@@ -1,3 +1,4 @@
+// TODO: add Line, Circle, etc. associated types
 protocol DrawingUnit: RawValueType {
     associatedtype Point: ConvertibleFromRawPoint = RawPoint<RawValue> where Point.RawValue == RawValue
 	associatedtype Rect: ConvertibleFromRawRect = RawRect<RawValue> where Rect.RawValue == RawValue

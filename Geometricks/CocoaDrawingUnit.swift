@@ -1,5 +1,6 @@
 import AppKit
 
+// TODO: add translation/scale
 final class CocoaDrawingUnit {
     typealias RawValue = CGFloat
     
