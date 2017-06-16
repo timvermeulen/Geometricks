@@ -1,7 +1,11 @@
-protocol ConvertibleFromRawVector: RawValueType {
+protocol ConvertibleFromRawVector {
+    associatedtype RawValue: Real
+    
     init(_ rawVector: RawVector<RawValue>)
 }
 
-protocol ConvertibleToRawVector: RawValueType {
+protocol ConvertibleToRawVector {
+    associatedtype RawValue: Real
+    
     func makeRawVector() -> RawVector<RawValue>
 }

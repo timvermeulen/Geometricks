@@ -70,7 +70,6 @@
 		22C62D571EE9A08400C73E0F /* NSRect+RawRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */; };
 		22C62D591EE9A1AC00C73E0F /* NSSize+RawVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */; };
 		22D62E091EEB0482009D2E26 /* RawCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D62E081EEB0482009D2E26 /* RawCurve.swift */; };
-		22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D66A5C1EE9765500CBF912 /* RawValueType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +159,6 @@
 		22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+RawRect.swift"; sourceTree = "<group>"; };
 		22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSize+RawVector.swift"; sourceTree = "<group>"; };
 		22D62E081EEB0482009D2E26 /* RawCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCurve.swift; sourceTree = "<group>"; };
-		22D66A5C1EE9765500CBF912 /* RawValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawValueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,7 +361,6 @@
 				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
 				227EBE561EE84CE800456AFB /* Numeric+squared.swift */,
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
-				22D66A5C1EE9765500CBF912 /* RawValueType.swift */,
 				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 				22326C7F1EF2FC2C00950225 /* Area */,
 				221684291EF0B27000ED288B /* Polynomial */,
@@ -585,7 +582,6 @@
 				224BC5771EE7F47300C29CE3 /* Identifiable.swift in Sources */,
 				2287839E1ED29E7B00FF8784 /* Canvas.swift in Sources */,
 				221684381EF0B2BE00ED288B /* ConstantPolynomial.swift in Sources */,
-				22D66A5D1EE9765500CBF912 /* RawValueType.swift in Sources */,
 				22C62D591EE9A1AC00C73E0F /* NSSize+RawVector.swift in Sources */,
 				228783B31ED29ECA00FF8784 /* AnyDraggablePoint.swift in Sources */,
 				228783B81ED29ECA00FF8784 /* FreePoint.swift in Sources */,

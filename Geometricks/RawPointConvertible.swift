@@ -1,8 +1,12 @@
-protocol ConvertibleFromRawPoint: RawValueType {
+protocol ConvertibleFromRawPoint {
+    associatedtype RawValue: Real
+    
     init(_ rawPoint: RawPoint<RawValue>)
 }
 
-protocol OptionallyConvertibleToRawPoint: RawValueType {
+protocol OptionallyConvertibleToRawPoint {
+    associatedtype RawValue: Real
+    
     func makeRawPoint() -> RawPoint<RawValue>?
 }
 

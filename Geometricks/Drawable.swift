@@ -1,4 +1,6 @@
-protocol Drawable: Identifiable, RawValueType {
+protocol Drawable: Identifiable {
+    associatedtype RawValue: Real
+    
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>)
 }
 
