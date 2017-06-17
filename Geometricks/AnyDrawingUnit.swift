@@ -1,4 +1,3 @@
-// TODO: conform to DrawingUnit
 struct AnyDrawingUnit<_RawValue: Real> {
     typealias RawValue = _RawValue
     
@@ -16,44 +15,38 @@ struct AnyDrawingUnit<_RawValue: Real> {
         _drawCurve = drawingUnit.drawRawCurve
 		_drawCircle = drawingUnit.drawRawCircle
         _drawCircleCircleIntersectionArea = drawingUnit.drawRawCircleCircleIntersectionArea
-		_drawingWillStart = drawingUnit.drawingWillStart
+		_drawingWillStart = drawingUnit.rawDrawingWillStart
         _drawingDidEnd = drawingUnit.drawingDidEnd
     }
 }
 
-extension AnyDrawingUnit {
-    func drawPoint<P: OptionallyConvertibleToRawPoint>(at location: P, identifier: Identifier) where P.RawValue == RawValue {
-        guard let rawPoint = location.makeRawPoint() else { return }
-        _drawPoint(rawPoint, identifier)
+extension AnyDrawingUnit: DrawingUnit {
+    typealias Point = RawPoint<RawValue>
+    typealias Rect = RawRect<RawValue>
+    
+    func drawPoint(at location: RawPoint<RawValue>, identifier: Identifier) {
+        _drawPoint(location, identifier)
     }
     
-    func drawLine<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint>(from start: P1, to end: P2, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue {
-        guard let rawStart = start.makeRawPoint(), let rawEnd = end.makeRawPoint() else { return }
-        _drawLine(rawStart, rawEnd, identifier)
+    func drawLine(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, identifier: Identifier) {
+        _drawLine(start, end, identifier)
     }
     
-    func drawCurve<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint, P3: OptionallyConvertibleToRawPoint, P4: OptionallyConvertibleToRawPoint>(from start: P1, to end: P2, controlPoint1: P3, controlPoint2: P4, identifier: Identifier) where P1.RawValue == RawValue, P2.RawValue == RawValue, P3.RawValue == RawValue, P4.RawValue == RawValue {
-        guard
-            let rawStart = start.makeRawPoint(),
-            let rawEnd = end.makeRawPoint(),
-            let rawControlPoint1 = controlPoint1.makeRawPoint(),
-            let rawControlPoint2 = controlPoint2.makeRawPoint()
-            else { return }
-        
-        _drawCurve(rawStart, rawEnd, rawControlPoint1, rawControlPoint2, identifier)
+    func drawCurve(from start: RawPoint<RawValue>, to end: RawPoint<RawValue>, controlPoint0: RawPoint<RawValue>, controlPoint1: RawPoint<RawValue>, identifier: Identifier) {
+        _drawCurve(start, end, controlPoint0, controlPoint1, identifier)
     }
     
-    func drawCircle<P: OptionallyConvertibleToRawPoint>(center: P, radius: RawValue, identifier: Identifier) where P.RawValue == RawValue {
-        guard let rawCenter = center.makeRawPoint() else { return }
-        _drawCircle(rawCenter, radius, identifier)
+    func drawCircle(center: RawPoint<RawValue>, radius: RawValue, identifier: Identifier) {
+        _drawCircle(center, radius, identifier)
     }
     
-    func drawCircleCircleIntersectionArea(circle0: RawCircle<RawValue>, startAngle0: RawValue, endAngle0: RawValue, circle1: RawCircle<RawValue>, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) {
-        _drawCircleCircleIntersectionArea(circle0, startAngle0, endAngle0, circle1, startAngle1, endAngle1, identifier)
+    func drawCircleCircleIntersectionArea(center0: RawPoint<RawValue>, radius0: RawValue, startAngle0: RawValue, endAngle0: RawValue, center1: RawPoint<RawValue>, radius1: RawValue, startAngle1: RawValue, endAngle1: RawValue, identifier: Identifier) {
+        let rawCircles = (RawCircle(center: center0, radius: radius0), RawCircle(center: center1, radius: radius1))
+        _drawCircleCircleIntersectionArea(rawCircles.0, startAngle0, endAngle0, rawCircles.1, startAngle1, endAngle1, identifier)
     }
     
-    func drawingWillStart<T: ConvertibleToRawRect>(in rect: T?) where T.RawValue == RawValue {
-        _drawingWillStart(rect?.makeRawRect())
+    func drawingWillStart(in rect: RawRect<RawValue>?) {
+        _drawingWillStart(rect)
     }
     
     func drawingDidEnd() {

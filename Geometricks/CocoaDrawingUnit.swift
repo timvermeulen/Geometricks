@@ -99,10 +99,10 @@ extension CocoaDrawingUnit: DrawingUnit {
 		path.stroke()
 	}
     
-    func drawCurve(from start: NSPoint, to end: NSPoint, controlPoint1: NSPoint, controlPoint2: NSPoint, identifier: Identifier) {
+    func drawCurve(from start: NSPoint, to end: NSPoint, controlPoint0: NSPoint, controlPoint1: NSPoint, identifier: Identifier) {
 		strokeColor(of: identifier).setStroke()
 		
-        let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+        let path = NSBezierPath.curve(from: start, to: end, controlPoint1: controlPoint0, controlPoint2: controlPoint1)
         path.lineWidth = strokeWidth(of: identifier)
         path.stroke()
     }

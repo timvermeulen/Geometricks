@@ -36,7 +36,7 @@ extension Curve: Observer {
 
 extension Curve: Drawable {
     func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
-        drawingUnit.drawCurve(from: start, to: end, controlPoint1: controlPoint0, controlPoint2: controlPoint1, identifier: identifier)
+        drawingUnit.drawConvertibleCurve(from: start, to: end, controlPoint0: controlPoint0, controlPoint1: controlPoint1, identifier: identifier)
     }
 }
 

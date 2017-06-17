@@ -28,7 +28,7 @@ extension Circle: Observer {
 extension Circle: Drawable {
 	func draw(in rect: RawRect<RawValue>?, using drawingUnit: AnyDrawingUnit<RawValue>) {
 		guard let radius = RawCircle(self)?.radius else { return }
-		drawingUnit.drawCircle(center: center, radius: radius, identifier: identifier)
+		drawingUnit.drawConvertibleCircle(center: center, radius: radius, identifier: identifier)
 	}
 }
 

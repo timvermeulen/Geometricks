@@ -47,7 +47,7 @@ extension CircleCircleOverlappingArea: Drawable {
             }
         }
         
-        drawingUnit.drawCircleCircleIntersectionArea(
+        drawingUnit.drawRawCircleCircleIntersectionArea(
             circle0: rawCircle0,
             startAngle0: startAngle0,
             endAngle0: endAngle0,
