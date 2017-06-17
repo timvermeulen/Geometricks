@@ -210,6 +210,15 @@
 			name = Area;
 			sourceTree = "<group>";
 		};
+		223892AB1EF4E1B1003C4C0B /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
+				221684291EF0B27000ED288B /* Polynomial */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		2249D42D1EEB20310027746F /* Intersection */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,18 +367,14 @@
 				227EBE581EE8500200456AFB /* Observable.swift */,
 				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
 				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
-				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
+				223892AB1EF4E1B1003C4C0B /* Math */,
 				22326C7F1EF2FC2C00950225 /* Area */,
-				221684291EF0B27000ED288B /* Polynomial */,
 				228783C51ED29F0400FF8784 /* Drawable */,
 				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
 				2249D42D1EEB20310027746F /* Intersection */,
 				228783C31ED29EE700FF8784 /* DraggablePoint */,
 				228783C41ED29EF700FF8784 /* Point */,
-				228783C71ED29F2200FF8784 /* RawPoint */,
-				228783C81ED29F2700FF8784 /* RawVector */,
-				22C62D551EE99FE900C73E0F /* RawRect */,
 				22D62E0A1EEB04B8009D2E26 /* Raw */,
 			);
 			name = Core;
@@ -387,6 +392,9 @@
 		22D62E0A1EEB04B8009D2E26 /* Raw */ = {
 			isa = PBXGroup;
 			children = (
+				228783C71ED29F2200FF8784 /* RawPoint */,
+				228783C81ED29F2700FF8784 /* RawVector */,
+				22C62D551EE99FE900C73E0F /* RawRect */,
 				2239AB4F1EEAD4DB00528A7B /* RawLine.swift */,
 				22D62E081EEB0482009D2E26 /* RawCurve.swift */,
 				2249D42B1EEB1E600027746F /* RawCircle.swift */,
