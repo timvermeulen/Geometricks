@@ -222,7 +222,6 @@
 		223C98361FB6C16D00CC97E7 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
-				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 				228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */,
 				2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */,
 				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
@@ -241,6 +240,7 @@
 				228783761ED29E4900FF8784 /* Assets.xcassets */,
 				228783781ED29E4900FF8784 /* Main.storyboard */,
 				228783741ED29E4900FF8784 /* ViewController.swift */,
+				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
