@@ -145,7 +145,7 @@
 		228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawPointConvertible.swift; sourceTree = "<group>"; };
 		228783AE1ED29ECA00FF8784 /* RawVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVector.swift; sourceTree = "<group>"; };
 		228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawVectorConvertible.swift; sourceTree = "<group>"; };
-		228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicDrawingUnit.swift; path = ../Geometricks/BasicDrawingUnit.swift; sourceTree = "<group>"; };
+		228783B01ED29ECA00FF8784 /* BasicDrawingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDrawingUnit.swift; sourceTree = "<group>"; };
 		228783CA1ED3A51700FF8784 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+init.swift"; sourceTree = "<group>"; };
 		228E65351EEB89D500AA5931 /* CircleCircleIntersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCircleIntersection.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				221684301EF0B2AC00ED288B /* QuarticPolynomial.swift */,
 				221684311EF0B2AC00ED288B /* QuinticPolynomial.swift */,
 			);
-			name = Polynomial;
+			path = Polynomial;
 			sourceTree = "<group>";
 		};
 		22326C7F1EF2FC2C00950225 /* Area */ = {
@@ -207,39 +207,77 @@
 			children = (
 				2238997A1EEDA0B8001F1F93 /* CircleCircleOverlappingArea.swift */,
 			);
-			name = Area;
+			path = Area;
 			sourceTree = "<group>";
 		};
 		223892AB1EF4E1B1003C4C0B /* Math */ = {
 			isa = PBXGroup;
 			children = (
-				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 				221684291EF0B27000ED288B /* Polynomial */,
+				229819371EEA231300C1E7A1 /* TwoTwoMatrix.swift */,
 			);
-			name = Math;
+			path = Math;
+			sourceTree = "<group>";
+		};
+		223C98361FB6C16D00CC97E7 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
+				228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */,
+				2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */,
+				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
+				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
+				22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */,
+				22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */,
+				221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		223C98371FB6C17B00CC97E7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				228783721ED29E4900FF8784 /* AppDelegate.swift */,
+				228783761ED29E4900FF8784 /* Assets.xcassets */,
+				228783781ED29E4900FF8784 /* Main.storyboard */,
+				228783741ED29E4900FF8784 /* ViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		223C98381FB6C19600CC97E7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
+				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
+				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
+				227EBE581EE8500200456AFB /* Observable.swift */,
+				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		2249D42D1EEB20310027746F /* Intersection */ = {
 			isa = PBXGroup;
 			children = (
-				2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */,
-				2249D4291EEB10580027746F /* LineCircleIntersection.swift */,
 				228E65351EEB89D500AA5931 /* CircleCircleIntersection.swift */,
+				2249D4291EEB10580027746F /* LineCircleIntersection.swift */,
+				2239AB4D1EEAC0F200528A7B /* LineLineIntersection.swift */,
 			);
-			name = Intersection;
+			path = Intersection;
 			sourceTree = "<group>";
 		};
 		224BC5731EE77FCD00C29CE3 /* OneDimensional */ = {
 			isa = PBXGroup;
 			children = (
-				224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */,
 				224BC5741EE7819A00C29CE3 /* AnyOneDimensional.swift */,
-				228783A81ED29ECA00FF8784 /* LineSegment.swift */,
-				22C62D4F1EE99CC300C73E0F /* Line.swift */,
-				228783CA1ED3A51700FF8784 /* Curve.swift */,
 				221BF5CC1EE896A30016C1D1 /* Circle.swift */,
+				228783CA1ED3A51700FF8784 /* Curve.swift */,
+				22C62D4F1EE99CC300C73E0F /* Line.swift */,
+				228783A81ED29ECA00FF8784 /* LineSegment.swift */,
+				224BC5711EE77FBD00C29CE3 /* OneDimensional.swift */,
 			);
-			name = OneDimensional;
+			path = OneDimensional;
 			sourceTree = "<group>";
 		};
 		228783661ED29E4900FF8784 = {
@@ -265,19 +303,9 @@
 		228783711ED29E4900FF8784 /* Geometricks */ = {
 			isa = PBXGroup;
 			children = (
-				228783721ED29E4900FF8784 /* AppDelegate.swift */,
-				228783741ED29E4900FF8784 /* ViewController.swift */,
-				2287839D1ED29E7B00FF8784 /* Canvas.swift */,
 				228783C91ED29F3300FF8784 /* Core */,
-				228783A31ED29ECA00FF8784 /* CocoaDrawingUnit.swift */,
-				2240F2A01EE6EAE400492619 /* CocoaInteractionUnit.swift */,
-				228783CC1ED3B3B500FF8784 /* NSBezierPath+init.swift */,
-				228783AA1ED29ECA00FF8784 /* NSPoint+Raw.swift */,
-				22C62D581EE9A1AC00C73E0F /* NSSize+RawVector.swift */,
-				22C62D561EE9A08400C73E0F /* NSRect+RawRect.swift */,
-				221BF5D01EE8B93F0016C1D1 /* Types+FloatingPoint.swift */,
-				228783761ED29E4900FF8784 /* Assets.xcassets */,
-				228783781ED29E4900FF8784 /* Main.storyboard */,
+				223C98371FB6C17B00CC97E7 /* Other */,
+				223C98361FB6C16D00CC97E7 /* Cocoa */,
 				2287837B1ED29E4900FF8784 /* Info.plist */,
 			);
 			path = Geometricks;
@@ -305,40 +333,40 @@
 		228783C31ED29EE700FF8784 /* DraggablePoint */ = {
 			isa = PBXGroup;
 			children = (
-				228783A71ED29ECA00FF8784 /* DraggablePoint.swift */,
 				228783A11ED29ECA00FF8784 /* AnyDraggablePoint.swift */,
+				228783A71ED29ECA00FF8784 /* DraggablePoint.swift */,
 			);
-			name = DraggablePoint;
+			path = DraggablePoint;
 			sourceTree = "<group>";
 		};
 		228783C41ED29EF700FF8784 /* Point */ = {
 			isa = PBXGroup;
 			children = (
-				228783AB1ED29ECA00FF8784 /* Point.swift */,
 				228783A21ED29ECA00FF8784 /* AnyPoint.swift */,
 				228783A61ED29ECA00FF8784 /* FreePoint.swift */,
-				229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */,
 				225824CA1EEC6F1100752128 /* OffsetPoint.swift */,
+				228783AB1ED29ECA00FF8784 /* Point.swift */,
+				229FCFDD1ED3B81000CAAEE5 /* SlidingPoint.swift */,
 			);
-			name = Point;
+			path = Point;
 			sourceTree = "<group>";
 		};
 		228783C51ED29F0400FF8784 /* Drawable */ = {
 			isa = PBXGroup;
 			children = (
-				228783A41ED29ECA00FF8784 /* Drawable.swift */,
 				2287839F1ED29ECA00FF8784 /* AnyDrawable.swift */,
+				228783A41ED29ECA00FF8784 /* Drawable.swift */,
 			);
-			name = Drawable;
+			path = Drawable;
 			sourceTree = "<group>";
 		};
 		228783C61ED29F1600FF8784 /* DrawingUnit */ = {
 			isa = PBXGroup;
 			children = (
-				228783A51ED29ECA00FF8784 /* DrawingUnit.swift */,
 				228783A01ED29ECA00FF8784 /* AnyDrawingUnit.swift */,
+				228783A51ED29ECA00FF8784 /* DrawingUnit.swift */,
 			);
-			name = DrawingUnit;
+			path = DrawingUnit;
 			sourceTree = "<group>";
 		};
 		228783C71ED29F2200FF8784 /* RawPoint */ = {
@@ -347,7 +375,7 @@
 				228783AC1ED29ECA00FF8784 /* RawPoint.swift */,
 				228783AD1ED29ECA00FF8784 /* RawPointConvertible.swift */,
 			);
-			name = RawPoint;
+			path = RawPoint;
 			sourceTree = "<group>";
 		};
 		228783C81ED29F2700FF8784 /* RawVector */ = {
@@ -356,28 +384,24 @@
 				228783AE1ED29ECA00FF8784 /* RawVector.swift */,
 				228783AF1ED29ECA00FF8784 /* RawVectorConvertible.swift */,
 			);
-			name = RawVector;
+			path = RawVector;
 			sourceTree = "<group>";
 		};
 		228783C91ED29F3300FF8784 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				228783A91ED29ECA00FF8784 /* LogicUnit.swift */,
-				224BC5761EE7F47300C29CE3 /* Identifiable.swift */,
-				227EBE581EE8500200456AFB /* Observable.swift */,
-				221BF5CE1EE8B6130016C1D1 /* Real.swift */,
-				221BF5D21EE8BDB40016C1D1 /* Comparable+clamped.swift */,
-				223892AB1EF4E1B1003C4C0B /* Math */,
 				22326C7F1EF2FC2C00950225 /* Area */,
+				228783C31ED29EE700FF8784 /* DraggablePoint */,
 				228783C51ED29F0400FF8784 /* Drawable */,
-				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C61ED29F1600FF8784 /* DrawingUnit */,
 				2249D42D1EEB20310027746F /* Intersection */,
-				228783C31ED29EE700FF8784 /* DraggablePoint */,
+				223892AB1EF4E1B1003C4C0B /* Math */,
+				224BC5731EE77FCD00C29CE3 /* OneDimensional */,
 				228783C41ED29EF700FF8784 /* Point */,
 				22D62E0A1EEB04B8009D2E26 /* Raw */,
+				223C98381FB6C19600CC97E7 /* Other */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		22C62D551EE99FE900C73E0F /* RawRect */ = {
@@ -386,20 +410,20 @@
 				22C62D511EE99F7600C73E0F /* RawRect.swift */,
 				22C62D531EE99FCE00C73E0F /* RawRectConvertible.swift */,
 			);
-			name = RawRect;
+			path = RawRect;
 			sourceTree = "<group>";
 		};
 		22D62E0A1EEB04B8009D2E26 /* Raw */ = {
 			isa = PBXGroup;
 			children = (
 				228783C71ED29F2200FF8784 /* RawPoint */,
-				228783C81ED29F2700FF8784 /* RawVector */,
 				22C62D551EE99FE900C73E0F /* RawRect */,
-				2239AB4F1EEAD4DB00528A7B /* RawLine.swift */,
-				22D62E081EEB0482009D2E26 /* RawCurve.swift */,
+				228783C81ED29F2700FF8784 /* RawVector */,
 				2249D42B1EEB1E600027746F /* RawCircle.swift */,
+				22D62E081EEB0482009D2E26 /* RawCurve.swift */,
+				2239AB4F1EEAD4DB00528A7B /* RawLine.swift */,
 			);
-			name = Raw;
+			path = Raw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,6 +661,7 @@
 				228783791ED29E4900FF8784 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
