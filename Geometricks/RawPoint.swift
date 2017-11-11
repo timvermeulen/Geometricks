@@ -1,6 +1,6 @@
 struct RawPoint<_RawValue: Real> {
-	typealias RawValue = _RawValue
-	
+    typealias RawValue = _RawValue
+    
     let x, y: RawValue
 }
 
@@ -16,14 +16,14 @@ extension RawPoint {
     func distance(to point: RawPoint) -> RawValue {
         return (point - self).norm
     }
-	
-	func rotated(by angle: RawValue, around point: RawPoint) -> RawPoint {
-		return point + (self - point).rotated(by: angle)
-	}
-	
-	func angle(relativeTo other: RawPoint) -> RawValue {
-		return (self - other).angleWithXAxis
-	}
+    
+    func rotated(by angle: RawValue, around point: RawPoint) -> RawPoint {
+        return point + (self - point).rotated(by: angle)
+    }
+    
+    func angle(relativeTo other: RawPoint) -> RawValue {
+        return (self - other).angleWithXAxis
+    }
 }
 
 extension RawPoint: Equatable {

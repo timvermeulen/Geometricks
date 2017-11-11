@@ -1,6 +1,6 @@
 struct RawLine<RawValue: Real> {
-	let start: RawPoint<RawValue>
-	let end: RawPoint<RawValue>
+    let start: RawPoint<RawValue>
+    let end: RawPoint<RawValue>
 }
 
 extension RawLine {
@@ -71,27 +71,27 @@ extension RawLine {
 }
 
 extension RawLine {
-	init(start: RawPoint<RawValue>, delta: RawVector<RawValue>) {
-		self.start = start
-		end = start + delta
-	}
-	
-	init?<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
-		guard
-			let rawStart = start.makeRawPoint(),
-			let rawEnd = end.makeRawPoint()
-			else { return nil }
-		
-		self.init(start: rawStart, end: rawEnd)
-	}
+    init(start: RawPoint<RawValue>, delta: RawVector<RawValue>) {
+        self.start = start
+        end = start + delta
+    }
     
-	// TODO: more generic?
-	
-	init?(_ line: Line<RawValue>) {
-		self.init(start: line.start, end: line.end)
-	}
-	
-	init?(_ lineSegment: LineSegment<RawValue>) {
-		self.init(start: lineSegment.start, end: lineSegment.end)
-	}
+    init?<P1: OptionallyConvertibleToRawPoint, P2: OptionallyConvertibleToRawPoint>(start: P1, end: P2) where P1.RawValue == RawValue, P2.RawValue == RawValue {
+        guard
+            let rawStart = start.makeRawPoint(),
+            let rawEnd = end.makeRawPoint()
+            else { return nil }
+        
+        self.init(start: rawStart, end: rawEnd)
+    }
+    
+    // TODO: more generic?
+    
+    init?(_ line: Line<RawValue>) {
+        self.init(start: line.start, end: line.end)
+    }
+    
+    init?(_ lineSegment: LineSegment<RawValue>) {
+        self.init(start: lineSegment.start, end: lineSegment.end)
+    }
 }

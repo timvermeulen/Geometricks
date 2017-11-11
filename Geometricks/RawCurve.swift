@@ -1,6 +1,6 @@
 struct RawCurve<RawValue: Real> {
-	let line: RawLine<RawValue>
-	let controlPoints: (RawPoint<RawValue>, RawPoint<RawValue>)
+    let line: RawLine<RawValue>
+    let controlPoints: (RawPoint<RawValue>, RawPoint<RawValue>)
 }
 
 extension RawCurve {
@@ -60,15 +60,15 @@ extension RawCurve {
 }
 
 extension RawCurve {
-	init?(_ curve: Curve<RawValue>) {
-		guard
-			let rawStart = curve.start.makeRawPoint(),
-			let rawEnd = curve.end.makeRawPoint(),
-			let rawControlPoint0 = curve.controlPoint0.makeRawPoint(),
-			let rawControlPoint1 = curve.controlPoint1.makeRawPoint()
-			else { return nil }
-		
-		line = RawLine(start: rawStart, end: rawEnd)
-		controlPoints = (rawControlPoint0, rawControlPoint1)
-	}
+    init?(_ curve: Curve<RawValue>) {
+        guard
+            let rawStart = curve.start.makeRawPoint(),
+            let rawEnd = curve.end.makeRawPoint(),
+            let rawControlPoint0 = curve.controlPoint0.makeRawPoint(),
+            let rawControlPoint1 = curve.controlPoint1.makeRawPoint()
+            else { return nil }
+        
+        line = RawLine(start: rawStart, end: rawEnd)
+        controlPoints = (rawControlPoint0, rawControlPoint1)
+    }
 }

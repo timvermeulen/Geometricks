@@ -1,25 +1,25 @@
 final class SlidingPoint<_RawValue: Real> {
-	typealias RawValue = _RawValue
-	
+    typealias RawValue = _RawValue
+    
     private let floor: AnyOneDimensional<RawValue>
-	
-	private var fraction: RawValue? {
-		didSet { rawPoint = fraction.flatMap(floor.point(at:)) }
-	}
-	
-	private var rawPoint: RawPoint<RawValue>? {
-		didSet { updateObservers() }
-	}
-	
-	let observableStorage = ObservableStorage()
+    
+    private var fraction: RawValue? {
+        didSet { rawPoint = fraction.flatMap(floor.point(at:)) }
+    }
+    
+    private var rawPoint: RawPoint<RawValue>? {
+        didSet { updateObservers() }
+    }
+    
+    let observableStorage = ObservableStorage()
     
     init<T: OneDimensional>(oneDimensional: T, fraction: RawValue) where T.RawValue == RawValue {
-		self.fraction = fraction
+        self.fraction = fraction
         floor = AnyOneDimensional(oneDimensional)
-		rawPoint = oneDimensional.point(at: fraction)
-		
-		observe(floor)
-	}
+        rawPoint = oneDimensional.point(at: fraction)
+        
+        observe(floor)
+    }
     
     deinit {
         stopObserving(floor)
@@ -27,9 +27,9 @@ final class SlidingPoint<_RawValue: Real> {
 }
 
 extension SlidingPoint: Observer {
-	func update() {
-		rawPoint = fraction.flatMap(floor.point(at:))
-	}
+    func update() {
+        rawPoint = fraction.flatMap(floor.point(at:))
+    }
 }
 
 extension SlidingPoint: OptionallyConvertibleToRawPoint {

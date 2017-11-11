@@ -7,23 +7,23 @@ protocol NonConstantPolynomial: Polynomial {
 }
 
 extension NonConstantPolynomial {
-	static var degree: Int {
-		return Derivative.degree + 1
-	}
-	
-	func write<Target: TextOutputStream>(to target: inout Target) {
-		if !leadingCoefficient.isZero {
-			target.write("\(leadingCoefficient) x^\(Self.degree) + ")
-		}
-		
-		popped.write(to: &target)
-	}
-	
-	var criticalPoints: [Input]? {
-		return derivative.realRoots
-	}
-	
-	func approximatedRealRoots(error: Output = 1 / 1000) -> [Input]? {
+    static var degree: Int {
+        return Derivative.degree + 1
+    }
+    
+    func write<Target: TextOutputStream>(to target: inout Target) {
+        if !leadingCoefficient.isZero {
+            target.write("\(leadingCoefficient) x^\(Self.degree) + ")
+        }
+        
+        popped.write(to: &target)
+    }
+    
+    var criticalPoints: [Input]? {
+        return derivative.realRoots
+    }
+    
+    func approximatedRealRoots(error: Output = 1 / 1000) -> [Input]? {
         let criticalPoints = self.criticalPoints ?? []
         let firstCriticalPoint = criticalPoints.first ?? 0
         let lastCriticalPoint = criticalPoints.last ?? 0
@@ -90,9 +90,9 @@ extension NonConstantPolynomial {
         let otherRoots = zip([lowerBound] + criticalPoints, criticalPoints + [upperBound]).flatMap { findRoot(between: $0.0, and: $0.1) }
         
         return (boundaryRoots + criticalRoots + otherRoots).sorted()
-	}
-	
-	var realRoots: [Input]? {
-		return approximatedRealRoots()
-	}
+    }
+    
+    var realRoots: [Input]? {
+        return approximatedRealRoots()
+    }
 }

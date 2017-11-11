@@ -1,9 +1,9 @@
 protocol ComplexSolvable: Polynomial {
-	var complexRoots: [Complex<Input>]? { get }
+    var complexRoots: [Complex<Input>]? { get }
 }
 
 extension ComplexSolvable {
-	var realRoots: [Input]? {
-		return complexRoots?.flatMap { $0.real }.sorted()
-	}
+    var realRoots: [Input]? {
+        return complexRoots?.flatMap { $0.real }.sorted()
+    }
 }

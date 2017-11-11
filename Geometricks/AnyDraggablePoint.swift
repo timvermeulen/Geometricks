@@ -1,12 +1,12 @@
 struct AnyDraggablePoint<_RawValue: Real> {
-	typealias RawValue = _RawValue
-	
+    typealias RawValue = _RawValue
+    
     private let _takeOnValue: (RawPoint<RawValue>) -> Void
     private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>?
     
     let identifier: Identifier
-	let observableStorage: ObservableStorage
+    let observableStorage: ObservableStorage
     
     init<T: DraggablePoint>(_ draggable: T) where T.RawValue == RawValue {
         _takeOnValue = draggable.takeOnValue
@@ -14,7 +14,7 @@ struct AnyDraggablePoint<_RawValue: Real> {
         _makeRawPoint = draggable.makeRawPoint
         
         identifier = draggable.identifier
-		observableStorage = draggable.observableStorage
+        observableStorage = draggable.observableStorage
     }
 }
 

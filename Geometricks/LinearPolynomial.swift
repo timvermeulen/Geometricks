@@ -1,9 +1,9 @@
 struct LinearPolynomial<RawValue: Real> {
-	private let coefficients: (RawValue, RawValue)
-	
+    private let coefficients: (RawValue, RawValue)
+    
     init(_ c0: RawValue, _ c1: RawValue) {
-		self.coefficients = (c0, c1)
-	}
+        self.coefficients = (c0, c1)
+    }
 }
 
 extension LinearPolynomial: NonConstantComplexSolvable {
@@ -26,13 +26,13 @@ extension LinearPolynomial: NonConstantPolynomial {
         return [Complex(realPart: -coefficients.0 / coefficients.1)]
     }
     
-	var derivative: ConstantPolynomial<RawValue> {
-		return ConstantPolynomial(value: coefficients.1)
-	}
-	
-	var popped: ConstantPolynomial<RawValue> {
-		return ConstantPolynomial(value: coefficients.0)
-	}
+    var derivative: ConstantPolynomial<RawValue> {
+        return ConstantPolynomial(value: coefficients.1)
+    }
+    
+    var popped: ConstantPolynomial<RawValue> {
+        return ConstantPolynomial(value: coefficients.0)
+    }
     
     var shifted: ConstantPolynomial<RawValue> {
         return ConstantPolynomial(value: coefficients.1)

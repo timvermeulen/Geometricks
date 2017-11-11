@@ -2,20 +2,20 @@ struct AnyDrawingUnit<_RawValue: Real> {
     typealias RawValue = _RawValue
     
     private let _drawPoint: (RawPoint<RawValue>, Identifier) -> Void
-	private let _drawLine: (RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
+    private let _drawLine: (RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
     private let _drawCurve: (RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, RawPoint<RawValue>, Identifier) -> Void
-	private let _drawCircle: (RawPoint<RawValue>, RawValue, Identifier) -> Void
+    private let _drawCircle: (RawPoint<RawValue>, RawValue, Identifier) -> Void
     private let _drawCircleCircleIntersectionArea: (RawCircle<RawValue>, RawValue, RawValue, RawCircle<RawValue>, RawValue, RawValue, Identifier) -> Void
-	private let _drawingWillStart: (RawRect<RawValue>?) -> Void
+    private let _drawingWillStart: (RawRect<RawValue>?) -> Void
     private let _drawingDidEnd: () -> Void
     
     init<T: DrawingUnit>(_ drawingUnit: T) where T.RawValue == RawValue {
         _drawPoint = drawingUnit.drawRawPoint
-		_drawLine = drawingUnit.drawRawLine
+        _drawLine = drawingUnit.drawRawLine
         _drawCurve = drawingUnit.drawRawCurve
-		_drawCircle = drawingUnit.drawRawCircle
+        _drawCircle = drawingUnit.drawRawCircle
         _drawCircleCircleIntersectionArea = drawingUnit.drawRawCircleCircleIntersectionArea
-		_drawingWillStart = drawingUnit.rawDrawingWillStart
+        _drawingWillStart = drawingUnit.rawDrawingWillStart
         _drawingDidEnd = drawingUnit.drawingDidEnd
     }
 }

@@ -1,18 +1,18 @@
 struct AnyPoint<_RawValue: Real> {
-	typealias RawValue = _RawValue
-	
+    typealias RawValue = _RawValue
+    
     private let _draw: (RawRect<RawValue>, AnyDrawingUnit<RawValue>) -> Void
     private let _makeRawPoint: () -> RawPoint<RawValue>?
     
     let identifier: Identifier
-	let observableStorage: ObservableStorage
+    let observableStorage: ObservableStorage
     
     init<P: Point>(_ point: P) where P.RawValue == RawValue {
         _draw = point.draw
         _makeRawPoint = point.makeRawPoint
         
         identifier = point.identifier
-		observableStorage = point.observableStorage
+        observableStorage = point.observableStorage
     }
 }
 
